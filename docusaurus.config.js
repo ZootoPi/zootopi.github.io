@@ -1,6 +1,6 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-  title: "GafBof team",
+  title: "GafBof",
   tagline: "If you work, it will work!",
   url: "https://gafbof.dev",
   baseUrl: "/",

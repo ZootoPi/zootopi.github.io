@@ -32,9 +32,11 @@ module.exports = {
     },
     footer: {
       style: "dark",
-      organization: "GafBof",
-      url: "https://gafbof.dev",
       copyright: `Copyright © ${new Date().getFullYear()} GafBof.`,
+    },
+    customField: {
+      footer_team: "GafBof team",
+      footer_team_url: "https://gafbof.dev",
     },
   },
   presets: [

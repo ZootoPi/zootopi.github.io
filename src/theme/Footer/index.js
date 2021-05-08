@@ -6,13 +6,13 @@
  */
 import React from "react";
 import clsx from "clsx";
-import Link from "@docusaurus/Link";
 import { useThemeConfig } from "@docusaurus/theme-common";
 import styles from "./styles.module.css";
 
 function Footer() {
-  const { footer } = useThemeConfig();
-  const { copyright, organization, url } = footer || {};
+  const { footer, customField } = useThemeConfig();
+  const { copyright } = footer || {};
+  const { footer_team, footer_team_url } = customField || {};
 
   if (!footer) {
     return null;
@@ -25,26 +25,23 @@ function Footer() {
       })}
     >
       <div className="container">
-        {copyright && (
-          <div className="footer__bottom text--center row">
-            <span className={styles.footer__tagline + " col"}>
-              Made with 🧡 by
-              <a href={url} target="_blank">
-                {organization}
-              </a>
-              team.
-            </span>
-            {copyright ? (
-              <div
-                className={styles.footer__copyright + " col"} // Developer provided the HTML, so assume it's safe.
-                // eslint-disable-next-line react/no-danger
-                dangerouslySetInnerHTML={{
-                  __html: copyright,
-                }}
-              />
-            ) : null}
-          </div>
-        )}
+        <div className="footer__bottom text--center row">
+          <span className={styles.footer__tagline + " col"}>
+            {"Made with 🧡 by "}
+            <a href={footer_team_url} target="_blank">
+              {footer_team}
+            </a>
+          </span>
+          {copyright ? (
+            <div
+              className={styles.footer__copyright + " col"} // Developer provided the HTML, so assume it's safe.
+              // eslint-disable-next-line react/no-danger
+              dangerouslySetInnerHTML={{
+                __html: copyright,
+              }}
+            />
+          ) : null}
+        </div>
       </div>
     </footer>
   );

@@ -7,9 +7,34 @@
 
 .footerLogoLink {
   opacity: 0.5;
-  transition: opacity var(--ifm-transition-fast) var(--ifm-transition-timing-default);
+  transition: opacity var(--ifm-transition-fast)
+    var(--ifm-transition-timing-default);
 }
 
 .footerLogoLink:hover {
   opacity: 1;
+}
+
+.footer__copyright {
+  text-align: center;
+  flex: 1;
+}
+
+@media (min-width: 768px) {
+  .footer__copyright {
+    text-align: right;
+    flex: 1;
+  }
+}
+
+.footer__tagline {
+  text-align: center;
+  flex: 1;
+}
+
+@media (min-width: 768px) {
+  .footer__tagline {
+    text-align: left;
+    flex: 1;
+  }
 }

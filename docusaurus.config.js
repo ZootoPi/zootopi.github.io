@@ -1,6 +1,6 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-  title: "GafBof Team",
+  title: "GafBof team",
   tagline: "sharing and make fun",
   url: "https://gafbof.dev",
   baseUrl: "/",
@@ -11,7 +11,7 @@ module.exports = {
   projectName: "gafbof.github.io", // Usually your repo name.
   themeConfig: {
     navbar: {
-      title: "GafBof Team",
+      title: "GafBof",
       logo: {
         alt: "GafBof Logo",
         src: "img/logo.png",
@@ -32,36 +32,9 @@ module.exports = {
     },
     footer: {
       style: "dark",
-      logo: {
-        alt: "GafBof Team",
-        src: "img/logo.png",
-        href: "https://gafbof.dev",
-      },
-      links: [
-        {
-          title: "Docs",
-          items: [
-            {
-              label: "Tutorial",
-              to: "/docs/intro",
-            },
-          ],
-        },
-        {
-          title: "Contact",
-          items: [
-            {
-              label: "Email",
-              href: "mailto:contact@gafbof.dev",
-            },
-            {
-              label: "GitHub",
-              href: "https://github.com/gafbof",
-            },
-          ],
-        },
-      ],
-      copyright: `Copyright © ${new Date().getFullYear()} GafBof Team.`,
+      organization: "GafBof",
+      url: "https://gafbof.dev",
+      copyright: `Copyright © ${new Date().getFullYear()} GafBof.`,
     },
   },
   presets: [

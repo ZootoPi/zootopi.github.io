@@ -1,7 +1,7 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
   title: "GafBof Team",
-  tagline: "Dinosaurs are cool",
+  tagline: "sharing and make fun",
   url: "https://gafbof.dev",
   baseUrl: "/",
   onBrokenLinks: "throw",
@@ -14,7 +14,7 @@ module.exports = {
       title: "GafBof Team",
       logo: {
         alt: "GafBof Logo",
-        src: "img/logo.svg",
+        src: "img/logo.png",
       },
       items: [
         {
@@ -23,7 +23,6 @@ module.exports = {
           position: "left",
           label: "Tutorial",
         },
-        { to: "/blog", label: "Blog", position: "left" },
         {
           href: "https://github.com/gafbof",
           label: "GitHub",
@@ -33,6 +32,11 @@ module.exports = {
     },
     footer: {
       style: "dark",
+      logo: {
+        alt: "GafBof Team",
+        src: "img/logo.png",
+        href: "https://gafbof.dev",
+      },
       links: [
         {
           title: "Docs",
@@ -44,28 +48,11 @@ module.exports = {
           ],
         },
         {
-          title: "Community",
+          title: "Contact",
           items: [
             {
-              label: "Stack Overflow",
-              href: "https://stackoverflow.com/questions/tagged/docusaurus",
-            },
-            {
-              label: "Discord",
-              href: "https://discordapp.com/invite/docusaurus",
-            },
-            {
-              label: "Twitter",
-              href: "https://twitter.com/docusaurus",
-            },
-          ],
-        },
-        {
-          title: "More",
-          items: [
-            {
-              label: "Blog",
-              to: "/blog",
+              label: "Email",
+              href: "mailto:contact@gafbof.dev",
             },
             {
               label: "GitHub",
@@ -83,15 +70,9 @@ module.exports = {
       {
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
-          // Please change this to your repo.
-          editUrl:
-            "https://github.com/gafbof/gafbof.github.io/edit/master/website/",
         },
         blog: {
           showReadingTime: true,
-          // Please change this to your repo.
-          editUrl:
-            "https://github.com/gafbof/gafbof.github.io/edit/master/website/blog/",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),

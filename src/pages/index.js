@@ -3,6 +3,7 @@ import clsx from "clsx";
 import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import { FaGithub } from "react-icons/all";
 import styles from "./index.module.css";
 import HomepageFeatures from "../components/HomepageFeatures";
 
@@ -13,16 +14,17 @@ function HomepageHeader() {
       <div className="container">
         <div className="row">
           <div className={styles.heroContainer + " col"}>
-            <h1 className="hero__title">{siteConfig.title}</h1>
-            <p className="hero__subtitle">{siteConfig.tagline}</p>
+            <h1 className="hero__title">Share what we love ❤️</h1>
             <div className={styles.buttons}>
               <Link
-                className="button button--secondary button--lg"
+                className="button button--secondary button--lg row"
                 href="https://github.com/gafbof"
               >
-                Github
+                <div>We in </div>
+                <FaGithub />
               </Link>
             </div>
+            <HomepageFeatures />
           </div>
           <div className="col">
             <div className={styles.heroImage}>

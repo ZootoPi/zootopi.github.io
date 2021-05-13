@@ -33,3 +33,13 @@
   align-items: center;
   justify-content: center;
 }
+
+.buttons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttons div {
+  padding-right: 10px;
+}

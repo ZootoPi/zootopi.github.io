@@ -21,7 +21,25 @@ module.exports = {
           type: "doc",
           docId: "intro",
           position: "left",
-          label: "Tutorial",
+          label: "Tutorials",
+        },
+        {
+          type: "doc",
+          docId: "intro",
+          position: "left",
+          label: "Projects",
+        },
+        {
+          type: "doc",
+          docId: "intro",
+          position: "left",
+          label: "Certificates",
+        },
+        {
+          type: "doc",
+          docId: "intro",
+          position: "right",
+          label: "Blog",
         },
         {
           href: "https://github.com/gafbof",

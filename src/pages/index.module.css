@@ -22,6 +22,10 @@
   margin: 1rem;
 }
 
+.heroImage img {
+  width: 100%;
+}
+
 .heroContainer {
   display: flex;
   flex-direction: column;

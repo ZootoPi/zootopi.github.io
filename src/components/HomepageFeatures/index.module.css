@@ -11,3 +11,7 @@
   height: 200px;
   width: 200px;
 }
+
+.featureElem {
+  border: 1px solid #dc382c;
+}

@@ -11,23 +11,29 @@ function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
   return (
     <header className={clsx("hero hero--primary", styles.heroBanner)}>
-      <div className="container row">
-        <div className={clsx(styles.heroContainer, "col")}>
-          <h1 className="hero__title">Share what we love ❤️</h1>
-          <div className={styles.buttons}>
-            <Link
-              className="button button--secondary button--lg row"
-              href="https://github.com/gafbof"
-            >
-              <div>We in </div>
-              <FaGithub />
-            </Link>
+      <div className="container">
+        <div className="row">
+          <div className={clsx(styles.heroContainer, "col")}>
+            <h1 className={styles.heroTitle}>
+              <span>Share </span>
+              what we
+              <span> love ❤️</span>
+            </h1>
+            <div className={styles.buttons}>
+              <Link
+                className="button button--secondary button--lg row"
+                href="https://github.com/gafbof"
+              >
+                <div>We in </div>
+                <FaGithub />
+              </Link>
+            </div>
+            <HomepageFeatures />
           </div>
-          <HomepageFeatures />
-        </div>
-        <div className="col">
-          <div className={styles.heroImage}>
-            <img src="img/gafbof_team.svg" />
+          <div className="col">
+            <div className={styles.heroImage}>
+              <img src="img/gafbof_team.svg" />
+            </div>
           </div>
         </div>
       </div>

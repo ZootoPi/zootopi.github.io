@@ -13,5 +13,25 @@
 }
 
 .featureElem {
-  border: 1px solid #dc382c;
+  border: 1px dashed var(--ifm-color-red);
+  border-radius: 3px;
+  margin-right: 1rem;
+  margin-top: 1rem;
+  position: relative;
+}
+
+.featureElem:hover {
+  background-color: var(--ifm-color-red);
+}
+
+.featureElem a {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.featureTitle {
+  margin-top: 1rem;
 }

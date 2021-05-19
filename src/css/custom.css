@@ -19,6 +19,8 @@
   /* Footer */
   --ifm-navbar-background-color: var(--ifm-color-primary);
   --ifm-navbar-shadow: 0;
+
+  --ifm-color-red: #dd2e44;
 }
 
 .docusaurus-highlight-code-line {

@@ -22,7 +22,7 @@
 }
 
 .heroTitle span {
-  color: rgb(212, 27, 27);
+  color: var(--ifm-color-red);
 }
 
 .heroBanner {

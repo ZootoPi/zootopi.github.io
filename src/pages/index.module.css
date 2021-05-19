@@ -5,6 +5,26 @@
  * and scoped locally.
  */
 
+.heroTitle {
+  font-size: 5rem;
+}
+
+@media screen and (max-width: 966px) {
+  .heroTitle {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .heroTitle {
+    font-size: 2rem;
+  }
+}
+
+.heroTitle span {
+  color: var(--ifm-color-red);
+}
+
 .heroBanner {
   padding: 4rem 0;
   text-align: center;
@@ -18,8 +38,18 @@
   }
 }
 
+@media screen and (max-width: 576px) {
+  .heroBanner {
+    padding: 0.5rem;
+  }
+}
+
 .heroImage {
   margin: 1rem;
+}
+
+.heroImage img {
+  width: 100%;
 }
 
 .heroContainer {
@@ -32,4 +62,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.buttons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttons div {
+  padding-right: 10px;
 }

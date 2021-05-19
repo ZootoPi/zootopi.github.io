@@ -6,7 +6,7 @@ module.exports = {
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
-  favicon: "img/favicon.ico",
+  favicon: "img/logo_square.svg",
   organizationName: "GafBof", // Usually your GitHub org/user name.
   projectName: "gafbof.github.io", // Usually your repo name.
   themeConfig: {
@@ -14,14 +14,32 @@ module.exports = {
       title: "GafBof",
       logo: {
         alt: "GafBof Logo",
-        src: "img/logo.png",
+        src: "img/logo.svg",
       },
       items: [
         {
           type: "doc",
           docId: "intro",
           position: "left",
-          label: "Tutorial",
+          label: "Tutorials",
+        },
+        {
+          type: "doc",
+          docId: "intro",
+          position: "left",
+          label: "Projects",
+        },
+        {
+          type: "doc",
+          docId: "intro",
+          position: "left",
+          label: "Certificates",
+        },
+        {
+          type: "doc",
+          docId: "intro",
+          position: "right",
+          label: "Blog",
         },
         {
           href: "https://github.com/gafbof",

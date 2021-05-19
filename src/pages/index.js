@@ -3,6 +3,7 @@ import clsx from "clsx";
 import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import { FaGithub } from "react-icons/all";
 import styles from "./index.module.css";
 import HomepageFeatures from "../components/HomepageFeatures";
 
@@ -12,21 +13,26 @@ function HomepageHeader() {
     <header className={clsx("hero hero--primary", styles.heroBanner)}>
       <div className="container">
         <div className="row">
-          <div className={styles.heroContainer + " col"}>
-            <h1 className="hero__title">{siteConfig.title}</h1>
-            <p className="hero__subtitle">{siteConfig.tagline}</p>
+          <div className={clsx(styles.heroContainer, "col")}>
+            <h1 className={styles.heroTitle}>
+              <span>Share </span>
+              what we
+              <span> love ❤️</span>
+            </h1>
             <div className={styles.buttons}>
               <Link
-                className="button button--secondary button--lg"
+                className="button button--secondary button--lg row"
                 href="https://github.com/gafbof"
               >
-                Github
+                <div>We in </div>
+                <FaGithub />
               </Link>
             </div>
+            <HomepageFeatures />
           </div>
           <div className="col">
             <div className={styles.heroImage}>
-              <img src="img/gafbof_team.png" />
+              <img src="img/gafbof_team.svg" />
             </div>
           </div>
         </div>
@@ -43,9 +49,6 @@ export default function Home() {
       description="Description will go into a meta tag in <head />"
     >
       <HomepageHeader />
-      {/* <main>
-        <HomepageFeatures />
-      </main> */}
     </Layout>
   );
 }

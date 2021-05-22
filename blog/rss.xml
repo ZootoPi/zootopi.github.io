@@ -4,8 +4,15 @@
         <title>GafBof Blog</title>
         <link>https://gafbof.dev/blog</link>
         <description>GafBof Blog</description>
-        <lastBuildDate>Sun, 25 Oct 2015 23:29:00 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 22 May 2021 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[This is a test blog]]></title>
+            <link>https://gafbof.dev/blog/2021/05/22/Test_blog</link>
+            <guid>This is a test blog</guid>
+            <pubDate>Sat, 22 May 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[This is my first post on GafBof.]]></description>
+        </item>
     </channel>
 </rss>

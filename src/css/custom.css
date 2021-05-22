@@ -21,6 +21,8 @@
   --ifm-navbar-shadow: 0;
 
   --ifm-color-red: #dd2e44;
+
+  --ifm-navbar-link-hover-color: var(--ifm-color-red);
 }
 
 .docusaurus-highlight-code-line {

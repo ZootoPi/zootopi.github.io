@@ -19,25 +19,24 @@ module.exports = {
       items: [
         {
           type: "doc",
-          docId: "intro",
+          docId: "tutorial-intro",
           position: "left",
           label: "Tutorials",
         },
         {
-          type: "doc",
-          docId: "intro",
+          to: "project/",
+          activeBasePath: "project",
           position: "left",
           label: "Projects",
         },
         {
-          type: "doc",
-          docId: "intro",
+          to: "certificate/",
+          activeBasePath: "certificate",
           position: "left",
           label: "Certificates",
         },
         {
-          type: "doc",
-          docId: "intro",
+          to: "blog",
           position: "right",
           label: "Blog",
         },
@@ -62,14 +61,36 @@ module.exports = {
       "@docusaurus/preset-classic",
       {
         docs: {
-          sidebarPath: require.resolve("./sidebars.js"),
+          path: "docs/tutorial",
+          routeBasePath: "tutorial",
+          sidebarPath: require.resolve("./sidebars/tutorial.js"),
         },
         blog: {
-          showReadingTime: true,
+          showReadingTime: false,
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
         },
+      },
+    ],
+  ],
+  plugins: [
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "project",
+        path: "docs/project",
+        routeBasePath: "project",
+        sidebarPath: require.resolve("./sidebars/project.js"),
+      },
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "certificate",
+        path: "docs/certificate",
+        routeBasePath: "certificate",
+        sidebarPath: require.resolve("./sidebars/certificate.js"),
       },
     ],
   ],

@@ -7,19 +7,19 @@ const FeatureList = [
     title: "Tutorials",
     // Svg: require('../../static/img/undraw_docusaurus_mountain.svg').default,
     description: "Hands-on assignments in all levels.",
-    url: "docs/intro",
+    url: "tutorial",
   },
   {
     title: "Projects",
     // Svg: require('../../static/img/undraw_docusaurus_mountain.svg').default,
     description: "Real-world fantastic projects by us",
-    url: "docs/intro",
+    url: "project",
   },
   {
     title: "Certificates",
     // Svg: require('../../static/img/undraw_docusaurus_mountain.svg').default,
     description: "Reviews about courses and certificates.",
-    url: "docs/intro",
+    url: "certificate",
   },
 ];
 

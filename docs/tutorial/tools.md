@@ -1,7 +1,5 @@
 ---
 id: tutorial-tools
-sidebar_position: 1
-slug: /
 ---
 
 # <center> <img src="https://media.giphy.com/media/j5oMK60WVe1w9YaaOa/source.gif" width="50"> Anaconda - bạn của mọi nhà <img src="https://media.giphy.com/media/j5oMK60WVe1w9YaaOa/source.gif" width="50"> </center>

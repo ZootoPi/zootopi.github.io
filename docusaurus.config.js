@@ -19,7 +19,7 @@ module.exports = {
       items: [
         {
           type: "doc",
-          docId: "tutorial-intro",
+          docId: "python/anaconda",
           position: "left",
           label: "Tutorials",
         },

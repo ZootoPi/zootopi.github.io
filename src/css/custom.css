@@ -43,3 +43,7 @@ html[data-theme="dark"] {
 .hero {
   width: 100%;
 }
+
+.main-wrapper main {
+  width: 100%;
+}

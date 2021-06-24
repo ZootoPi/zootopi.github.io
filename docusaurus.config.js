@@ -36,6 +36,11 @@ module.exports = {
           label: "Certificates",
         },
         {
+          to: "about",
+          position: "right",
+          label: "About",
+        },
+        {
           to: "blog",
           position: "right",
           label: "Blog",

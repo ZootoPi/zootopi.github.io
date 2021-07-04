@@ -61,7 +61,7 @@ module.exports = {
       footer_team_url: "https://gafbof.dev",
     },
     googleAnalytics: {
-      trackingID: "G-XFEDRE3531",
+      trackingID: "G-LFH9JTFMHQ",
       // Optional fields.
       anonymizeIP: true, // Should IPs be anonymized?
     },

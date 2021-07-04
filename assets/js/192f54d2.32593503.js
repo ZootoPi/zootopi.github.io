@@ -1,1 +1,0 @@
-(self.webpackChunkblog=self.webpackChunkblog||[]).push([[154],{2782:function(e){"use strict";e.exports=JSON.parse('{"pluginId":"certificate","version":"current","label":"Next","isLast":true,"docsSidebars":{"certSidebar":[{"type":"link","label":"Certificate Intro","href":"/certificate/"}]},"permalinkToSidebar":{"/certificate/":"certSidebar"}}')}}]);

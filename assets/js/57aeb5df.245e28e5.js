@@ -1,0 +1,1 @@
+(self.webpackChunkblog=self.webpackChunkblog||[]).push([[853],{8073:function(e){"use strict";e.exports=JSON.parse('{"pluginId":"project","version":"current","label":"Next","banner":"none","isLast":true,"docsSidebars":{"projectSidebar":[{"type":"link","label":"Project Intro","href":"/project/"}]},"permalinkToSidebar":{"/project/":"projectSidebar"}}')}}]);

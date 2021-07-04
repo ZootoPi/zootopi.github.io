@@ -1,0 +1,8 @@
+{%- extends 'markdown/index.md.j2' -%}
+
+{% block input -%}
+{%- if cell.metadata.hide_input or nb.metadata.hide_input -%}
+{%- else -%}
+{{ super() }}
+{%- endif -%}
+{% endblock input %}

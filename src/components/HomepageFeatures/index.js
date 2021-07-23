@@ -7,17 +7,15 @@ const FeatureList = [
     title: "Tutorials",
     // Svg: require('../../static/img/undraw_docusaurus_mountain.svg').default,
     description: "Hands-on assignments in all levels.",
-    url: "tutorial",
+    url: "tutorial/python/anaconda",
   },
   {
     title: "Projects",
-    // Svg: require('../../static/img/undraw_docusaurus_mountain.svg').default,
     description: "Real-world fantastic projects by us",
     url: "project",
   },
   {
     title: "Certificates",
-    // Svg: require('../../static/img/undraw_docusaurus_mountain.svg').default,
     description: "Reviews about courses and certificates.",
     url: "certificate",
   },

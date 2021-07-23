@@ -13,7 +13,7 @@
 }
 
 .featureElem {
-  border: 1px dashed var(--ifm-color-red);
+  border: 1px dashed var(--ifm-color-primary);
   border-radius: 3px;
   margin-right: 1rem;
   margin-top: 1rem;
@@ -21,7 +21,8 @@
 }
 
 .featureElem:hover {
-  background-color: var(--ifm-color-red);
+  background-color: var(--ifm-color-primary);
+  color: var(--ifm-color-black);
 }
 
 .featureElem a {

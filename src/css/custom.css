@@ -7,26 +7,27 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #4cbbbe;
-  --ifm-color-primary-dark: #45a7aa;
-  --ifm-color-primary-darker: #3f9699;
-  --ifm-color-primary-darkest: #337d80;
-  --ifm-color-primary-light: #4dd7db;
-  --ifm-color-primary-lighter: #61d9dd;
-  --ifm-color-primary-lightest: #79dfe0;
+  --ifm-color-primary: #00c2cb;
+  --ifm-color-primary-dark: #00afb7;
+  --ifm-color-primary-darker: #00a5ad;
+  --ifm-color-primary-darkest: #00888e;
+  --ifm-color-primary-light: #00d5df;
+  --ifm-color-primary-lighter: #00dfe9;
+  --ifm-color-primary-lightest: #09f4ff;
   --ifm-code-font-size: 95%;
 
   /* Footer */
   --ifm-navbar-background-color: var(--ifm-color-primary);
   --ifm-navbar-shadow: 0;
 
-  --ifm-color-red: #dd2e44;
+  --ifm-navbar-link-hover-color: var(--ifm-font-color-base-inverse);
 
-  --ifm-navbar-link-hover-color: var(--ifm-color-red);
+  --ifm-color-red: #ff002e;
+  --ifm-color-black: #22272e;
 }
 
 html[data-theme="dark"] {
-  --ifm-background-color: #22272e;
+  --ifm-background-color: var(--ifm-color-black);
 }
 
 .docusaurus-highlight-code-line {
@@ -42,6 +43,11 @@ html[data-theme="dark"] {
 
 .hero {
   width: 100%;
+}
+
+.hero--primary {
+  --ifm-hero-background-color: var(--ifm-color-black);
+  --ifm-hero-text-color: var(--ifm-color-gray-0);
 }
 
 .main-wrapper main {

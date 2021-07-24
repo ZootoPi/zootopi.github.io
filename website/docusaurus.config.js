@@ -71,7 +71,7 @@ module.exports = {
       "@docusaurus/preset-classic",
       {
         docs: {
-          path: "docs/tutorial",
+          path: "../docs/tutorial",
           routeBasePath: "tutorial",
           sidebarPath: require.resolve("./sidebars/tutorial.js"),
         },
@@ -89,7 +89,7 @@ module.exports = {
       "@docusaurus/plugin-content-docs",
       {
         id: "project",
-        path: "docs/project",
+        path: "../docs/project",
         routeBasePath: "project",
         sidebarPath: require.resolve("./sidebars/project.js"),
       },
@@ -98,7 +98,7 @@ module.exports = {
       "@docusaurus/plugin-content-docs",
       {
         id: "certificate",
-        path: "docs/certificate",
+        path: "../docs/certificate",
         routeBasePath: "certificate",
         sidebarPath: require.resolve("./sidebars/certificate.js"),
       },

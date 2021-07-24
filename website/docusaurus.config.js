@@ -76,6 +76,7 @@ module.exports = {
           sidebarPath: require.resolve("./sidebars/tutorial.js"),
         },
         blog: {
+          path: "../blog",
           showReadingTime: false,
         },
         theme: {

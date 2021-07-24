@@ -74,4 +74,4 @@ def convert_notebooks(dirs):
 
 if __name__ == "__main__":
 
-    convert_notebooks(dirs=['docs', 'blog'])
+    convert_notebooks(dirs=['../docs', '../blog'])

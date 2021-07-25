@@ -60,7 +60,7 @@ module.exports = {
       footer_team: "GafBof team",
       footer_team_url: "https://gafbof.dev",
     },
-    googleAnalytics: {
+    gtag: {
       trackingID: "G-LFH9JTFMHQ",
       // Optional fields.
       anonymizeIP: true, // Should IPs be anonymized?
@@ -104,5 +104,6 @@ module.exports = {
         sidebarPath: require.resolve("./sidebars/certificate.js"),
       },
     ],
+    ["@docusaurus/plugin-google-gtag"],
   ],
 };

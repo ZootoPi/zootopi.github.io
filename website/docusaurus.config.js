@@ -104,6 +104,5 @@ module.exports = {
         sidebarPath: require.resolve("./sidebars/certificate.js"),
       },
     ],
-    ["@docusaurus/plugin-google-gtag"],
   ],
 };

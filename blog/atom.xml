@@ -2,16 +2,16 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://gafbof.dev/blog</id>
     <title>GafBof Blog</title>
-    <updated>2021-05-22T00:00:00.000Z</updated>
+    <updated>2021-07-27T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://gafbof.dev/blog"/>
     <subtitle>GafBof Blog</subtitle>
     <icon>https://gafbof.dev/img/logo_square.svg</icon>
     <entry>
-        <title type="html"><![CDATA[This is a test blog]]></title>
-        <id>This is a test blog</id>
-        <link href="https://gafbof.dev/blog/2021/05/22/Test_blog"/>
-        <updated>2021-05-22T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[This is my first post on GafBof.]]></summary>
+        <title type="html"><![CDATA[Github Copilot Technical Review]]></title>
+        <id>Github Copilot Technical Review</id>
+        <link href="https://gafbof.dev/blog/2021/07/27/copilot"/>
+        <updated>2021-07-27T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Copilot technical reviwer.]]></summary>
     </entry>
 </feed>

@@ -1,6 +1,7 @@
 ---
 id: certificate-courses
 sidebar_position: 1
+slug: /
 ---
 
 # Advanced Data Science with IBM Specialization

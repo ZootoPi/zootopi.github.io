@@ -73,8 +73,8 @@ Dưới đây là 1 số tổng hợp về thông tin các khoá con giúp dễ 
   - Học cách mở rộng quy mô của những bộ não nhân tạo đó bằng Kubernetes, Apache Spark và GPU.
 
 - Công cụ:
-    - Các công cụ trong Khoá 1 và 2.
-    - Frameworks:Keras, TensorFlow, PyTorch, DeepLearning4J và Apache SystemML.
+  - Các công cụ trong Khoá 1 và 2.
+  - Frameworks:Keras, TensorFlow, PyTorch, DeepLearning4J và Apache SystemML.
 - Thời gian: 24 tiếng (4-6 tiếng/tuần).
 
 ### 3.4 Khoá 4:

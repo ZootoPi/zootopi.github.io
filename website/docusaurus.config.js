@@ -1,19 +1,19 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-  title: "GafBof",
+  title: "ZootoPi",
   tagline: "If you work, it will work!",
-  url: "https://gafbof.dev",
+  url: "https://zootopi.dev",
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/logo_square.svg",
-  organizationName: "GafBof", // Usually your GitHub org/user name.
-  projectName: "gafbof.github.io", // Usually your repo name.
+  organizationName: "ZootoPi", // Usually your GitHub org/user name.
+  projectName: "zootopi.github.io", // Usually your repo name.
   themeConfig: {
     navbar: {
-      title: "GafBof",
+      title: "ZootoPi",
       logo: {
-        alt: "GafBof Logo",
+        alt: "ZootoPi Logo",
         src: "img/logo.svg",
       },
       items: [
@@ -46,7 +46,7 @@ module.exports = {
           label: "Blog",
         },
         {
-          href: "https://github.com/gafbof",
+          href: "https://github.com/zootopi",
           label: "GitHub",
           position: "right",
         },
@@ -54,11 +54,11 @@ module.exports = {
     },
     footer: {
       style: "dark",
-      copyright: `Copyright © ${new Date().getFullYear()} GafBof.`,
+      copyright: `Copyright © ${new Date().getFullYear()} ZootoPi.`,
     },
     customField: {
-      footer_team: "GafBof team",
-      footer_team_url: "https://gafbof.dev",
+      footer_team: "ZootoPi team",
+      footer_team_url: "https://zootopi.dev",
     },
     gtag: {
       trackingID: "G-LFH9JTFMHQ",

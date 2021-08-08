@@ -28,8 +28,8 @@ jobs:
           DEPLOYMENT_BRANCH: gh-pages
         run: |
           cd website
-          git config --global user.email "gafbofbot@gmail.com"
-          git config --global user.name "GafBof bot"
+          git config --global user.email "zootopibot@gmail.com"
+          git config --global user.name "ZootoPi bot"
           if [ -e yarn.lock ]; then
           yarn install --frozen-lockfile
           elif [ -e package-lock.json ]; then

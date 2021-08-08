@@ -22,7 +22,7 @@ function HomepageHeader() {
             <div className={styles.buttons}>
               <Link
                 className="button button--secondary button--lg row"
-                href="https://github.com/gafbof"
+                href="https://github.com/zootopi"
               >
                 <div>We in </div>
                 <FaGithub />
@@ -32,7 +32,7 @@ function HomepageHeader() {
           </div>
           <div className="col">
             <div className={styles.heroImage}>
-              <img src="img/gafbof_team.svg" />
+              <img src="img/zootopi_team.svg" />
             </div>
           </div>
         </div>

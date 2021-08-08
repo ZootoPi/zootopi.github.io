@@ -18,11 +18,12 @@ Về mặt thực hành và ứng dụng, khoá học này sẽ giúp các bạn
 
 ## 2. Nội dung khoá học
 
-|Truy cập vào khoá học|Tham khảo bài giải|
-|-|-|
-|[Advanced DS with IBM Specialization](https://www.coursera.org/specializations/advanced-data-science-ibm)|[GafBof Solution](https://github.com/GafBof/advanced_data_science_ibm)|
+| Truy cập vào khoá học                                                                                     | Tham khảo bài giải                                                     |
+| --------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| [Advanced DS with IBM Specialization](https://www.coursera.org/specializations/advanced-data-science-ibm) | [GafBof Solution](https://github.com/GafBof/advanced_data_science_ibm) |
 
 Khoá học bao gồm 4 khoá nhỏ:
+
 - Khoá 1: [Fundamentals of Scalable Data Science](https://www.coursera.org/learn/ds)
 - Khoá 2: [Advanced Machine Learning and Signal Processing](https://www.coursera.org/learn/advanced-machine-learning-signal-processing)
 - Khoá 3: [Applied AI with DeepLearning](https://www.coursera.org/learn/ai)
@@ -43,21 +44,21 @@ Dưới đây là 1 số tổng hợp về thông tin các khoá con giúp dễ 
   - Xác định kỹ thuật nào hữu ích để làm việc với dữ liệu lớn.
   - Làm quen với các công cụ và thư viện trực quan hoá để nâng cao hiệu quả phân tích dữ liệu lớn với phân vùng và phân tích song song và trực quan hóa dữ liệu ở một số định dạng 2D và 3D.
 - Công cụ:
-    - Jupyter notebooks (IBM Watson Studio bản miễn phí).
-    - ApacheSpark (IBM Watson Studio bản miễn phí).
-    - Python.
+  - Jupyter notebooks (IBM Watson Studio bản miễn phí).
+  - ApacheSpark (IBM Watson Studio bản miễn phí).
+  - Python.
 - Thời gian: 20 tiếng (4-6 tiếng/tuần).
 
 ### 3.2 Khoá 2:
 
 - Kiến thức:
-    - Tiếp cận kiến thức về Mô hình Học máy có Giám sát và Không Giám sát.
-    - Tìm hiểu về các nguyên tắc cơ bản của Đại số tuyến tính để hiểu cách hoạt động của các chế độ học máy.
-    - Làm quen với các Frameworks phổ biến nhất cho python Scikit-Learn và SparkML.
-    - Học cách tinh chỉnh tham số/ siêu tham số để tối ưu hoá mô hình.
+  - Tiếp cận kiến thức về Mô hình Học máy có Giám sát và Không Giám sát.
+  - Tìm hiểu về các nguyên tắc cơ bản của Đại số tuyến tính để hiểu cách hoạt động của các chế độ học máy.
+  - Làm quen với các Frameworks phổ biến nhất cho python Scikit-Learn và SparkML.
+  - Học cách tinh chỉnh tham số/ siêu tham số để tối ưu hoá mô hình.
 - Công cụ:
-    - Các công cụ trong Khoá 1.
-    - Frameworks: Scikit-Learn, SparkML.
+  - Các công cụ trong Khoá 1.
+  - Frameworks: Scikit-Learn, SparkML.
 - Thời gian: 27 tiếng (4-6 tiếng/tuần).
 
 ### 3.3 Khoá 3:

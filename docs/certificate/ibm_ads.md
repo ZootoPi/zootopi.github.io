@@ -42,9 +42,9 @@ Dưới đây là 1 số tổng hợp về thông tin các khoá con giúp dễ 
 ### 3.1 Khoá 1:
 
 - Kiến thức:
-    - Giới thiệu các biện pháp thống kê cơ bản, các đặc điểm dữ liệu, cũng như xu hướng, độ lệch hoặc sự không nhất quán và các ngoại lệ tiềm ẩn trong dữ liệu.
-    - Xác định kỹ thuật nào hữu ích để làm việc với dữ liệu lớn.
-    - Làm quen với các công cụ và thư viện trực quan hoá để nâng cao hiệu quả phân tích dữ liệu lớn với phân vùng và phân tích song song và trực quan hóa dữ liệu ở một số định dạng 2D và 3D.
+  - Giới thiệu các biện pháp thống kê cơ bản, các đặc điểm dữ liệu, cũng như xu hướng, độ lệch hoặc sự không nhất quán và các ngoại lệ tiềm ẩn trong dữ liệu.
+  - Xác định kỹ thuật nào hữu ích để làm việc với dữ liệu lớn.
+  - Làm quen với các công cụ và thư viện trực quan hoá để nâng cao hiệu quả phân tích dữ liệu lớn với phân vùng và phân tích song song và trực quan hóa dữ liệu ở một số định dạng 2D và 3D.
 - Công cụ:
     - Jupyter notebooks (IBM Watson Studio bản miễn phí).
     - ApacheSpark (IBM Watson Studio bản miễn phí).

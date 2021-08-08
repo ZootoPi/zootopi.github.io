@@ -1,13 +1,15 @@
 name: reviewdog
 on: [pull_request]
 jobs:
-  markdownlint:
-    name: runner / markdownlint
+  prettier:
+    name: Review code with Prettier
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: markdownlint
-        uses: reviewdog/action-markdownlint@v0.1
+      - uses: actionsx/prettier@v2
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          reporter: github-pr-review
+          # prettier CLI arguments.
+          args: --write **/*.md
+      - uses: uses: reviewdog/action-suggester@v1
+        with:
+          tool_name: prettier

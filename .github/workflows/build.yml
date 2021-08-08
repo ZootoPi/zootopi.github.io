@@ -1,0 +1,32 @@
+name: Build website
+
+on:
+  pull_request:
+    branches: [master]
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+      - name: Generate post from jupyter notebook
+        run: |
+          cd website
+          python -m pip install --upgrade pip
+          pip install -r scripts/requirements.txt
+          python scripts/parse_notebook.py
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "12.x"
+      - name: Test Build
+        run: |
+          cd website
+          if [ -e yarn.lock ]; then
+          yarn install --frozen-lockfile
+          elif [ -e package-lock.json ]; then
+          npm ci
+          else
+          npm i
+          fi
+          npm run build

@@ -9,7 +9,7 @@ jobs:
       - uses: actionsx/prettier@v2
         with:
           # prettier CLI arguments.
-          args: --write ./**/*.md
+          args: "--write ./**/*.md"
       - uses: reviewdog/action-suggester@v1
         with:
           tool_name: prettier

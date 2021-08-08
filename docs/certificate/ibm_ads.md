@@ -66,10 +66,11 @@ Dưới đây là 1 số tổng hợp về thông tin các khoá con giúp dễ 
 ### 3.3 Khoá 3:
 
 - Kiến thức:
-    - Tiếp cận kiến thức về các mô hình Học sâu được sử dụng trong Xử lý ngôn ngữ tự nhiên, Thị giác máy tính, Phân tích chuỗi thời gian và nhiều ngành khác.
-    - Tìm hiểu về các nguyên tắc cơ bản của Đại số tuyến tính và Mạng nơron.
-    - Giới thiệu các Framework DeepLearning phổ biến nhất như Keras, TensorFlow, PyTorch, DeepLearning4J và Apache SystemML.
-    - Học cách mở rộng quy mô của những bộ não nhân tạo đó bằng Kubernetes, Apache Spark và GPU.
+
+  - Tiếp cận kiến thức về các mô hình Học sâu được sử dụng trong Xử lý ngôn ngữ tự nhiên, Thị giác máy tính, Phân tích chuỗi thời gian và nhiều ngành khác.
+  - Tìm hiểu về các nguyên tắc cơ bản của Đại số tuyến tính và Mạng nơron.
+  - Giới thiệu các Framework DeepLearning phổ biến nhất như Keras, TensorFlow, PyTorch, DeepLearning4J và Apache SystemML.
+  - Học cách mở rộng quy mô của những bộ não nhân tạo đó bằng Kubernetes, Apache Spark và GPU.
 
 - Công cụ:
     - Các công cụ trong Khoá 1 và 2.

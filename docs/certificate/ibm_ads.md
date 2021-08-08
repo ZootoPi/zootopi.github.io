@@ -79,7 +79,7 @@ Dưới đây là 1 số tổng hợp về thông tin các khoá con giúp dễ 
 ### 3.4 Khoá 4:
 
 - Kiến thức:
-    - Thực hành capstone project để đánh giá kiến thức đã học được trong 3 khoá trên.
+  - Thực hành capstone project để đánh giá kiến thức đã học được trong 3 khoá trên.
 - Thời gian: 9 tiếng
 
 Chúc các bạn học tập vui vẻ ^^!

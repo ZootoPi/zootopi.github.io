@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0">
     <channel>
-        <title>GafBof Blog</title>
-        <link>https://gafbof.dev/blog</link>
-        <description>GafBof Blog</description>
+        <title>ZootoPi Blog</title>
+        <link>https://zootopi.dev/blog</link>
+        <description>ZootoPi Blog</description>
         <lastBuildDate>Tue, 27 Jul 2021 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <item>
             <title><![CDATA[Github Copilot Technical Review]]></title>
-            <link>https://gafbof.dev/blog/2021/07/27/copilot</link>
+            <link>https://zootopi.dev/blog/2021/07/27/copilot</link>
             <guid>Github Copilot Technical Review</guid>
             <pubDate>Tue, 27 Jul 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[Copilot technical reviewer]]></description>

@@ -18,9 +18,9 @@ Về mặt thực hành và ứng dụng, khoá học này sẽ giúp các bạn
 
 ## 2. Nội dung khoá học
 
-| Truy cập vào khoá học                                                                                     | Tham khảo bài giải                                                     |
-| --------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
-| [Advanced DS with IBM Specialization](https://www.coursera.org/specializations/advanced-data-science-ibm) | [GafBof Solution](https://github.com/GafBof/advanced_data_science_ibm) |
+| Truy cập vào khoá học                                                                                     | Tham khảo bài giải                                                       |
+| --------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| [Advanced DS with IBM Specialization](https://www.coursera.org/specializations/advanced-data-science-ibm) | [ZootoPi Solution](https://github.com/ZootoPi/advanced_data_science_ibm) |
 
 Khoá học bao gồm 4 khoá nhỏ:
 
@@ -31,7 +31,7 @@ Khoá học bao gồm 4 khoá nhỏ:
 
 ## 3. Đánh giá về khoá học
 
-Trên thang Cơ bản - Trung cấp - Nâng cao, GafBof đánh giá đây là 1 khoá học Nâng Cao. Những bạn chưa có nền tảng về lập trình cơ bản hay khoa học dữ liệu nên học trước khoá [IBM Data Science Professional Certificate](https://www.coursera.org/professional-certificates/ibm-data-science) để dễ dàng tiếp thu kiến thức trong khoá học này.
+Trên thang Cơ bản - Trung cấp - Nâng cao, ZootoPi đánh giá đây là 1 khoá học Nâng Cao. Những bạn chưa có nền tảng về lập trình cơ bản hay khoa học dữ liệu nên học trước khoá [IBM Data Science Professional Certificate](https://www.coursera.org/professional-certificates/ibm-data-science) để dễ dàng tiếp thu kiến thức trong khoá học này.
 
 Tuỳ vào tốc độ và trải nghiệm học của mỗi người, cùng 1 khoá học thời gian học sẽ có những khác biệt. Chứng chỉ trên Coursera có 1 lợi thế đó là thời gian linh hoạt nên bạn hoàn toàn có thể tuỳ chỉnh lộ trình học phù hợp với bạn nhất.
 

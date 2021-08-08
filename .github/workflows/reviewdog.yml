@@ -1,0 +1,16 @@
+name: reviewdog
+on: [pull_request]
+jobs:
+  prettier:
+    name: Review code with Prettier
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actionsx/prettier@v2
+        with:
+          # prettier CLI arguments.
+          args: --write .
+      - uses: reviewdog/action-suggester@v1
+        with:
+          tool_name: prettier
+          github_token: ${{ secrets.BOT_TOKEN }}

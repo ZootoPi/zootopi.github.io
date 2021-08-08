@@ -8,9 +8,6 @@ slug: /
 
 ## 1. Giới thiệu
 
-
-
-
 Advanced Data Science with IBM Specialization (Khoá học chuyên ngành về Khoa học Dữ liệu nâng cao) là 1 trong những khoá học phù hợp với những bạn đã có nền tảng về khoa học dữ liệu cũng như kỹ năng lập trình cơ bản trong python, SQL cơ bản... và muốn tìm hiểu sâu hơn về xử lý dữ liệu lớn song song, khám phá và trực quan hóa dữ liệu cũng như học máy và học sâu ở mức nâng cao.
 
 ![IBM Specialization Certificate](./img/advanced_ds.png)

@@ -38,10 +38,9 @@ jobs:
           production-branch: master
           github-token: ${{ secrets.BOT_TOKEN }}
           deploy-message: "Deploy from GitHub Actions"
-          enable-pull-request-comment: true
           enable-commit-comment: false
-          overwrites-pull-request-comment: true
           github-deployment-environment: staging
+          alias: preview-${{ github.event.number }}
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}

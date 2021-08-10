@@ -6,7 +6,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 # Giới thiệu về dự án của ZootoPi
 
-Hí anh em, chúng tớ là <img src="https://media.giphy.com/media/j5oMK60WVe1w9YaaOa/source.gif" width="20"/> **ZootoPi**<img src="https://media.giphy.com/media/j5oMK60WVe1w9YaaOa/source.gif" width="20"/>, hay Tiếng Việt dân dã là **Gà Bò**. Dự án là sự kết hợp của anh **Gà** và em **Bò** với mong muốn chia sẻ những kiến thức mà trong quá trình anh em chúng tớ bắt đầu hành trình code dạo. Nếu bạn nào thắc mắc vì sao lại là **ZootoPi** chứ không phải **Gà Bò**, thì đó là do khi chúng tớ thống nhất tên và dựng website, anh **Gà** quên không bật Unikey...
+Hí anh em, chúng tớ là <img src="https://media.giphy.com/media/j5oMK60WVe1w9YaaOa/source.gif" width="20"/> **ZootoPi**<img src="https://media.giphy.com/media/j5oMK60WVe1w9YaaOa/source.gif" width="20"/>. Dự án là sự kết hợp của anh **Gà**, em **Bò**, và bé **Củ Cải** với mong muốn chia sẻ những kiến thức mà trong quá trình anh em chúng tớ bắt đầu hành trình code dạo. 
 
 <p align="center" width="100%">
 <img alt="ZootoPi" src={useBaseUrl('/img/zootopi_stand.svg')} />

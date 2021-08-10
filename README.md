@@ -1,6 +1,6 @@
 # Giới thiệu về dự án của ZootoPi
 
-Hí anh em, chúng tớ là <img src="https://media.giphy.com/media/j5oMK60WVe1w9YaaOa/source.gif" width="20"/> **ZootoPi**<img src="https://media.giphy.com/media/j5oMK60WVe1w9YaaOa/source.gif" width="20"/>. Dự án là sự kết hợp của anh **Gà**, em **Bò**, và bé **Củ Cải** với mong muốn chia sẻ những kiến thức mà trong quá trình anh em chúng tớ bắt đầu hành trình code dạo. 
+Hí anh em, chúng tớ là <img src="https://media.giphy.com/media/j5oMK60WVe1w9YaaOa/source.gif" width="20"/> **ZootoPi**<img src="https://media.giphy.com/media/j5oMK60WVe1w9YaaOa/source.gif" width="20"/>. Dự án là sự kết hợp của anh **Gà**, em **Bò**, và bé **Củ Cải** với mong muốn chia sẻ những kiến thức mà trong quá trình anh em chúng tớ bắt đầu hành trình code dạo.
 
 <p align="center" width="100%">
 <img src="website/static/img/zootopi_stand.svg"/>

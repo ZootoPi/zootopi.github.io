@@ -6,7 +6,7 @@ module.exports = {
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
-  favicon: "img/logo_square.svg",
+  favicon: "img/logo.svg",
   organizationName: "ZootoPi", // Usually your GitHub org/user name.
   projectName: "zootopi.github.io", // Usually your repo name.
   themeConfig: {

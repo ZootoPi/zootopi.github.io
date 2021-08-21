@@ -32,6 +32,7 @@ jobs:
         with:
           path: |
             ~/.npm
+            ./website/build
           key: deploy-${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             deploy-${{ runner.os }}-node-

@@ -10,15 +10,29 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
+      - uses: actions/cache@v2
+        with:
+          path: ~/.local/share/virtualenvs
+          key: ${{ runner.os }}-python-${{ steps.setup-python.outputs.python-version }}-pipenv-${{ hashFiles('Pipfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-python-${{ steps.setup-python.outputs.python-version }}-pipenv-
+            deploy-${{ runner.os }}-python-${{ steps.setup-python.outputs.python-version }}-pipenv-
       - name: Generate post from jupyter notebook
         run: |
           cd website
-          python -m pip install --upgrade pip
           pip install -r scripts/requirements.txt
           python scripts/parse_notebook.py
       - uses: actions/setup-node@v2
         with:
           node-version: "12.x"
+      - uses: actions/cache@v2
+        with:
+          path: |
+            ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+            deploy-${{ runner.os }}-node-
       - name: Test Build
         run: |
           cd website

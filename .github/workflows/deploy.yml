@@ -50,7 +50,7 @@ jobs:
           if [ -e yarn.lock ]; then
           yarn install --frozen-lockfile
           elif [ -e package-lock.json ]; then
-          npm ci
+          npm ci --prefer-offline
           else
           npm i
           fi

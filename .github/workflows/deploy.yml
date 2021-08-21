@@ -9,6 +9,16 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
+      - name: Get pip cache dir
+        id: pip-cache
+        run: |
+          echo "::set-output name=dir::$(pip cache dir)"
+      - uses: actions/cache@v2
+        with:
+          path: ${{ steps.pip-cache.outputs.dir }}
+          key: deploy-${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            deploy-${{ runner.os }}-pip-
       - name: Generate post from jupyter notebook
         run: |
           cd website
@@ -18,6 +28,13 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: "12.x"
+      - uses: actions/cache@v2
+        with:
+          path: |
+            ~/.npm
+          key: deploy-${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            deploy-${{ runner.os }}-node-
       - uses: webfactory/ssh-agent@v0.5.0
         with:
           ssh-private-key: ${{ secrets.GH_PAGES_DEPLOY }}
@@ -33,7 +50,7 @@ jobs:
           if [ -e yarn.lock ]; then
           yarn install --frozen-lockfile
           elif [ -e package-lock.json ]; then
-          npm ci
+          npm ci --prefer-offline
           else
           npm i
           fi

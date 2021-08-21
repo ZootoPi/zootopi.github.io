@@ -10,22 +10,39 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
+      - name: Get pip cache dir
+        id: pip-cache
+        run: |
+          echo "::set-output name=dir::$(pip cache dir)"
+      - uses: actions/cache@v2
+        with:
+          path: ${{ steps.pip-cache.outputs.dir }}
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
       - name: Generate post from jupyter notebook
         run: |
           cd website
-          python -m pip install --upgrade pip
           pip install -r scripts/requirements.txt
           python scripts/parse_notebook.py
       - uses: actions/setup-node@v2
         with:
           node-version: "12.x"
+      - uses: actions/cache@v2
+        with:
+          path: |
+            ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+            deploy-${{ runner.os }}-node-
       - name: Test Build
         run: |
           cd website
           if [ -e yarn.lock ]; then
           yarn install --frozen-lockfile
           elif [ -e package-lock.json ]; then
-          npm ci
+          npm ci --prefer-offline --no-audit
           else
           npm i
           fi

@@ -27,16 +27,9 @@ jobs:
           python scripts/parse_notebook.py
       - uses: actions/setup-node@v2
         with:
-          node-version: "12.x"
-      - uses: actions/cache@v2
-        with:
-          path: |
-            ~/.npm
-            ./website/build
-          key: deploy-${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            deploy-${{ runner.os }}-node-
-      - uses: webfactory/ssh-agent@v0.5.0
+          cache: npm
+          cache-dependency-path: "**/package-lock.json"
+      - uses: webfactory/ssh-agent@v0.5.3
         with:
           ssh-private-key: ${{ secrets.GH_PAGES_DEPLOY }}
       - name: Release to GitHub Pages

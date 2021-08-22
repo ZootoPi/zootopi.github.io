@@ -27,16 +27,8 @@ jobs:
           python scripts/parse_notebook.py
       - uses: actions/setup-node@v2
         with:
-          node-version: "12.x"
-      - uses: actions/cache@v2
-        with:
-          path: |
-            ~/.npm
-            ./website/build
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-            deploy-${{ runner.os }}-node-
+          cache: npm
+          cache-dependency-path: "**/package-lock.json"
       - name: Test Build
         run: |
           cd website

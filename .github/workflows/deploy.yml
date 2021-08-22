@@ -24,7 +24,7 @@ jobs:
         if: steps.pip-cache.outputs.cache-hit != 'true'
         run: pip install -r website/scripts/requirements.txt
       - name: Generate post from jupyter notebook
-        run: python scripts/parse_notebook.py
+        run: python website/scripts/parse_notebook.py
       - uses: actions/setup-node@v2
         with:
           cache: npm

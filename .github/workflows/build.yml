@@ -15,17 +15,15 @@ jobs:
         run: |
           echo "::set-output name=dir::$(pip cache dir)"
       - uses: actions/cache@v2
-        id: pip-cache
         with:
           path: ${{ steps.pip-get-cache.outputs.dir }}
           key: deploy-${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
           restore-keys: |
             deploy-${{ runner.os }}-pip-
-      - name: Install python dependencies
-        if: steps.pip-cache.outputs.cache-hit != 'true'
-        run: pip install -r website/scripts/requirements.txt
       - name: Generate post from jupyter notebook
-        run: python website/scripts/parse_notebook.py
+        run: |
+          pip install -r website/scripts/requirements.txt
+          python website/scripts/parse_notebook.py
       - uses: actions/setup-node@v2
         with:
           cache: npm

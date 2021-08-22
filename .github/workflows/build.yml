@@ -3,6 +3,8 @@ name: Build website
 on:
   pull_request:
     branches: [master]
+  push:
+    branches: [master]
 
 jobs:
   build:
@@ -56,6 +58,7 @@ jobs:
   deploy-preview:
     runs-on: ubuntu-latest
     needs: build
+    if: github.event_name != 'push'
     steps:
       - uses: actions/download-artifact@v2
         with:
@@ -79,6 +82,7 @@ jobs:
   report-site:
     runs-on: ubuntu-latest
     needs: deploy-preview
+    if: github.event_name != 'push'
     steps:
       - uses: actions/checkout@v2
       - name: Audit URLs using Lighthouse
@@ -124,3 +128,26 @@ jobs:
           number: ${{ github.event.pull_request.number }}
           header: lighthouse
           message: ${{ steps.format_lighthouse_score.outputs.comment }}
+
+  deploy-production:
+    runs-on: ubuntu-latest
+    needs: build
+    if: github.event_name != 'pull_request'
+    steps:
+      - uses: actions/download-artifact@v2
+        with:
+          name: website-build
+          path: website/build
+      - uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: ${{ secrets.GH_PAGES_DEPLOY }}
+        run: |
+          git config --global user.email "zootopibot@gmail.com"
+          git config --global user.name "ZootoPi bot"
+      - name: Release to GitHub Pages
+        env:
+          USE_SSH: true
+          GIT_USER: git
+          DEPLOYMENT_BRANCH: gh-pages
+        working-directory: website
+        run: npm run deploy --skip-build

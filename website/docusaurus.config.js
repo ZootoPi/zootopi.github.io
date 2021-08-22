@@ -14,7 +14,7 @@ module.exports = {
       title: "ZootoPi",
       logo: {
         alt: "ZootoPi Logo",
-        src: "img/icon-96x96.png",
+        src: "img/icons/icon-96x96.png",
       },
       items: [
         {

@@ -104,5 +104,33 @@ module.exports = {
         sidebarPath: require.resolve("./sidebars/certificate.js"),
       },
     ],
+    [
+      "@docusaurus/plugin-pwa",
+      {
+        debug: true,
+        offlineModeActivationStrategies: [
+          "appInstalled",
+          "standalone",
+          "queryString",
+        ],
+        pwaHead: [
+          {
+            tagName: "link",
+            rel: "icon",
+            href: "/img/logo.png",
+          },
+          {
+            tagName: "link",
+            rel: "manifest",
+            href: "/manifest.json",
+          },
+          {
+            tagName: "meta",
+            name: "theme-color",
+            content: "rgb(0, 194, 203)",
+          },
+        ],
+      },
+    ],
   ],
 };

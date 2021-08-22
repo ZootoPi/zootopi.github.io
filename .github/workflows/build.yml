@@ -50,6 +50,10 @@ jobs:
           cd website
           npm run build
 
+  deploy-preview:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v1.2
         with:
@@ -67,7 +71,7 @@ jobs:
 
   report-site:
     runs-on: ubuntu-latest
-    needs: build
+    needs: deploy-preview
     steps:
       - uses: actions/checkout@v2
       - name: Audit URLs using Lighthouse

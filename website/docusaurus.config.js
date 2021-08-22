@@ -129,6 +129,11 @@ module.exports = {
             name: "theme-color",
             content: "rgb(0, 194, 203)",
           },
+          {
+            tagName: "link",
+            rel: "apple-touch-icon",
+            href: "img/icons/icon-192x192.png",
+          },
         ],
       },
     ],

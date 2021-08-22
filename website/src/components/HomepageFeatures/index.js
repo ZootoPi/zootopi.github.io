@@ -29,10 +29,10 @@ function Feature({ Svg, title, description, url }) {
       </div> */}
 
       <div className="text--center padding-horiz--md">
-        <h3 className={styles.featureTitle}>{title}</h3>
+        <h2 className={styles.featureTitle}>{title}</h2>
         <p>{description}</p>
       </div>
-      <a href={url}></a>
+      <a href={url} aria-label={description}></a>
     </div>
   );
 }

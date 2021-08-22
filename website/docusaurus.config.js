@@ -58,7 +58,7 @@ module.exports = {
     },
     customField: {
       footer_team: "ZootoPi team",
-      footer_team_url: "https://zootopi.dev",
+      footer_team_url: "/",
     },
     gtag: {
       trackingID: "G-LFH9JTFMHQ",

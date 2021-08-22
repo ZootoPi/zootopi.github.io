@@ -92,7 +92,7 @@ jobs:
           urls: |
             https://preview-$PR_NUMBER--zootopi.netlify.app/
           configPath: ./.github/workflows/lighthousesrc.json
-          uploadArtifacts: true
+          uploadArtifacts: false
           temporaryPublicStorage: true
         env:
           PR_NUMBER: ${{ github.event.pull_request.number}}
@@ -142,6 +142,6 @@ jobs:
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
-          branch: gh-pages
+          branch: ${{ secrets.DEPLOYMENT_BRANCH }}
           folder: website/build
           token: ${{ secrets.BOT_TOKEN }}

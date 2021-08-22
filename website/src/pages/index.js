@@ -32,7 +32,7 @@ function HomepageHeader() {
           </div>
           <div className="col">
             <div className={styles.heroImage}>
-              <img src="img/zootopi_team.svg" />
+              <img alt="Zootopi team" src="img/zootopi_team.svg" />
             </div>
           </div>
         </div>

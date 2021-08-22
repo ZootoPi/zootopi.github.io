@@ -6,7 +6,7 @@ module.exports = {
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
-  favicon: "img/logo.svg",
+  favicon: "img/icons/icon-72x72.ico",
   organizationName: "ZootoPi", // Usually your GitHub org/user name.
   projectName: "zootopi.github.io", // Usually your repo name.
   themeConfig: {
@@ -14,7 +14,7 @@ module.exports = {
       title: "ZootoPi",
       logo: {
         alt: "ZootoPi Logo",
-        src: "img/logo.svg",
+        src: "img/icons/icon-96x96.png",
       },
       items: [
         {
@@ -58,7 +58,7 @@ module.exports = {
     },
     customField: {
       footer_team: "ZootoPi team",
-      footer_team_url: "https://zootopi.dev",
+      footer_team_url: "/",
     },
     gtag: {
       trackingID: "G-LFH9JTFMHQ",
@@ -102,6 +102,39 @@ module.exports = {
         path: "../docs/certificate",
         routeBasePath: "certificate",
         sidebarPath: require.resolve("./sidebars/certificate.js"),
+      },
+    ],
+    [
+      "@docusaurus/plugin-pwa",
+      {
+        debug: true,
+        offlineModeActivationStrategies: [
+          "appInstalled",
+          "standalone",
+          "queryString",
+        ],
+        pwaHead: [
+          {
+            tagName: "link",
+            rel: "icon",
+            href: "/img/logo.svg",
+          },
+          {
+            tagName: "link",
+            rel: "manifest",
+            href: "/manifest.json",
+          },
+          {
+            tagName: "meta",
+            name: "theme-color",
+            content: "rgb(0, 194, 203)",
+          },
+          {
+            tagName: "link",
+            rel: "apple-touch-icon",
+            href: "img/icons/icon-192x192.png",
+          },
+        ],
       },
     ],
   ],

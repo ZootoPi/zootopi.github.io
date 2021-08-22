@@ -29,6 +29,13 @@ jobs:
         with:
           cache: npm
           cache-dependency-path: "**/package-lock.json"
+      - uses: actions/cache@v2
+        with:
+          path: |
+            website/node_modules
+          key: ${{ runner.os }}-node-modules-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-modules
       - name: Test Build
         run: |
           cd website

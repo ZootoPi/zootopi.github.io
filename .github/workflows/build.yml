@@ -134,21 +134,13 @@ jobs:
     needs: build
     if: github.event_name != 'pull_request'
     steps:
-      - uses: actions/checkout@v2
       - uses: actions/download-artifact@v2
         with:
           name: website-build
           path: website/build
-      - uses: webfactory/ssh-agent@v0.5.3
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
-          ssh-private-key: ${{ secrets.GH_PAGES_DEPLOY }}
-      - run: |
-          git config --global user.email "zootopibot@gmail.com"
-          git config --global user.name "ZootoPi bot"
-      - name: Release to GitHub Pages
-        env:
-          USE_SSH: true
-          GIT_USER: git
-          DEPLOYMENT_BRANCH: gh-pages
-        working-directory: website
-        run: npm run deploy --skip-build
+          branch: gh-pages
+          folder: website/build
+          token: ${{ secrets.BOT_TOKEN }}

@@ -29,6 +29,13 @@ jobs:
         with:
           cache: npm
           cache-dependency-path: "**/package-lock.json"
+      - uses: actions/cache@v2
+        with:
+          path: |
+            website/node_modules
+          key: deploy-${{ runner.os }}-node-modules-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            deploy-${{ runner.os }}-node-modules-
       - uses: webfactory/ssh-agent@v0.5.3
         with:
           ssh-private-key: ${{ secrets.GH_PAGES_DEPLOY }}
@@ -41,9 +48,7 @@ jobs:
           cd website
           git config --global user.email "zootopibot@gmail.com"
           git config --global user.name "ZootoPi bot"
-          if [ -e yarn.lock ]; then
-          yarn install --frozen-lockfile
-          elif [ -e package-lock.json ]; then
+          if [ -e package-lock.json ]; then
           npm ci --prefer-offline
           else
           npm i

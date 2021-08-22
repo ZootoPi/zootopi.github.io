@@ -35,13 +35,11 @@ jobs:
             website/node_modules
           key: ${{ runner.os }}-node-modules-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
-            ${{ runner.os }}-node-modules
+            ${{ runner.os }}-node-modules-
       - name: Test Build
         run: |
           cd website
-          if [ -e yarn.lock ]; then
-          yarn install --frozen-lockfile
-          elif [ -e package-lock.json ]; then
+          if [ -e package-lock.json ]; then
           npm ci --prefer-offline --no-audit
           else
           npm i

@@ -141,7 +141,7 @@ jobs:
       - uses: webfactory/ssh-agent@v0.5.3
         with:
           ssh-private-key: ${{ secrets.GH_PAGES_DEPLOY }}
-        run: |
+      - run: |
           git config --global user.email "zootopibot@gmail.com"
           git config --global user.name "ZootoPi bot"
       - name: Release to GitHub Pages

@@ -1,0 +1,422 @@
+<div class="notebook">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="B%C3%A0i-5:-Gi%E1%BB%9Bi-thi%E1%BB%87u-v%E1%BB%81-Pandas">Bài 5: Giới thiệu về Pandas<a class="anchor-link" href="#B%C3%A0i-5:-Gi%E1%BB%9Bi-thi%E1%BB%87u-v%E1%BB%81-Pandas">¶</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img alt="" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Pandas_logo.svg/1200px-Pandas_logo.svg.png"/></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="I.-GI%E1%BB%9AI-THI%E1%BB%86U">I. GIỚI THIỆU<a class="anchor-link" href="#I.-GI%E1%BB%9AI-THI%E1%BB%86U">¶</a></h2><h3 id="1.-Pandas-l%C3%A0-g%C3%AC?">1. Pandas là gì?<a class="anchor-link" href="#1.-Pandas-l%C3%A0-g%C3%AC?">¶</a></h3><p>Pandas (viết tắt từ <code>Panel Data</code> -  bảng dữ liệu) là thư viện mã nguồn mở phục vụ cho việc phân tích và xử lý dữ liệu trong Python, được phát triển bởi Wes McKinney trong năm 2008. Thư viện này được thiết kế để làm việc dễ dàng và trực quan với dữ liệu có cấu trúc (dạng bảng, đa chiều, ...) và dữ liệu chuỗi thời gian. Hiện nay, Pandas được sử dụng rộng rãi trong cả nghiên cứu lẫn phát triển các ứng dụng về khoa học dữ liệu.</p>
+<p>Pandas trở thành thư viện yêu thích của những nhà phân tích dữ liệu bởi:</p>
+<ul>
+<li>Pandas phù hợp với nhiều loại dữ liệu khác nhau:<ul>
+<li>Dữ liệu dạng bảng, như trong bảng SQL hoặc bảng tính Excel.</li>
+<li>Dữ liệu chuỗi thời gian theo thứ tự và không có thứ tự.</li>
+<li>Dữ liệu ma trận tùy ý với nhãn hàng và cột...</li>
+</ul>
+</li>
+<li>Dễ dàng thao tác, phân tích, xử lý và trực quan hoá dữ liệu:<ul>
+<li>Khả năng xử lý dữ liệu mất mát (NaN,...), nhiễu, ...</li>
+<li>Khả năng thay đổi kích thước: chèn và xóa cột, dòng</li>
+<li>Khả năng căn chỉnh dữ liệu tự động và rõ ràng</li>
+<li>Khả năng phân tách, gộp nối, chuyển đổi, định hình các tập dữ liệu 1 cách linh hoạt giúp cho việc tổng hợp và phân tích dữ liệu nhanh gọn, dễ dàng hơn.</li>
+<li>Khả năng tải và lưu trữ dữ liệu theo nhiều format khác nhau: .csv, .txt, .excel, .pkl, .hdfs5, ...</li>
+<li>Khả năng xử lí dữ liệu dạng chuỗi.</li>
+<li>Khả năng tích hợp tốt với các thư viện khác của Python: SciPy, Matplotlib, Seaborn, Plotly, Sklearn, ...</li>
+</ul>
+</li>
+</ul>
+<h3 id="2.-C%C3%A0i-%C4%91%E1%BA%B7t">2. Cài đặt<a class="anchor-link" href="#2.-C%C3%A0i-%C4%91%E1%BA%B7t">¶</a></h3><ul>
+<li>Cài đặt khi tạo môi trường ảo:</li>
+</ul>
+<p><code>conda create -n hanh python=3.7 pandas</code></p>
+<ul>
+<li>Cài đặt sau khi tạo xong môi trường ảo:</li>
+</ul>
+<p><code>conda install pandas</code>
+hoặc 
+<code>pip install pandas</code></p>
+<h3 id="3.-Import-th%C6%B0-vi%E1%BB%87n">3. Import thư viện<a class="anchor-link" href="#3.-Import-th%C6%B0-vi%E1%BB%87n">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [1]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Tham-kh%E1%BA%A3o:"><strong>Tham khảo</strong>:<a class="anchor-link" href="#Tham-kh%E1%BA%A3o:">¶</a></h4><ul>
+<li><a href="https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf">Pandas Cheatsheet</a></li>
+<li><a href="https://bedford-computing.co.uk/learning/wp-content/uploads/2015/10/Python-for-Data-Analysis.pdf">Python for Data Analysis</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="II.-C%C3%81C-H%C3%80M-C%C6%A0-B%E1%BA%A2N-TRONG-PANDAS">II. CÁC HÀM CƠ BẢN TRONG PANDAS<a class="anchor-link" href="#II.-C%C3%81C-H%C3%80M-C%C6%A0-B%E1%BA%A2N-TRONG-PANDAS">¶</a></h2><h3 id="1.-Objects-trong-Pandas">1. Objects trong Pandas<a class="anchor-link" href="#1.-Objects-trong-Pandas">¶</a></h3><p>Trong Pandas, ta có 2 khái niệm:</p>
+<ul>
+<li><strong>DataFrames</strong>: các bảng dữ liệu bao gồm nhiều hàng và nhiều cột, khởi tạo thông qua câu lệnh <code>pd.DataFrame()</code></li>
+<li><strong>Series</strong>: cột dữ liệu, khởi tạo thông qua câu lệnh <code>pd.Series()</code></li>
+</ul>
+<p>Bảng dữ liệu trong SQL gọi là bảng, Excel gọi là sheet, còn Python gọi đây là 1 DataFrame của Pandas.
+Hiểu đơn giản, 1 cái Series là 1 cột của DataFrame. Ở mức máy tính thì Series là 1 object riêng và DataFrame là 1 object riêng. Tuy nhiên, có thể chuyển 1 Series thành DataFrame và chuyển DataFrame 1 cột thành Series.</p>
+<p><img alt="" src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/creating_dataframe1.png"/>
+<img alt="" src="https://analyticssavvy.com/wp-content/uploads/2020/05/series-and-dataframe.png"/></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="2.-Kh%E1%BB%9Fi-t%E1%BA%A1o-1-DataFrame">2. Khởi tạo 1 DataFrame<a class="anchor-link" href="#2.-Kh%E1%BB%9Fi-t%E1%BA%A1o-1-DataFrame">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ol>
+<li>Tạo ra 1 DataFrame rỗng</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [2]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span> <span class="c1">#tạo ra 1 dataframe rỗng</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [3]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">df</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[3]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>pandas.core.frame.DataFrame</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Vậy trong trường hợp ta muốn tạo ra 1 DataFrame có chứa dữ liệu như dưới đây thì làm thế nào?</p>
+<table>
+<thead><tr>
+<th style="text-align:left"></th>
+<th style="text-align:left">name</th>
+<th style="text-align:right">age</th>
+<th style="text-align:left">university</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">student1</td>
+<td style="text-align:left">My</td>
+<td style="text-align:right">10</td>
+<td style="text-align:left">MIT</td>
+</tr>
+<tr>
+<td style="text-align:left">student2</td>
+<td style="text-align:left">Hanh</td>
+<td style="text-align:right">11</td>
+<td style="text-align:left">Harvard</td>
+</tr>
+<tr>
+<td style="text-align:left">student3</td>
+<td style="text-align:left">Long</td>
+<td style="text-align:right">12</td>
+<td style="text-align:left">NYU</td>
+</tr>
+<tr>
+<td style="text-align:left">student4</td>
+<td style="text-align:left">Dat</td>
+<td style="text-align:right">14</td>
+<td style="text-align:left">Paris13</td>
+</tr>
+<tr>
+<td style="text-align:left">student5</td>
+<td style="text-align:left">Hoai</td>
+<td style="text-align:right">15</td>
+<td style="text-align:left">MCU</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ol>
+<li>Tạo ra 1 DataFrame từ dict</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [4]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">dict1</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'name'</span><span class="p">:[</span><span class="s1">'My'</span><span class="p">,</span><span class="s1">'Hanh'</span><span class="p">,</span> <span class="s1">'Long'</span><span class="p">,</span> <span class="s1">'Dat'</span><span class="p">,</span> <span class="s1">'Hoai'</span><span class="p">],</span>
+        <span class="s1">'age'</span><span class="p">:[</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">15</span><span class="p">],</span>
+        <span class="s1">'university'</span><span class="p">:[</span><span class="s1">'MIT'</span><span class="p">,</span><span class="s1">'Harvard'</span><span class="p">,</span><span class="s1">'NYU'</span><span class="p">,</span><span class="s1">'Paris13'</span><span class="p">,</span><span class="s1">'MCU'</span><span class="p">]}</span>
+<span class="n">df1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">dict1</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="sa">f</span><span class="s1">'student</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">'</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">)])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ol>
+<li>Tạo ra 1 DataFrame từ list của list</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [5]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">li</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">'My'</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="s1">'MIT'</span><span class="p">],</span> <span class="p">[</span><span class="s1">'Hanh'</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="s1">'Havard'</span><span class="p">],</span> <span class="p">[</span><span class="s1">'Long'</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="s1">'NYU'</span><span class="p">],[</span><span class="s1">'Dat'</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="s1">'Paris13'</span><span class="p">],[</span><span class="s1">'Hoai'</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="s1">'MCU'</span><span class="p">]]</span>
+<span class="n">df2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">li</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">'name'</span><span class="p">,</span> <span class="s1">'age'</span><span class="p">,</span> <span class="s1">'university'</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="sa">f</span><span class="s1">'student</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">'</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">)])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ol>
+<li>Tạo ra 1 DataFrame từ zip</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [6]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'My'</span><span class="p">,</span><span class="s1">'Hanh'</span><span class="p">,</span> <span class="s1">'Long'</span><span class="p">,</span> <span class="s1">'Dat'</span><span class="p">,</span> <span class="s1">'Hoai'</span><span class="p">]</span>
+<span class="n">age</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">15</span><span class="p">]</span>
+<span class="n">university</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'MIT'</span><span class="p">,</span> <span class="s1">'Harvard'</span><span class="p">,</span><span class="s1">'NYU'</span><span class="p">,</span><span class="s1">'Paris13'</span><span class="p">,</span><span class="s1">'MCU'</span><span class="p">]</span>
+<span class="n">tuple_li</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">university</span><span class="p">))</span>
+<span class="n">df3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">tuple_li</span><span class="p">,</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'name'</span><span class="p">,</span> <span class="s1">'age'</span><span class="p">,</span><span class="s1">'university'</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="sa">f</span><span class="s1">'student</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">'</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">)])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ol>
+<li>Tạo từ 1 chuỗi numpy</li>
+</ol>
+<table>
+<thead><tr>
+<th style="text-align:right"></th>
+<th style="text-align:right">col1</th>
+<th style="text-align:right">col2</th>
+<th style="text-align:right">col3</th>
+<th style="text-align:right">col4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">2</td>
+<td style="text-align:right">3</td>
+<td style="text-align:right">4</td>
+</tr>
+<tr>
+<td style="text-align:right">1</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">6</td>
+<td style="text-align:right">7</td>
+<td style="text-align:right">8</td>
+</tr>
+<tr>
+<td style="text-align:right">2</td>
+<td style="text-align:right">9</td>
+<td style="text-align:right">10</td>
+<td style="text-align:right">11</td>
+<td style="text-align:right">12</td>
+</tr>
+<tr>
+<td style="text-align:right">3</td>
+<td style="text-align:right">13</td>
+<td style="text-align:right">14</td>
+<td style="text-align:right">15</td>
+<td style="text-align:right">16</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [7]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">df1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">16</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">'col1'</span><span class="p">,</span> <span class="s1">'col2'</span><span class="p">,</span><span class="s1">'col3'</span><span class="p">,</span> <span class="s1">'col4'</span><span class="p">])</span>
+<span class="n">df1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">16</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="sa">f</span><span class="s1">'col</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">'</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">)])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="3.-Kh%E1%BB%9Fi-t%E1%BA%A1o-1-Series">3. Khởi tạo 1 Series<a class="anchor-link" href="#3.-Kh%E1%BB%9Fi-t%E1%BA%A1o-1-Series">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [8]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#Lấy các giá trị 1 cột trong DataFrame và truyền vào biến Series</span>
+<span class="n">series</span> <span class="o">=</span> <span class="n">df2</span><span class="p">[</span><span class="s1">'name'</span><span class="p">]</span> <span class="c1"># cách 1</span>
+<span class="n">series</span> <span class="o">=</span> <span class="n">df2</span><span class="o">.</span><span class="n">name</span> <span class="c1"># cách 2</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Đố vui</strong>: Vì sao trong Pandas lại có 2 cách khác nhau để gọi 1 cột trong DataFrame?</p>
+<p>Ngoài ra, có 1 số cách để ta khởi tạo 1 Series như dưới đây"</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [9]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">series1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">({</span><span class="s1">'name'</span><span class="p">:[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]})</span> <span class="c1">#khởi tạo 1 Series tên name và có các giá trị 1,2,3</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Để trả về 1 Series có tên là <code>Zoo</code> có giá trị <code>['Z','o','o']</code> tương ứng index là <code>['Char1','Char2','Char3']</code>.</p>
+<p>Ta có thể chọn 1 trong 2 cách dưới đây.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [10]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">series2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="s1">'Z'</span><span class="p">,</span><span class="s1">'o'</span><span class="p">,</span><span class="s1">'o'</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">'Char1'</span><span class="p">,</span> <span class="s1">'Char2'</span><span class="p">,</span><span class="s1">'Char3'</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s1">'Zoo'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [11]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">series3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="s1">'Z'</span><span class="p">,</span><span class="s1">'o'</span><span class="p">,</span><span class="s1">'o'</span><span class="p">]),</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">'Char1'</span><span class="p">,</span> <span class="s1">'Char2'</span><span class="p">,</span><span class="s1">'Char3'</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s1">'Zoo'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="4.-%C4%90%E1%BB%8Dc/l%C6%B0u-1-DataFrame">4. Đọc/lưu 1 DataFrame<a class="anchor-link" href="#4.-%C4%90%E1%BB%8Dc/l%C6%B0u-1-DataFrame">¶</a></h3><p>Pandas hỗ trợ đọc nhiều format dữ liệu khác nhau, ví dụ như: excel, csv, sql, html, json, table, ... Ở đây, mình sẽ ví dụ với 1 kiểu dữ liệu được sử dụng phổ biến nhất, đó là <code>.csv</code>. <code>csv</code> là viết tắt của cụm từ <code>commas seperated value</code>, về bản chất là 1 file text lưu trữ các thông tin dạng bảng với các giá trị từng cột phân cách nhau bới dấu <code>commas</code>, tức là dấu phẩy. Có nhiều biến thể của file <code>.csv</code>, ví dụ <code>.tsv</code> tương ứng <code>tab seperated value</code>, ...</p>
+<p>Ta có thể đọc file csv thông qua câu lệnh <code>pd.read_csv()</code> và lưu file tạo ra và thao tác thông qua câu lệnh <code>pd.to_csv()</code>. Tương tự như csv, các format dữ liệu khác cũng sẽ có cấu trúc câu lệnh trong Pandas tương tự như với csv. Dưới đây là 1 số ví dụ về đọc và lưu file với Pandas.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [12]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data'</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="c1">#dữ liệu online</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [13]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="n">tips_df</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s1">'tips'</span><span class="p">)</span> <span class="c1">#dữ liệu từ github của seaborn.</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Trong bài học tiếp theo, chúng ta sẽ cùng nhau tìm hiểu 1 số hàm phổ biến giúp cho Pandas trở thành công cụ xử lý dữ liệu cấu trúc dạng bảng hàng đầu khi làm việc với Python.</p>
+</div>
+</div>
+</div>
+</div>

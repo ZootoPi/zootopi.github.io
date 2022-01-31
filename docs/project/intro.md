@@ -24,11 +24,11 @@ Tham khảo bài báo [Named Entity Recognition Architecture Combining Contextua
 
 ### 3.1. Hiệu suất giữa kiến trúc chung so với kiến trúc độc lập
 
-|Đặc trưng|F1-score(%)|
-|-|-|
-|Đặc trưng toàn cục| 88.63 |
-|Đặc trưng theo ngữ cảnh |93.28 |
-|Kết hợp 2 đặc trưng|93.82 |
+| Đặc trưng               | F1-score(%) |
+| ----------------------- | ----------- |
+| Đặc trưng toàn cục      | 88.63       |
+| Đặc trưng theo ngữ cảnh | 93.28       |
+| Kết hợp 2 đặc trưng     | 93.82       |
 
 ![Ví dụ về kết quả dự đoán](./imgs/example_v0.png)
 

@@ -34,12 +34,12 @@ Tham khảo bài báo [Named Entity Recognition Architecture Combining Contextua
 
 ### 3.2. Đánh giá hiệu suất cho mỗi loại thực thể (Entity)
 
-|Loại thực thể|Precision(%)|Recall(%)|F1-score(%)|
-|-|-|-|-|
-|LOC |94.15|93.53|93.83|
-|MISC|81.33|81.89|81.62|
-|ORG |88.97|92.29|90.60|
-|PER |96.67|97.09|96.88|
+| Loại thực thể | Precision(%) | Recall(%) | F1-score(%) |
+| ------------- | ------------ | --------- | ----------- |
+| LOC           | 94.15        | 93.53     | 93.83       |
+| MISC          | 81.33        | 81.89     | 81.62       |
+| ORG           | 88.97        | 92.29     | 90.60       |
+| PER           | 96.67        | 97.09     | 96.88       |
 
 ### 3.3. So sánh kết quả nghiên cứu với các phương pháp đương thời
 

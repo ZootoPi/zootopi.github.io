@@ -28,7 +28,7 @@ Tham khảo bài báo [Named Entity Recognition Architecture Combining Contextua
 | ----------------------- | ----------- |
 | Đặc trưng toàn cục      | 88.63       |
 | Đặc trưng theo ngữ cảnh | 93.28       |
-| Kết hợp 2 đặc trưng     | __93.82__       |
+| Kết hợp 2 đặc trưng     | **93.82**   |
 
 > Ví dụ về kết quả dự đoán:
 ![Ví dụ về kết quả dự đoán](./imgs/example_v0.png)

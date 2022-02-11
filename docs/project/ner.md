@@ -31,7 +31,7 @@ Tham khảo bài báo [Named Entity Recognition Architecture Combining Contextua
 | Kết hợp 2 đặc trưng     | **93.82**   |
 
 > Ví dụ về kết quả dự đoán:
-![Ví dụ về kết quả dự đoán](./imgs/example_v0.png)
+> ![Ví dụ về kết quả dự đoán](./imgs/example_v0.png)
 
 ### 3.2. Đánh giá hiệu suất từng loại thực thể
 

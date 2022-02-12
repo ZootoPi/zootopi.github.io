@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkblog=self.webpackChunkblog||[]).push([[154],{2876:function(e){e.exports=JSON.parse('{"pluginId":"certificate","version":"current","label":"Next","banner":"none","isLast":true,"docsSidebars":{"certSidebar":[{"type":"link","label":"Advanced Data Science with IBM Specialization","href":"/certificate/"}]}}')}}]);

@@ -4,7 +4,7 @@ sidebar_position: 1
 slug: /
 ---
 
-# Nhận dạng thực thể sử dụng mô hình kết hợp đặc trưng theo ngữ cảnh và đặc trưng toàn cục
+# Nhận dạng thực thể kết hợp đặc trưng ngữ cảnh và toàn cục
 
 ## 1. Giới thiệu
 
@@ -18,7 +18,7 @@ Ta nối các đặc trưng toàn cục từ GCN và theo ngữ cảnh từ XLNe
 
 Thử nghiệm được triển khai trên GPU 2070 Super và GPU TitanX với 56 CPU, RAM 128 GB. Kết quả thử nghiệm được đánh giá thông qua 3 chỉ số đánh giá: Precision, Recall, và F1-score.
 
-Tham khảo bài báo [Named Entity Recognition Architecture Combining Contextual and Global Features.](https://arxiv.org/pdf/2112.08033.pdf) để hiểu chi tiết hơn về kiến trúc mô hình được đưa ra. Để triển khai lại, tham khảo mã nguồn tại [ner-combining-contextual-and-global-features](https://github.com/honghanhh/ner-combining-contextual-and-global-features).
+Tham khảo bài báo [Named Entity Recognition Architecture Combining Contextual and Global Features](https://arxiv.org/pdf/2112.08033.pdf) để hiểu chi tiết hơn về kiến trúc mô hình được đưa ra. Để triển khai lại, tham khảo mã nguồn tại [ner-combining-contextual-and-global-features](https://github.com/honghanhh/ner-combining-contextual-and-global-features).
 
 ## 3. Kết quả nghiên cứu
 
@@ -28,11 +28,12 @@ Tham khảo bài báo [Named Entity Recognition Architecture Combining Contextua
 | ----------------------- | ----------- |
 | Đặc trưng toàn cục      | 88.63       |
 | Đặc trưng theo ngữ cảnh | 93.28       |
-| Kết hợp 2 đặc trưng     | 93.82       |
+| Kết hợp 2 đặc trưng     | **93.82**   |
 
-![Ví dụ về kết quả dự đoán](./imgs/example_v0.png)
+> Ví dụ về kết quả dự đoán:
+> ![Ví dụ về kết quả dự đoán](./imgs/example_v0.png)
 
-### 3.2. Đánh giá hiệu suất cho mỗi loại thực thể (Entity)
+### 3.2. Đánh giá hiệu suất từng loại thực thể
 
 | Loại thực thể | Precision(%) | Recall(%) | F1-score(%) |
 | ------------- | ------------ | --------- | ----------- |

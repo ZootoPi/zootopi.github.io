@@ -23,7 +23,10 @@
     "file-loader": "^6.2.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-icons": "^4.2.0",
+    "react-icons": "^4.3.1",
+    "react-scroll": "^1.8.4",
+    "react-switch": "^6.0.0",
+    "reactstrap": "^9.0.1",
     "url-loader": "^4.1.1"
   },
   "browserslist": {

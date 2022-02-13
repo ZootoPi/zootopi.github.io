@@ -1,0 +1,212 @@
+.app__navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  z-index: 101;
+  position: fixed;
+}
+
+.navbar-transparent {
+  background-color: #FFF !important;
+  transition: 0.5s ease;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+.dark_navbar {
+  background-color: #000 !important;
+  transition: 0.5s ease;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+.app__navbar-logo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.app__navbar-logo img {
+  width: 90px;
+}
+
+.app__navbar-links,
+.app__navbar-links__darkmode,
+.app__navbar-login,
+.app__navbar-login__darkmode,
+.app__navbar-home,
+.app__navbar-home__darkmode {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+
+.app__navbar-links li, .app__navbar-links__darkmode li {
+  margin: 0 1rem;
+  cursor: pointer;
+}
+
+.app__navbar-home li, .app__navbar-home__darkmode li {
+  margin: 0 0 0 1rem;
+  cursor: pointer;
+}
+
+.app__navbar-links li a,
+.app__navbar-home li a,
+.app__navbar-login li a {
+  color: #000;
+  text-decoration: none;
+}
+
+.app__navbar-home__darkmode li a,
+.app__navbar-links__darkmode li a,
+.app__navbar-login__darkmode li a {
+  color: #FFF;
+  text-decoration: none;
+}
+
+.app__navbar-links li a:hover,
+.app__navbar-links__darkmode li a:hover,
+.app__navbar-login li a:hover,
+.app__navbar-login__darkmode li a:hover {
+  color: grey;
+}
+
+.app__navbar-login,
+.app__navbar-login__darkmode {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.app__navbar-login a,
+.app__navbar-login__darkmode a {
+  margin: 0 1rem;
+  text-decoration: none;
+  transition: 0.5s ease;
+}
+
+.app__navbar-smallscreen {
+  display: none;
+}
+
+.app__navbar-smallscreen_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: grey;
+  transition: 0.5s ease;
+  flex-direction: column;
+  z-index: 5;
+}
+
+.app__navbar-smallscreen_overlay .overlay__close {
+  font-size: 27px;
+  cursor: pointer;
+  color: red;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.app__navbar-smallscreen_links {
+  list-style: none;
+}
+
+.app__navbar-smallscreen_links li {
+  margin: 2rem;
+  cursor: pointer;
+  color: #000;
+  font-size: 1.5rem;
+  text-align: left;
+}
+
+.app__navbar-smallscreen_links li a {
+  color: #000;
+  text-decoration: none;
+}
+
+.app__navbar-smallscreen_links li:hover {
+  color: #FFF;
+}
+
+.app__navbar-home a, .app__navbar-home__darkmode a {
+  font-size: 1.5vw;
+}
+
+.app__navbar-links a,
+.app__navbar-links__darkmode a,
+.app__navbar-login a,
+.app__navbar-login__darkmode a {
+  font-size: 1.2vw;
+  font-weight: bold;
+}
+
+.github__menu_part {
+  align-items: center;
+  display: flex;
+}
+
+.github__menu_part img {
+  width: 1vw;
+  height: 1vw;
+  margin-left: -0.6vw;
+}
+
+.switch__style {
+  margin-left: 1vw;
+}
+
+.dark_mode__icon {
+  width: 0.8vw;
+  height: 0.8vw;
+  margin-top: 0.3vw;
+  margin-left: 0.3vw;
+}
+
+@media screen and (max-width: 2000px) {
+  .app__navbar-logo img {
+    width: 60px;
+  }
+}
+
+@media screen and (max-width: 1150px) {}
+
+@media screen and (max-width: 650px) {
+
+  .app__navbar-links,
+  .app__navbar-links__darkmode,
+  .app__navbar-login,
+  .app__navbar-login__darkmode {
+    display: none;
+  }
+
+  .app__navbar-smallscreen {
+    display: flex;
+  }
+
+  .app__navbar {
+    padding: 1rem;
+  }
+
+  .app__navbar-login,
+  .app__navbar-login__darkmode {
+    display: none;
+  }
+
+  .app__navbar-logo img {
+    width: 50px;
+  }
+
+  .app__navbar-home, .app__navbar-home__darkmode {
+    padding-left: 0;
+  }
+
+  .app__navbar-home a, .app__navbar-home__darkmode a {
+    font-size: 1rem;
+  }
+}

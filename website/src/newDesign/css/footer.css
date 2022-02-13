@@ -1,0 +1,127 @@
+.footer_wrapper {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin-bottom: 1vw;
+}
+
+.footer_style {
+  z-index: 100;
+  width: 100%;
+}
+
+.footer_part {
+  justify-content: space-between;
+  padding: 0 7vw;
+}
+
+.zootopi_icon__footer {
+  width: 2vw;
+  height: 2vw;
+}
+
+.brand__name {
+  color: #000;
+  font-size: 0.6vw;
+  text-transform: uppercase;
+}
+
+.zootopi__team {
+  color: #000;
+  font-weight: bold;
+}
+
+.social__network {
+  display: flex;
+  align-items: center;
+  padding: 0.2vw;
+  cursor: pointer;
+  color: #000;
+}
+
+.social__network:hover {
+  text-decoration: none;
+  color: grey;
+}
+
+.spcial__text {
+  margin-left: 1vw;
+  font-size: 1vw;
+}
+
+.facebook__footer_icon {
+  width: 0.8vw;
+  height: 1.3vw;
+}
+
+.github__footer_icon {
+  width: 1.3vw;
+  height: 1.3vw;
+}
+
+.youtube__footer_icon {
+  width: 1.7vw;
+  height: 1.3vw;
+}
+
+.socialnetwork__part {
+  padding: 0.5vw;
+  list-style: none;
+}
+
+.navbar__footer_part {
+  display: flex;
+  list-style: none;
+}
+
+.navbar__footer_part a {
+  color: #000;
+  font-size: 1vw;
+}
+
+.navbar__footer_part a:hover {
+  color: grey;
+  text-decoration: none;
+}
+
+.navbar__footer_leftmenu {
+  padding: 0.5vw;
+}
+
+.navbar__footer_rightmenu {
+  margin-left: 1.5vw;
+  padding: 0.5vw;
+}
+
+.coppyright {
+  font-size: 1vw;
+}
+
+.madeby {
+  font-size: 1vw;
+}
+
+@media screen and (max-width: 650px) {
+  .navbar__footer_part a {
+    color: #000;
+    font-size: 3vw;
+  }
+
+  .brand__name {
+    font-size: 2vw;
+  }
+
+  .coppyright {
+    font-size: 3vw;
+  }
+
+  .spcial__text {
+    font-size: 3vw;
+  }
+
+  .madeby {
+    font-size: 3vw;
+  }
+}

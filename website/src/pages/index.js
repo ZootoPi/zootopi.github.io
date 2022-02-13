@@ -6,6 +6,7 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { FaGithub } from "react-icons/all";
 import styles from "./index.module.css";
 import HomepageFeatures from "../components/HomepageFeatures";
+import HomeSceen from '../newDesign/HomeScreen.js'
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
@@ -42,13 +43,6 @@ function HomepageHeader() {
 }
 
 export default function Home() {
-  const { siteConfig } = useDocusaurusContext();
-  return (
-    <Layout
-      title={`${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />"
-    >
-      <HomepageHeader />
-    </Layout>
-  );
+  // const { siteConfig } = useDocusaurusContext();
+  return <HomeSceen />
 }

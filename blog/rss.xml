@@ -4,9 +4,16 @@
         <title>ZootoPi Blog</title>
         <link>https://zootopi.dev/blog</link>
         <description>ZootoPi Blog</description>
-        <lastBuildDate>Tue, 27 Jul 2021 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 12 Feb 2022 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[XAI - Chiếc hộp đen phía sau quyết định của AI]]></title>
+            <link>https://zootopi.dev/blog/2022/02/12/xai</link>
+            <guid>XAI - Chiếc hộp đen phía sau quyết định của AI</guid>
+            <pubDate>Sat, 12 Feb 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[XAI - MỞ CHIẾC "HỘP ĐEN" PHÍA SAU QUYẾT ĐỊNH CỦA AI]]></description>
+        </item>
         <item>
             <title><![CDATA[Github Copilot Technical Review]]></title>
             <link>https://zootopi.dev/blog/2021/07/27/copilot</link>

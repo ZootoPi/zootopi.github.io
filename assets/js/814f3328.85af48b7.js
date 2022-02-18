@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkblog=self.webpackChunkblog||[]).push([[535],{5641:function(e){e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"XAI - Chi\u1ebfc h\u1ed9p \u0111en ph\xeda sau quy\u1ebft \u0111\u1ecbnh c\u1ee7a AI","permalink":"/blog/2022/02/12/xai"},{"title":"Github Copilot Technical Review","permalink":"/blog/2021/07/27/copilot"}]}')}}]);

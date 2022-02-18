@@ -4,13 +4,20 @@
         <title>ZootoPi Blog</title>
         <link>https://zootopi.dev/blog</link>
         <description>ZootoPi Blog</description>
-        <lastBuildDate>Sat, 12 Feb 2022 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 17 Feb 2022 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <item>
-            <title><![CDATA[XAI - Chiếc hộp đen phía sau quyết định của AI]]></title>
+            <title><![CDATA[4 mẹo tận dụng tối đa Google Colab]]></title>
+            <link>https://zootopi.dev/blog/2022/02/17/colab</link>
+            <guid>4 mẹo tận dụng tối đa Google Colab</guid>
+            <pubDate>Thu, 17 Feb 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[4 mẹo giúp bạn sử dụng Colab hiệu quả hơn]]></description>
+        </item>
+        <item>
+            <title><![CDATA[XAI - Chiếc hộp đen phía sau AI]]></title>
             <link>https://zootopi.dev/blog/2022/02/12/xai</link>
-            <guid>XAI - Chiếc hộp đen phía sau quyết định của AI</guid>
+            <guid>XAI - Chiếc hộp đen phía sau AI</guid>
             <pubDate>Sat, 12 Feb 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[XAI - MỞ CHIẾC "HỘP ĐEN" PHÍA SAU QUYẾT ĐỊNH CỦA AI]]></description>
         </item>

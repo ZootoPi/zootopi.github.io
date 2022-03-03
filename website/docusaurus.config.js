@@ -60,11 +60,6 @@ module.exports = {
       footer_team: "ZootoPi team",
       footer_team_url: "/",
     },
-    gtag: {
-      trackingID: "G-LFH9JTFMHQ",
-      // Optional fields.
-      anonymizeIP: true, // Should IPs be anonymized?
-    },
   },
   presets: [
     [
@@ -81,6 +76,11 @@ module.exports = {
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
+        },
+        gtag: {
+          trackingID: "G-LFH9JTFMHQ",
+          // Optional fields.
+          anonymizeIP: true, // Should IPs be anonymized?
         },
       },
     ],

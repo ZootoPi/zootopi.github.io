@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkblog=self.webpackChunkblog||[]).push([[154],{2876:function(e){e.exports=JSON.parse('{"pluginId":"certificate","version":"current","label":"Next","banner":"none","isLast":true,"docsSidebars":{"certSidebar":[{"type":"link","label":"Kho\xe1 h\u1ecdc chuy\xean s\xe2u v\u1ec1 Khoa h\u1ecdc D\u1eef li\u1ec7u t\u1eeb IBM","href":"/certificate/"}]}}')}}]);

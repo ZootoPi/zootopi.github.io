@@ -608,7 +608,7 @@ function waitUntil(event, asyncFn) {
 
 // @ts-ignore
 try {
-    self['workbox:core:6.4.2'] && _();
+    self['workbox:core:6.5.3'] && _();
 }
 catch (e) { }
 
@@ -1567,15 +1567,23 @@ class PrecacheStrategy extends workbox_strategies_Strategy_js__WEBPACK_IMPORTED_
             const integrityInManifest = params.integrity;
             const integrityInRequest = request.integrity;
             const noIntegrityConflict = !integrityInRequest || integrityInRequest === integrityInManifest;
+            // Do not add integrity if the original request is no-cors
+            // See https://github.com/GoogleChrome/workbox/issues/3096
             response = await handler.fetch(new Request(request, {
-                integrity: integrityInRequest || integrityInManifest,
+                integrity: request.mode !== 'no-cors'
+                    ? integrityInRequest || integrityInManifest
+                    : undefined,
             }));
             // It's only "safe" to repair the cache if we're using SRI to guarantee
             // that the response matches the precache manifest's expectations,
             // and there's either a) no integrity property in the incoming request
             // or b) there is an integrity, and it matches the precache manifest.
             // See https://github.com/GoogleChrome/workbox/issues/2858
-            if (integrityInManifest && noIntegrityConflict) {
+            // Also if the original request users no-cors we don't use integrity.
+            // See https://github.com/GoogleChrome/workbox/issues/3096
+            if (integrityInManifest &&
+                noIntegrityConflict &&
+                request.mode !== 'no-cors') {
                 this._useDefaultCacheabilityPluginIfNeeded();
                 const wasCached = await handler.cachePut(request, response.clone());
                 if (true) {
@@ -1774,7 +1782,7 @@ __webpack_require__.r(__webpack_exports__);
 
 // @ts-ignore
 try {
-    self['workbox:precaching:6.4.2'] && _();
+    self['workbox:precaching:6.5.3'] && _();
 }
 catch (e) { }
 
@@ -2026,6 +2034,10 @@ function getCacheKeyForURL(url) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "PrecacheController": () => (/* reexport safe */ _PrecacheController_js__WEBPACK_IMPORTED_MODULE_8__.PrecacheController),
+/* harmony export */   "PrecacheFallbackPlugin": () => (/* reexport safe */ _PrecacheFallbackPlugin_js__WEBPACK_IMPORTED_MODULE_11__.PrecacheFallbackPlugin),
+/* harmony export */   "PrecacheRoute": () => (/* reexport safe */ _PrecacheRoute_js__WEBPACK_IMPORTED_MODULE_9__.PrecacheRoute),
+/* harmony export */   "PrecacheStrategy": () => (/* reexport safe */ _PrecacheStrategy_js__WEBPACK_IMPORTED_MODULE_10__.PrecacheStrategy),
 /* harmony export */   "addPlugins": () => (/* reexport safe */ _addPlugins_js__WEBPACK_IMPORTED_MODULE_0__.addPlugins),
 /* harmony export */   "addRoute": () => (/* reexport safe */ _addRoute_js__WEBPACK_IMPORTED_MODULE_1__.addRoute),
 /* harmony export */   "cleanupOutdatedCaches": () => (/* reexport safe */ _cleanupOutdatedCaches_js__WEBPACK_IMPORTED_MODULE_2__.cleanupOutdatedCaches),
@@ -2033,11 +2045,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "getCacheKeyForURL": () => (/* reexport safe */ _getCacheKeyForURL_js__WEBPACK_IMPORTED_MODULE_4__.getCacheKeyForURL),
 /* harmony export */   "matchPrecache": () => (/* reexport safe */ _matchPrecache_js__WEBPACK_IMPORTED_MODULE_5__.matchPrecache),
 /* harmony export */   "precache": () => (/* reexport safe */ _precache_js__WEBPACK_IMPORTED_MODULE_6__.precache),
-/* harmony export */   "precacheAndRoute": () => (/* reexport safe */ _precacheAndRoute_js__WEBPACK_IMPORTED_MODULE_7__.precacheAndRoute),
-/* harmony export */   "PrecacheController": () => (/* reexport safe */ _PrecacheController_js__WEBPACK_IMPORTED_MODULE_8__.PrecacheController),
-/* harmony export */   "PrecacheRoute": () => (/* reexport safe */ _PrecacheRoute_js__WEBPACK_IMPORTED_MODULE_9__.PrecacheRoute),
-/* harmony export */   "PrecacheStrategy": () => (/* reexport safe */ _PrecacheStrategy_js__WEBPACK_IMPORTED_MODULE_10__.PrecacheStrategy),
-/* harmony export */   "PrecacheFallbackPlugin": () => (/* reexport safe */ _PrecacheFallbackPlugin_js__WEBPACK_IMPORTED_MODULE_11__.PrecacheFallbackPlugin)
+/* harmony export */   "precacheAndRoute": () => (/* reexport safe */ _precacheAndRoute_js__WEBPACK_IMPORTED_MODULE_7__.precacheAndRoute)
 /* harmony export */ });
 /* harmony import */ var _addPlugins_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./addPlugins.js */ "./node_modules/workbox-precaching/addPlugins.js");
 /* harmony import */ var _addRoute_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./addRoute.js */ "./node_modules/workbox-precaching/addRoute.js");
@@ -2764,8 +2772,6 @@ __webpack_require__.r(__webpack_exports__);
  * requests against third-party servers, you must define a RegExp that matches
  * the start of the URL.
  *
- * [See the module docs for info.]{@link https://developers.google.com/web/tools/workbox/modules/workbox-routing}
- *
  * @memberof workbox-routing
  * @extends workbox-routing.Route
  */
@@ -3327,7 +3333,7 @@ class Router {
 
 // @ts-ignore
 try {
-    self['workbox:routing:6.4.2'] && _();
+    self['workbox:routing:6.5.3'] && _();
 }
 catch (e) { }
 
@@ -3378,8 +3384,7 @@ __webpack_require__.r(__webpack_exports__);
  * is required if `capture` is not a `Route` object.
  * @param {string} [method='GET'] The HTTP method to match the Route
  * against.
- * @return {workbox-routing.Route} The generated `Route`(Useful for
- * unregistering).
+ * @return {workbox-routing.Route} The generated `Route`.
  *
  * @memberof workbox-routing
  */
@@ -4397,7 +4402,7 @@ class StrategyHandler {
 
 // @ts-ignore
 try {
-    self['workbox:strategies:6.4.2'] && _();
+    self['workbox:strategies:6.5.3'] && _();
 }
 catch (e) { }
 
@@ -4514,134 +4519,100 @@ __webpack_require__.r(__webpack_exports__);
  */
 /* eslint-disable no-restricted-globals */
 
-
-
 function parseSwParams() {
-  const params = JSON.parse(
-    new URLSearchParams(self.location.search).get('params'),
-  );
-  if (params.debug) {
-    console.log('[Docusaurus-PWA][SW]: Service Worker params:', params);
-  }
-  return params;
+    const params = JSON.parse(new URLSearchParams(self.location.search).get('params'));
+    if (params.debug) {
+        console.log('[Docusaurus-PWA][SW]: Service Worker params:', params);
+    }
+    return params;
 }
-
-// doc advises against dynamic imports in SW
+// Doc advises against dynamic imports in SW
 // https://developers.google.com/web/tools/workbox/guides/using-bundlers#code_splitting_and_dynamic_imports
 // https://twitter.com/sebastienlorber/status/1280155204575518720
 // but looks it's working fine as it's inlined by webpack, need to double check
 async function runSWCustomCode(params) {
-  if (false) {}
+    if (false) {}
 }
-
 /**
  * Gets different possible variations for a request URL. Similar to
  * https://git.io/JvixK
- *
- * @param {string} url
  */
 function getPossibleURLs(url) {
-  const possibleURLs = [];
-  const urlObject = new URL(url, self.location.href);
-
-  if (urlObject.origin !== self.location.origin) {
-    return possibleURLs;
-  }
-
-  // Ignore search params and hash
-  urlObject.search = '';
-  urlObject.hash = '';
-
-  // /blog.html
-  possibleURLs.push(urlObject.href);
-
-  // /blog/ => /blog/index.html
-  if (urlObject.pathname.endsWith('/')) {
-    possibleURLs.push(`${urlObject.href}index.html`);
-  } else {
-    // /blog => /blog/index.html
-    possibleURLs.push(`${urlObject.href}/index.html`);
-  }
-
-  return possibleURLs;
+    const urlObject = new URL(url, self.location.href);
+    if (urlObject.origin !== self.location.origin) {
+        return [];
+    }
+    // Ignore search params and hash
+    urlObject.search = '';
+    urlObject.hash = '';
+    return [
+        // /blog.html
+        urlObject.href,
+        // /blog/ => /blog/index.html
+        // /blog => /blog/index.html
+        `${urlObject.href}${urlObject.pathname.endsWith('/') ? '' : '/'}index.html`,
+    ];
 }
-
 (async () => {
-  const params = parseSwParams();
-
-  // eslint-disable-next-line no-underscore-dangle
-  const precacheManifest = [{"revision":"08ec9e0105e8f81be1664725e19b8726","url":"404.html"},{"revision":"4cd46f21c1dba12d9b0bd7cf35185168","url":"about/index.html"},{"revision":"0e4632b8fd9c55c9f364572c4ea12e94","url":"assets/css/styles.b9f612ae.css"},{"revision":"9a79060cf244940cec889ff4f24bb648","url":"assets/js/09c67ec7.c3c5623c.js"},{"revision":"a974c70e24de060a7c433b980f94e764","url":"assets/js/131.3d8adbc1.js"},{"revision":"cd8d6c14f46345fd5fbc197da1dbdbdb","url":"assets/js/143.93ba2794.js"},{"revision":"cb736acb681e24a0804552ecfd3ad004","url":"assets/js/17896441.ff9987d0.js"},{"revision":"5d32b827f3d11dff5635028898797070","url":"assets/js/192f54d2.b74d8e00.js"},{"revision":"1d042f35995d25003b93136cf279ea3b","url":"assets/js/1be78505.c426d8c4.js"},{"revision":"58ebf8240b57bbd7ebc5e0dd036f8d7b","url":"assets/js/1eb03302.18a128a2.js"},{"revision":"a4b2e4bac79987732d605580d315b6fb","url":"assets/js/1f391b9e.d4d7ffa4.js"},{"revision":"65b30efdc1e7b3488403281b7b00e8fd","url":"assets/js/230.c7a849cc.js"},{"revision":"05a69e8ab547ec6d12eae90fb368c35d","url":"assets/js/2515f12c.936983c2.js"},{"revision":"9989c0bacb09741c58fabdeac26bad92","url":"assets/js/283.83082e1c.js"},{"revision":"2185d05b60c128a63fce6fb8dce0e94e","url":"assets/js/31ed967a.8c9d8e7f.js"},{"revision":"4e3f8dc492fcc77ec412ab53d31070af","url":"assets/js/33fadf1f.6d447a5d.js"},{"revision":"c5abba573c4f398db90cdd9c5c63c1b4","url":"assets/js/356a0ac6.06f0f164.js"},{"revision":"e88c2a2391190e10b7585a1efcd30264","url":"assets/js/501ba9c4.2d294e5e.js"},{"revision":"0ba0e54aa8c5886fe1b156a9272439b5","url":"assets/js/561ce509.b4835200.js"},{"revision":"c8d97f2418a91c4d0895c411350818fb","url":"assets/js/57aeb5df.90ad41db.js"},{"revision":"a64b7763dbac449156617a07f1753962","url":"assets/js/5e039c3e.8e3b29b7.js"},{"revision":"f14c38d885a66b234c1dc3d60855fc38","url":"assets/js/75.68df6c99.js"},{"revision":"b27a5029c16c88e10586fc0559281462","url":"assets/js/78106495.55826744.js"},{"revision":"0c4be7f3461240a692636864596f8485","url":"assets/js/7b7d9474.b67e4a0a.js"},{"revision":"a1a78921def3d9477744f1a24d57890e","url":"assets/js/7c2e60c8.0e4d60f5.js"},{"revision":"53178ee37270a4e829b2bbd3d91dddc4","url":"assets/js/814f3328.080b6c2b.js"},{"revision":"6d7f0d13bca644861e2d73c3a5e90825","url":"assets/js/824260c2.20baeaf2.js"},{"revision":"acf3acfc820bdac5818659aca29ac38b","url":"assets/js/864196d0.9269a287.js"},{"revision":"9da56cc330adb1f40e9ec475fe84b772","url":"assets/js/897.973a9c77.js"},{"revision":"e0e608b3a3111ae95c9a31a41bf1f617","url":"assets/js/935f2afb.03156c4c.js"},{"revision":"442ed190f6679a09ee7618b3239c8eff","url":"assets/js/99917f6f.f812cbc3.js"},{"revision":"44799292ebed72855ea430d64c868ea6","url":"assets/js/9e4087bc.1aebbbef.js"},{"revision":"4cd19b3fa9ec3a829e4d1832e5fc7777","url":"assets/js/a6aa9e1f.865936d9.js"},{"revision":"d3565c6fb26b34b5b637aca81a4417f2","url":"assets/js/aab30d89.88fb08b5.js"},{"revision":"4852e71f1a6d7c6f0de5b8542cb72d61","url":"assets/js/b2b675dd.4dbcdc10.js"},{"revision":"8169caf00be1d17f7727ef1b09627cc2","url":"assets/js/b2f554cd.86d44988.js"},{"revision":"292c87e45ce0bdedb07eb62ed8f41e48","url":"assets/js/bb0e322a.3e595f2a.js"},{"revision":"2e6eeabd70381e7dd4bde092ec9ecb28","url":"assets/js/beb5cee9.702adbb4.js"},{"revision":"ae29074312f6b0fd94d6a535e98adeba","url":"assets/js/c4f5d8e4.4b7fdc2f.js"},{"revision":"b72ca4995593cebbaa2a25ef558bd603","url":"assets/js/c61d9eb7.5d04fb11.js"},{"revision":"0e86c05c11fb5b6d468412fc640859f4","url":"assets/js/ccc49370.4d97d70a.js"},{"revision":"e95ec7b37a92d25a83945007fab1b176","url":"assets/js/da5a4ba8.040969a1.js"},{"revision":"4f3d68e218c12dfbc7201a0f3115513b","url":"assets/js/e26f2a9a.046f1797.js"},{"revision":"7ff793a78014c59ad2963bde43bdc65c","url":"assets/js/f0fec2b2.0ca9b65c.js"},{"revision":"79432e3cf25e4a428631147c1592bbe9","url":"assets/js/fe18a730.384afe6d.js"},{"revision":"34947f44aa21e48764c1cfec6111d1f0","url":"assets/js/main.ada35eba.js"},{"revision":"e8ae0bea14c040fe10eaf87a60fff78f","url":"assets/js/runtime~main.861cd128.js"},{"revision":"ea16f1124a8f6b06dcccc6bc02a95e06","url":"blog/2021/07/27/copilot/index.html"},{"revision":"dbcb5f79fd6dd341f2e5e4a9f3cfab1e","url":"blog/2022/02/12/xai/index.html"},{"revision":"3419423f5e984b2ae3cae899076a344a","url":"blog/2022/02/13/xai1/index.html"},{"revision":"9c55d9611e75fe826a362739e5125fa2","url":"blog/2022/02/17/colab/index.html"},{"revision":"bcde27142dd460f63860f90660f0beeb","url":"blog/archive/index.html"},{"revision":"020974fc49ebb86288b321aa9f46fca6","url":"blog/index.html"},{"revision":"f929098972ed5e98634b07fe5acbe10e","url":"certificate/index.html"},{"revision":"38ca399392544936e280a095a97c37b6","url":"index.html"},{"revision":"7875af704e82cc98e743ddb1e5afbbcf","url":"manifest.json"},{"revision":"75407a21351ac934f5e219709f0f635a","url":"project/index.html"},{"revision":"ebb4b199d4eb20d3fcc894b768893aa9","url":"tutorial/data_mining/intro/index.html"},{"revision":"bed7c07767cadf437f186a75fd69a819","url":"tutorial/data_science/missing/index.html"},{"revision":"c134db379a71dabd913056e428eaaf38","url":"tutorial/python/anaconda/index.html"},{"revision":"35c5233dc4652f301b694628511ed693","url":"tutorial/python/foundation-part2/index.html"},{"revision":"596c0d3e636d37e62b3ba51212fa4f42","url":"tutorial/python/foundation/index.html"},{"revision":"97b7d2a988f7349deeac4a3cce9b235d","url":"tutorial/python/install/index.html"},{"revision":"aa33dc85b2704b05670222aaa47f07e6","url":"tutorial/python/jupyter/index.html"},{"revision":"6a8b12e664bc27300f4c999d85d0e855","url":"tutorial/python/numpy/index.html"},{"revision":"d6e3377d962ae5495a1d50ec67f8eb81","url":"tutorial/python/pandas_2/index.html"},{"revision":"567ae34bc8bb09765a680f8287964106","url":"tutorial/python/pandas/index.html"},{"revision":"d3941b23abeba6134d3f74b3ea6a9a29","url":"tutorial/python/visualization/index.html"},{"revision":"6bfdd7793bce8792e90b13ded08171ea","url":"tutorial/text_mining/intro/index.html"},{"revision":"3600b959c6b2d78a49e8531dd7730563","url":"assets/images/06.numpy_57_0-14010abf4671f6cc1276864d2378197d.png"},{"revision":"ce76a4f7f2e6ce58ec5f07d0b721cf1b","url":"assets/images/4_colab-50da3b6bceb57363ff50e531eb805790.gif"},{"revision":"3de2315fd48ab4b9b751623dcee29e1b","url":"assets/images/4_console-ceab6486b8b0af917d9d13bcc720c5fc.png"},{"revision":"6fd35a8f1e8e2cc3c1ace73bdabbc856","url":"assets/images/4_mount_drive-aace3497ba0f952627f8c0df4192f07a.png"},{"revision":"8885c9ae0b525f437286f2f2706e9528","url":"assets/images/4_mounted_drive-9d7f758457d2436713fb00fd798bb27a.png"},{"revision":"7f8bfef8dcc7a2e2e4bb368e5df5bdc5","url":"assets/images/4_notebook_settings-3605dcf47356f3b4ca0b80d2d8055ba4.png"},{"revision":"8e529b28b17d41bc21c511017e7aabc0","url":"assets/images/4_tricks_colab-8efce84c4f8ef9e5ccdacf0efd6411fa.png"},{"revision":"4c44d0618f2d3d50685dc36d31101cf6","url":"assets/images/advanced_ds-b58aadd02cb2d1a4edce760f05403629.png"},{"revision":"9bc4bb29b15d12c6d14d8b1f7e368fa7","url":"assets/images/anaconda-93c520e12fbe23b23d4f46e348a717ef.png"},{"revision":"1ad91dd47f8fb647bd37e8440d25680b","url":"assets/images/bar-9980c4088c46ecf1aae872e1e44cd5b3.png"},{"revision":"3005e062c72c714298c754dcbdc20fef","url":"assets/images/boxenplot-5cc700804c8ca8c5a9aed68259928dcd.png"},{"revision":"47b0364e1c73cc2f4ba4ceae6cd61c14","url":"assets/images/boxplot_sns1-64be64f274016ce4a09ce9e58cb9a5b9.png"},{"revision":"43ef0e1bb6048c9a5dc75839bd2b5d2a","url":"assets/images/copilot-intro-423ef2e3e4baaaaa1dd42650ab6bc947.png"},{"revision":"b1cb1b726d5049189c22e3a522757991","url":"assets/images/dist_plot1-6f608c01a2fcf650feb7d9b332cc3689.png"},{"revision":"ff9f215f6e521378281f60d4f909ecef","url":"assets/images/example_v0-101f3ae1e83d69d3778904fdb09e6910.png"},{"revision":"58ac844ac8ee7460ea55ef299716ce3a","url":"assets/images/facetgrid-4183f8f164a75ee614fa231ae296faf2.png"},{"revision":"a01fca9b3aff5f41d38acd7271c5c144","url":"assets/images/flow-f0d7af752bed4137e3affcc7e68e3dc6.png"},{"revision":"09ea736eaa0003c55387c04775491d4c","url":"assets/images/joint_pie-d187166db97f0949fcb29a0b8d860ea5.png"},{"revision":"ea9d952b18a2392b97804c5ed791ac3a","url":"assets/images/jupyterlab-42d1317f49c6901ef29b0790c2dcb429.png"},{"revision":"2566bc1c291c318c37bec4fd2a13154d","url":"assets/images/jupyternotebook-38126b39145b04767d526fde9d82bf6e.png"},{"revision":"43b4251c9d67d74cf5bed000b8fcea9d","url":"assets/images/line_plot-61b018f0d1d90f2cf2f7e554c88fe6c1.png"},{"revision":"774d53747be15b6a09d995e02a2e1ba6","url":"assets/images/method-joint-6630a8b2da947efe15ae289ea25e2d92.png"},{"revision":"023f0d0058c21b66252299fcbc9ea7ba","url":"assets/images/multiline_plot-d9960eac5db7560f1e4bdcb5319faf4c.png"},{"revision":"abe440fa6d39e85555a2da6b9b976f62","url":"assets/images/pairplot-8ceacb2f39061ba4e88e0061a8d0faf2.png"},{"revision":"f23b641f95256137813aec315069798c","url":"assets/images/paraline_plot-df9c7e5b67c43ab81737b241911889bb.png"},{"revision":"af097c545c49bcedbe9f72adc10e929f","url":"assets/images/pie-2ede1a25a329786fc0f39511ff48a4df.png"},{"revision":"11675aee6f57230494309f00b9d93b07","url":"assets/images/pie1-e7e1168823341df52a30edcad17e47d8.png"},{"revision":"551cdd4d4f6896644a50452a16c6b2d1","url":"assets/images/python-8b3a7ee519e5353dfda9ba1b2c163918.png"},{"revision":"011847524514309570d314d0d2b8b13c","url":"assets/images/scatter_plt_classify-310a5a4047bc2820ffa09826b1fe4e94.png"},{"revision":"563052c79a8745175620468ed7c932c9","url":"assets/images/scatter_plt-640bbffd1dc7dabef9bf7700d0f9b405.png"},{"revision":"0ed2d4493d192812c8c069c032294989","url":"assets/images/scatter_sns_classify-9bfe22966ad5262ab2ac7565d50ecccf.png"},{"revision":"c3e577b977ed2cfdbb5d1cf54fd65fa5","url":"assets/images/scatter_sns-cb87ea4c51a52b49588ffb22a9d49a1b.png"},{"revision":"a175f813ccc604f27dc63517fb4d07a3","url":"assets/images/sota-c1f3e744ede4f3e84b07e6d36310fdea.png"},{"revision":"08909388b90a8ab55e213c232b1c4317","url":"assets/images/swarm-8b57e1491198f4a87f464856dcabda1b.png"},{"revision":"b9e500dc5f296ce0dd3c29941334f556","url":"assets/images/text-mining-172faa09a63e37d07d7f014e23d985f4.png"},{"revision":"f61882f177b859795d477ee94eb0fe02","url":"assets/images/violin1-80bbed16530e52cb039210cc28188a1b.png"},{"revision":"ae4434253f2987272e5724c3c1dad9ad","url":"assets/images/violin2-e10cca8630c33d353a84eb526dcc9039.png"},{"revision":"1b97fe739402bd95c0c12afe6e6c4bb3","url":"assets/images/violinplot-92f6486b7963e82f1ce00ba5c2c87c7b.png"},{"revision":"8f7c78c0565b7bbd9fa137a4b65902a6","url":"assets/images/wow-11fc3d8a0425757c0fef113146d249e2.png"},{"revision":"ccac73b62c431aeca86b9d7dfadab345","url":"assets/images/xai_interpretability-ec609bd9d6b48c9bfc377f5177b1ef9a.png"},{"revision":"65dea119572fa8acf510b53e1fbf52e0","url":"assets/images/xai-b1d76601490ca22580cd5f6c6887aa28.png"},{"revision":"38170d087d79bb99b7cd82893a3d2a28","url":"img/cover.svg"},{"revision":"4889a411c850d2eef75390d9ae695ccb","url":"img/icons/icon-128x128.png"},{"revision":"f96492022317530a71faab2534035cd7","url":"img/icons/icon-144x144.png"},{"revision":"55195ed04451d569653f91e34edc424e","url":"img/icons/icon-152x152.png"},{"revision":"480aca8074800f03d86a1f516110fb43","url":"img/icons/icon-192x192.png"},{"revision":"09d639ca5d631b626ef53aa7eb9ffab0","url":"img/icons/icon-384x384.png"},{"revision":"fb5380551b7ccb23f5af75067a3405bf","url":"img/icons/icon-512x512.png"},{"revision":"4121607541d611d38b146e79247812d6","url":"img/icons/icon-72x72.ico"},{"revision":"55444aa96eaefd5d2f577643800095b9","url":"img/icons/icon-72x72.png"},{"revision":"e1bc75e5c5f000d4eed6ff82ee1ff9f7","url":"img/icons/icon-96x96.png"},{"revision":"d85a9df122c320fadd394b687cee7c4f","url":"img/logo.svg"},{"revision":"20b85e9b613ca7b749569d1c37da3f95","url":"img/zootopi_team.svg"}];
-  const controller = new workbox_precaching__WEBPACK_IMPORTED_MODULE_0__.PrecacheController({
-    fallbackToNetwork: true, // safer to turn this true?
-  });
-
-  if (params.offlineMode) {
-    controller.addToCacheList(precacheManifest);
-    if (params.debug) {
-      console.log('[Docusaurus-PWA][SW]: addToCacheList', {
-        precacheManifest,
-      });
-    }
-  }
-
-  await runSWCustomCode(params);
-
-  self.addEventListener('install', (event) => {
-    if (params.debug) {
-      console.log('[Docusaurus-PWA][SW]: install event', {
-        event,
-      });
-    }
-    event.waitUntil(controller.install(event));
-  });
-
-  self.addEventListener('activate', (event) => {
-    if (params.debug) {
-      console.log('[Docusaurus-PWA][SW]: activate event', {
-        event,
-      });
-    }
-    event.waitUntil(controller.activate(event));
-  });
-
-  self.addEventListener('fetch', async (event) => {
+    const params = parseSwParams();
+    // eslint-disable-next-line no-underscore-dangle
+    const precacheManifest = [{"revision":"0285be64c7fe1754bb5df111889a430d","url":"404.html"},{"revision":"f7f7ba4de8a5097db9472aea1fa1f78f","url":"about/index.html"},{"revision":"54980e01828ee4ce12975b8a3f2869c0","url":"assets/css/styles.cc915da7.css"},{"revision":"dfd67ade171d7c6987a32a45fb941e3a","url":"assets/js/09c67ec7.4bfb682d.js"},{"revision":"a33135d4c7c12e8697466c788b9c7a07","url":"assets/js/1359ee9f.a00057ec.js"},{"revision":"9f9b398af5a03ae2d644e63cc629b9b6","url":"assets/js/17896441.b73ee04c.js"},{"revision":"0fbca268936019689d9c5c5bdcd6e619","url":"assets/js/192f54d2.af4cc387.js"},{"revision":"a77b970d9fe3f867ff92169c51ff6419","url":"assets/js/1be78505.45dd41be.js"},{"revision":"8d5540a608ef29a7f7eba10720a85f11","url":"assets/js/1eb03302.c78d05e9.js"},{"revision":"d1b3a6d09cb8cf8619c6bfc9dc1ecdf0","url":"assets/js/1f391b9e.555adc3c.js"},{"revision":"67d1ca60700479fcdb691fc793857a63","url":"assets/js/210.f6c17b95.js"},{"revision":"32f1d8271ae74caf6d7ae93f264f0a9e","url":"assets/js/230.6ac3100f.js"},{"revision":"3ebc8f0d51222d4958c92c016b05f4bf","url":"assets/js/2515f12c.45fff79b.js"},{"revision":"857a02b3b38f9fa22dfc339a751b9d14","url":"assets/js/31ed967a.b9d6d4d7.js"},{"revision":"d575b97f8fccecc2b483e697a8602d1d","url":"assets/js/33fadf1f.7548b741.js"},{"revision":"404e9a2b4dc40425cb5b2402ec420026","url":"assets/js/356a0ac6.94649d4e.js"},{"revision":"b993abc395e8b6a8f6c0d748fe9385bb","url":"assets/js/3e17fa77.4e792397.js"},{"revision":"59a1fb008114155ea85ecb2ea63920de","url":"assets/js/412.bbb78a2a.js"},{"revision":"38ddcd1a291e67d40fc1e30b9f32c27f","url":"assets/js/4972.01c3fd36.js"},{"revision":"60d667c1af0464594258cee882b30e0e","url":"assets/js/501ba9c4.6e6ed258.js"},{"revision":"215f3821ece70e2febb2332a639bfbcb","url":"assets/js/5131.83fcdf3a.js"},{"revision":"5e31e1c4ccd7489437c87b99afddb555","url":"assets/js/5154.6b8fbddc.js"},{"revision":"141b543a22c358fbe8a9a48a3db8370b","url":"assets/js/5283.ad2fa12c.js"},{"revision":"ff79f76f2434c9838a0abaa18cb815b3","url":"assets/js/561ce509.64a29020.js"},{"revision":"6d8813e369b3e3d36964ef1022bfea07","url":"assets/js/57aeb5df.7bde0d6a.js"},{"revision":"ecba499ba14e2f6cfe2e0185497b3860","url":"assets/js/5e039c3e.b0a2bcd9.js"},{"revision":"e93ac8d3ffbb8b97e1a52f94096cf43e","url":"assets/js/78106495.87dcb721.js"},{"revision":"bbda6ede62dcfe65869f65719ff8b12f","url":"assets/js/7b7d9474.7efc99ca.js"},{"revision":"ae9bd57a30543e97fe3a17859f0bf611","url":"assets/js/7c2e60c8.378c6639.js"},{"revision":"15a153ff5338926069f3806b3268fcae","url":"assets/js/814f3328.bd5ca63b.js"},{"revision":"cd18fb895cb9086f0e98452f33ccd495","url":"assets/js/824260c2.89a60fbf.js"},{"revision":"2df9c0945fded14b5218b9bba109ebff","url":"assets/js/864196d0.7728ba18.js"},{"revision":"7c89c69cd1d06da3ea168ba3d8b74ee2","url":"assets/js/935f2afb.1df27a78.js"},{"revision":"fed68528f825e3b669cce07e6f1ed150","url":"assets/js/99917f6f.9c41dd09.js"},{"revision":"ba97705355561e02779e36bbe2ae03e0","url":"assets/js/9e4087bc.12319c1e.js"},{"revision":"5656967e4a8815a2c008cae148ecec4f","url":"assets/js/a56b58ee.bcd613e2.js"},{"revision":"587b529b884fd5759a264dddc43a617e","url":"assets/js/a6aa9e1f.8e40b118.js"},{"revision":"2e6d67386853ac929480933a3ce219d6","url":"assets/js/aab30d89.0737406a.js"},{"revision":"c31fc7936e8fbc948bca1dcf66a53553","url":"assets/js/b2b675dd.37e83a3b.js"},{"revision":"6970c35922e98a48bb0b799b31f4bac9","url":"assets/js/b2f554cd.0d690767.js"},{"revision":"4b5ade72bea132161ede1240e0371bac","url":"assets/js/bb0e322a.765c8f12.js"},{"revision":"2db23ca3de88c40cc97532982143b6fe","url":"assets/js/beb5cee9.2029b9af.js"},{"revision":"20606287ba27489655e3738f05d76890","url":"assets/js/c4f5d8e4.fe91af73.js"},{"revision":"f98d4cc2578a80a960e4bf0c251b94b3","url":"assets/js/c61d9eb7.658e7237.js"},{"revision":"832d7a8d1fbb94d8ca561299bd986487","url":"assets/js/ccc49370.8408ea63.js"},{"revision":"3c7e5baf20d13d01928177b3420d9f1e","url":"assets/js/da1fba06.694f5ec6.js"},{"revision":"ca82137ae17a1496cc40077381c9e125","url":"assets/js/da5a4ba8.5856c38a.js"},{"revision":"f5e1c2edd079415044835884b4fafaa9","url":"assets/js/e26f2a9a.df717f2c.js"},{"revision":"5bfeb442bf021e23537ea9947bdc2740","url":"assets/js/f0fec2b2.19a51265.js"},{"revision":"17c0ab64a02fac01680c7fc0aad5bda5","url":"assets/js/f95b62cb.2c0d227b.js"},{"revision":"bb08e4c00ec09616f52a20c14ddbeba9","url":"assets/js/fe18a730.c5e29470.js"},{"revision":"4b092e9b290d7e986f791874c1cc535f","url":"assets/js/main.30f835ed.js"},{"revision":"46aed465fbe1ac678ec8daab4d86eeb0","url":"assets/js/runtime~main.1b85ffcc.js"},{"revision":"032e390cb17faf91feafd5fc0e3d50aa","url":"blog/2021/07/27/copilot/index.html"},{"revision":"96e02f14a2289c823adf089478be5940","url":"blog/2022/02/12/xai/index.html"},{"revision":"511b84bdc90d5796600079c02e0a706a","url":"blog/2022/02/13/xai1/index.html"},{"revision":"949a3182ecf052e0d813fdffe15e8bed","url":"blog/2022/02/17/colab/index.html"},{"revision":"9f2add2ca10051939500b213bea69b57","url":"blog/archive/index.html"},{"revision":"a014e6ac6d48afe16f4f8dda6634f9a9","url":"blog/index.html"},{"revision":"8e16afacb1c4b300c252b5b38d8406dd","url":"certificate/index.html"},{"revision":"bd558dcf6e46d5cf8b65c1e8b67d42a3","url":"index.html"},{"revision":"7875af704e82cc98e743ddb1e5afbbcf","url":"manifest.json"},{"revision":"0f7a30effeb65fa85e9095418cb2e7fa","url":"project/index.html"},{"revision":"f1c87ff8ef1fa966b92e9b7ccba6a2dc","url":"tutorial/data_mining/intro/index.html"},{"revision":"3345ebfc3b5c5f95363933eec48c5b2f","url":"tutorial/data_science/missing/index.html"},{"revision":"fa69f0ea361dae2fa23c02bf6e40c42f","url":"tutorial/python/anaconda/index.html"},{"revision":"fee85ff609236f58d4bb97165bf84e7d","url":"tutorial/python/foundation-part2/index.html"},{"revision":"d4ae8ab15e5b2edb01c6143beb7f12b9","url":"tutorial/python/foundation/index.html"},{"revision":"70be258a6be54bdb145f3b644af9ee58","url":"tutorial/python/install/index.html"},{"revision":"d2b2bbc233a91e360292e588db4f15cb","url":"tutorial/python/jupyter/index.html"},{"revision":"3678de9908ecc21332cb8c5f970418cd","url":"tutorial/python/numpy/index.html"},{"revision":"ab2cfbd40d2c99346142d2cf3091b385","url":"tutorial/python/pandas_2/index.html"},{"revision":"19e36d2391e5c9c896525e6ca01ca3b0","url":"tutorial/python/pandas/index.html"},{"revision":"018ffced38cf24531f4fff85e33dbf5d","url":"tutorial/python/visualization/index.html"},{"revision":"0e67f6bc72fbfa460ec323841c01a6e0","url":"tutorial/text_mining/intro/index.html"},{"revision":"3600b959c6b2d78a49e8531dd7730563","url":"assets/images/06.numpy_57_0-14010abf4671f6cc1276864d2378197d.png"},{"revision":"ce76a4f7f2e6ce58ec5f07d0b721cf1b","url":"assets/images/4_colab-50da3b6bceb57363ff50e531eb805790.gif"},{"revision":"3de2315fd48ab4b9b751623dcee29e1b","url":"assets/images/4_console-ceab6486b8b0af917d9d13bcc720c5fc.png"},{"revision":"6fd35a8f1e8e2cc3c1ace73bdabbc856","url":"assets/images/4_mount_drive-aace3497ba0f952627f8c0df4192f07a.png"},{"revision":"8885c9ae0b525f437286f2f2706e9528","url":"assets/images/4_mounted_drive-9d7f758457d2436713fb00fd798bb27a.png"},{"revision":"7f8bfef8dcc7a2e2e4bb368e5df5bdc5","url":"assets/images/4_notebook_settings-3605dcf47356f3b4ca0b80d2d8055ba4.png"},{"revision":"8e529b28b17d41bc21c511017e7aabc0","url":"assets/images/4_tricks_colab-8efce84c4f8ef9e5ccdacf0efd6411fa.png"},{"revision":"4c44d0618f2d3d50685dc36d31101cf6","url":"assets/images/advanced_ds-b58aadd02cb2d1a4edce760f05403629.png"},{"revision":"9bc4bb29b15d12c6d14d8b1f7e368fa7","url":"assets/images/anaconda-93c520e12fbe23b23d4f46e348a717ef.png"},{"revision":"1ad91dd47f8fb647bd37e8440d25680b","url":"assets/images/bar-9980c4088c46ecf1aae872e1e44cd5b3.png"},{"revision":"3005e062c72c714298c754dcbdc20fef","url":"assets/images/boxenplot-5cc700804c8ca8c5a9aed68259928dcd.png"},{"revision":"47b0364e1c73cc2f4ba4ceae6cd61c14","url":"assets/images/boxplot_sns1-64be64f274016ce4a09ce9e58cb9a5b9.png"},{"revision":"43ef0e1bb6048c9a5dc75839bd2b5d2a","url":"assets/images/copilot-intro-423ef2e3e4baaaaa1dd42650ab6bc947.png"},{"revision":"b1cb1b726d5049189c22e3a522757991","url":"assets/images/dist_plot1-6f608c01a2fcf650feb7d9b332cc3689.png"},{"revision":"ff9f215f6e521378281f60d4f909ecef","url":"assets/images/example_v0-101f3ae1e83d69d3778904fdb09e6910.png"},{"revision":"58ac844ac8ee7460ea55ef299716ce3a","url":"assets/images/facetgrid-4183f8f164a75ee614fa231ae296faf2.png"},{"revision":"a01fca9b3aff5f41d38acd7271c5c144","url":"assets/images/flow-f0d7af752bed4137e3affcc7e68e3dc6.png"},{"revision":"09ea736eaa0003c55387c04775491d4c","url":"assets/images/joint_pie-d187166db97f0949fcb29a0b8d860ea5.png"},{"revision":"ea9d952b18a2392b97804c5ed791ac3a","url":"assets/images/jupyterlab-42d1317f49c6901ef29b0790c2dcb429.png"},{"revision":"2566bc1c291c318c37bec4fd2a13154d","url":"assets/images/jupyternotebook-38126b39145b04767d526fde9d82bf6e.png"},{"revision":"43b4251c9d67d74cf5bed000b8fcea9d","url":"assets/images/line_plot-61b018f0d1d90f2cf2f7e554c88fe6c1.png"},{"revision":"774d53747be15b6a09d995e02a2e1ba6","url":"assets/images/method-joint-6630a8b2da947efe15ae289ea25e2d92.png"},{"revision":"023f0d0058c21b66252299fcbc9ea7ba","url":"assets/images/multiline_plot-d9960eac5db7560f1e4bdcb5319faf4c.png"},{"revision":"abe440fa6d39e85555a2da6b9b976f62","url":"assets/images/pairplot-8ceacb2f39061ba4e88e0061a8d0faf2.png"},{"revision":"f23b641f95256137813aec315069798c","url":"assets/images/paraline_plot-df9c7e5b67c43ab81737b241911889bb.png"},{"revision":"af097c545c49bcedbe9f72adc10e929f","url":"assets/images/pie-2ede1a25a329786fc0f39511ff48a4df.png"},{"revision":"11675aee6f57230494309f00b9d93b07","url":"assets/images/pie1-e7e1168823341df52a30edcad17e47d8.png"},{"revision":"551cdd4d4f6896644a50452a16c6b2d1","url":"assets/images/python-8b3a7ee519e5353dfda9ba1b2c163918.png"},{"revision":"011847524514309570d314d0d2b8b13c","url":"assets/images/scatter_plt_classify-310a5a4047bc2820ffa09826b1fe4e94.png"},{"revision":"563052c79a8745175620468ed7c932c9","url":"assets/images/scatter_plt-640bbffd1dc7dabef9bf7700d0f9b405.png"},{"revision":"0ed2d4493d192812c8c069c032294989","url":"assets/images/scatter_sns_classify-9bfe22966ad5262ab2ac7565d50ecccf.png"},{"revision":"c3e577b977ed2cfdbb5d1cf54fd65fa5","url":"assets/images/scatter_sns-cb87ea4c51a52b49588ffb22a9d49a1b.png"},{"revision":"a175f813ccc604f27dc63517fb4d07a3","url":"assets/images/sota-c1f3e744ede4f3e84b07e6d36310fdea.png"},{"revision":"08909388b90a8ab55e213c232b1c4317","url":"assets/images/swarm-8b57e1491198f4a87f464856dcabda1b.png"},{"revision":"b9e500dc5f296ce0dd3c29941334f556","url":"assets/images/text-mining-172faa09a63e37d07d7f014e23d985f4.png"},{"revision":"f61882f177b859795d477ee94eb0fe02","url":"assets/images/violin1-80bbed16530e52cb039210cc28188a1b.png"},{"revision":"ae4434253f2987272e5724c3c1dad9ad","url":"assets/images/violin2-e10cca8630c33d353a84eb526dcc9039.png"},{"revision":"1b97fe739402bd95c0c12afe6e6c4bb3","url":"assets/images/violinplot-92f6486b7963e82f1ce00ba5c2c87c7b.png"},{"revision":"8f7c78c0565b7bbd9fa137a4b65902a6","url":"assets/images/wow-11fc3d8a0425757c0fef113146d249e2.png"},{"revision":"ccac73b62c431aeca86b9d7dfadab345","url":"assets/images/xai_interpretability-ec609bd9d6b48c9bfc377f5177b1ef9a.png"},{"revision":"65dea119572fa8acf510b53e1fbf52e0","url":"assets/images/xai-b1d76601490ca22580cd5f6c6887aa28.png"},{"revision":"38170d087d79bb99b7cd82893a3d2a28","url":"img/cover.svg"},{"revision":"4889a411c850d2eef75390d9ae695ccb","url":"img/icons/icon-128x128.png"},{"revision":"f96492022317530a71faab2534035cd7","url":"img/icons/icon-144x144.png"},{"revision":"55195ed04451d569653f91e34edc424e","url":"img/icons/icon-152x152.png"},{"revision":"480aca8074800f03d86a1f516110fb43","url":"img/icons/icon-192x192.png"},{"revision":"09d639ca5d631b626ef53aa7eb9ffab0","url":"img/icons/icon-384x384.png"},{"revision":"fb5380551b7ccb23f5af75067a3405bf","url":"img/icons/icon-512x512.png"},{"revision":"4121607541d611d38b146e79247812d6","url":"img/icons/icon-72x72.ico"},{"revision":"55444aa96eaefd5d2f577643800095b9","url":"img/icons/icon-72x72.png"},{"revision":"e1bc75e5c5f000d4eed6ff82ee1ff9f7","url":"img/icons/icon-96x96.png"},{"revision":"d85a9df122c320fadd394b687cee7c4f","url":"img/logo.svg"},{"revision":"20b85e9b613ca7b749569d1c37da3f95","url":"img/zootopi_team.svg"}];
+    const controller = new workbox_precaching__WEBPACK_IMPORTED_MODULE_0__.PrecacheController({
+        // Safer to turn this true?
+        fallbackToNetwork: true,
+    });
     if (params.offlineMode) {
-      const requestURL = event.request.url;
-      const possibleURLs = getPossibleURLs(requestURL);
-      for (let i = 0; i < possibleURLs.length; i += 1) {
-        const possibleURL = possibleURLs[i];
-        const cacheKey = controller.getCacheKeyForURL(possibleURL);
-        if (cacheKey) {
-          const cachedResponse = caches.match(cacheKey);
-          if (params.debug) {
-            console.log('[Docusaurus-PWA][SW]: serving cached asset', {
-              requestURL,
-              possibleURL,
-              possibleURLs,
-              cacheKey,
-              cachedResponse,
-            });
-          }
-          event.respondWith(cachedResponse);
-          break;
+        controller.addToCacheList(precacheManifest);
+        if (params.debug) {
+            console.log('[Docusaurus-PWA][SW]: addToCacheList', { precacheManifest });
         }
-      }
     }
-  });
-
-  self.addEventListener('message', async (event) => {
-    if (params.debug) {
-      console.log('[Docusaurus-PWA][SW]: message event', {
-        event,
-      });
-    }
-
-    const type = event.data && event.data.type;
-
-    if (type === 'SKIP_WAITING') {
-      self.skipWaiting();
-    }
-  });
+    await runSWCustomCode(params);
+    self.addEventListener('install', (event) => {
+        if (params.debug) {
+            console.log('[Docusaurus-PWA][SW]: install event', { event });
+        }
+        event.waitUntil(controller.install(event));
+    });
+    self.addEventListener('activate', (event) => {
+        if (params.debug) {
+            console.log('[Docusaurus-PWA][SW]: activate event', { event });
+        }
+        event.waitUntil(controller.activate(event));
+    });
+    self.addEventListener('fetch', async (event) => {
+        if (params.offlineMode) {
+            const requestURL = event.request.url;
+            const possibleURLs = getPossibleURLs(requestURL);
+            for (const possibleURL of possibleURLs) {
+                const cacheKey = controller.getCacheKeyForURL(possibleURL);
+                if (cacheKey) {
+                    const cachedResponse = caches.match(cacheKey);
+                    if (params.debug) {
+                        console.log('[Docusaurus-PWA][SW]: serving cached asset', {
+                            requestURL,
+                            possibleURL,
+                            possibleURLs,
+                            cacheKey,
+                            cachedResponse,
+                        });
+                    }
+                    event.respondWith(cachedResponse);
+                    break;
+                }
+            }
+        }
+    });
+    self.addEventListener('message', async (event) => {
+        if (params.debug) {
+            console.log('[Docusaurus-PWA][SW]: message event', { event });
+        }
+        const type = event.data?.type;
+        if (type === 'SKIP_WAITING') {
+            // lib def bug, see https://github.com/microsoft/TypeScript/issues/14877
+            self.skipWaiting();
+        }
+    });
 })();
 
 })();

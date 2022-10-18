@@ -15,10 +15,10 @@ jobs:
       - name: Get pip cache dir
         id: pip-get-cache
         run: |
-          echo "::set-output name=dir::$(pip cache dir)"
+          echo "pip_cache=$(pip cache dir)" >> $GITHUB_ENV
       - uses: actions/cache@v3
         with:
-          path: ${{ steps.pip-get-cache.outputs.dir }}
+          path: ${{ env.pip_cache }}
           key: deploy-${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
           restore-keys: |
             deploy-${{ runner.os }}-pip-

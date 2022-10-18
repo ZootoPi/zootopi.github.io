@@ -1,5 +1,11 @@
-/** @type {import('@docusaurus/types').DocusaurusConfig} */
-module.exports = {
+// @ts-check
+// Note: type annotations allow type checking and IDEs autocompletion
+
+const lightCodeTheme = require("prism-react-renderer/themes/github");
+const darkCodeTheme = require("prism-react-renderer/themes/dracula");
+
+/** @type {import('@docusaurus/types').Config} */
+const config = {
   title: "ZootoPi",
   tagline: "If you work, it will work!",
   url: "https://zootopi.dev",
@@ -7,64 +13,119 @@ module.exports = {
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/icons/icon-72x72.ico",
-  organizationName: "ZootoPi", // Usually your GitHub org/user name.
-  projectName: "zootopi.github.io", // Usually your repo name.
-  themeConfig: {
-    navbar: {
-      title: "ZootoPi",
-      logo: {
-        alt: "ZootoPi Logo",
-        src: "img/icons/icon-96x96.png",
-      },
-      items: [
-        {
-          type: "doc",
-          docId: "python/anaconda",
-          position: "left",
-          label: "Tutorials",
-        },
-        {
-          to: "project/",
-          activeBasePath: "project",
-          position: "left",
-          label: "Projects",
-        },
-        {
-          to: "certificate/",
-          activeBasePath: "certificate",
-          position: "left",
-          label: "Certificates",
-        },
-        {
-          to: "about",
-          position: "right",
-          label: "About",
-        },
-        {
-          to: "blog",
-          position: "right",
-          label: "Blog",
-        },
-        {
-          href: "https://github.com/zootopi",
-          label: "GitHub",
-          position: "right",
-        },
-      ],
-    },
-    footer: {
-      style: "dark",
-      copyright: `Copyright © ${new Date().getFullYear()} ZootoPi.`,
-    },
-    customField: {
-      footer_team: "ZootoPi team",
-      footer_team_url: "/",
-    },
+
+  // GitHub pages deployment config.
+  // If you aren't using GitHub pages, you don't need these.
+  organizationName: "zootopi", // Usually your GitHub org/user name.
+  projectName: "zootopi", // Usually your repo name.
+
+  // Even if you don't use internalization, you can use this field to set useful
+  // metadata like html lang. For example, if your site is Chinese, you may want
+  // to replace "en" with "zh-Hans".
+  i18n: {
+    defaultLocale: "en",
+    locales: ["en"],
   },
+  themeConfig:
+    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+    ({
+      navbar: {
+        title: "ZootoPi",
+        logo: {
+          alt: "ZootoPi Logo",
+          src: "img/icons/icon-96x96.png",
+        },
+        items: [
+          {
+            type: "doc",
+            docId: "python/anaconda",
+            position: "left",
+            label: "Tutorial",
+          },
+          {
+            to: "project/",
+            activeBasePath: "project",
+            position: "left",
+            label: "Projects",
+          },
+          {
+            to: "certificate/",
+            activeBasePath: "certificate",
+            position: "left",
+            label: "Certificates",
+          },
+          {
+            to: "about",
+            position: "right",
+            label: "About",
+          },
+          {
+            to: "blog",
+            position: "right",
+            label: "Blog",
+          },
+          {
+            href: "https://github.com/zootopi",
+            label: "GitHub",
+            position: "right",
+          },
+        ],
+      },
+      footer: {
+        style: "dark",
+        links: [
+          {
+            title: "Docs",
+            items: [
+              {
+                label: "Tutorial",
+                to: "/docs/intro",
+              },
+            ],
+          },
+          {
+            title: "Community",
+            items: [
+              {
+                label: "Stack Overflow",
+                href: "https://stackoverflow.com/questions/tagged/docusaurus",
+              },
+              {
+                label: "Discord",
+                href: "https://discordapp.com/invite/docusaurus",
+              },
+              {
+                label: "Twitter",
+                href: "https://twitter.com/docusaurus",
+              },
+            ],
+          },
+          {
+            title: "More",
+            items: [
+              {
+                label: "Blog",
+                to: "/blog",
+              },
+              {
+                label: "GitHub",
+                href: "https://github.com/facebook/docusaurus",
+              },
+            ],
+          },
+        ],
+        copyright: `Copyright © ${new Date().getFullYear()} ZootoPi.`,
+      },
+      prism: {
+        theme: lightCodeTheme,
+        darkTheme: darkCodeTheme,
+      },
+    }),
   presets: [
     [
-      "@docusaurus/preset-classic",
-      {
+      "classic",
+      /** @type {import('@docusaurus/preset-classic').Options} */
+      ({
         docs: {
           path: "../docs/tutorial",
           routeBasePath: "tutorial",
@@ -82,7 +143,7 @@ module.exports = {
           // Optional fields.
           anonymizeIP: true, // Should IPs be anonymized?
         },
-      },
+      }),
     ],
   ],
   plugins: [
@@ -139,3 +200,5 @@ module.exports = {
     ],
   ],
 };
+
+module.exports = config;

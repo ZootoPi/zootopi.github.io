@@ -4,7 +4,7 @@ import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import HomepageFeatures from "@site/src/components/HomepageFeatures";
-import { FaGithub } from "react-icons/all";
+import { FaGithub } from "react-icons/fa";
 
 import styles from "./index.module.css";
 

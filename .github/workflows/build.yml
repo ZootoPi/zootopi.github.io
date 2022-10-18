@@ -10,13 +10,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-python@v2
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
       - name: Get pip cache dir
         id: pip-get-cache
         run: |
           echo "::set-output name=dir::$(pip cache dir)"
-      - uses: actions/cache@v2
+      - uses: actions/cache@v3
         with:
           path: ${{ steps.pip-get-cache.outputs.dir }}
           key: deploy-${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
@@ -26,11 +26,11 @@ jobs:
         run: |
           pip install -r website/scripts/requirements.txt
           python website/scripts/parse_notebook.py
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
         with:
           cache: npm
           cache-dependency-path: "**/package-lock.json"
-      - uses: actions/cache@v2
+      - uses: actions/cache@v3
         id: npm-cache
         with:
           path: |
@@ -55,7 +55,7 @@ jobs:
         run: |
           cp .firebaserc build
           cp firebase.json build
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         with:
           name: website-build
           path: website/build
@@ -65,7 +65,7 @@ jobs:
     needs: build
     if: github.event_name != 'push'
     steps:
-      - uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@v3
         with:
           name: website-build
           path: website/build
@@ -89,7 +89,7 @@ jobs:
     needs: deploy-preview
     if: github.event_name != 'push'
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Audit URLs using Lighthouse
         id: lighthouse_audit
         uses: treosh/lighthouse-ci-action@v3
@@ -103,7 +103,7 @@ jobs:
           PR_NUMBER: ${{ github.event.pull_request.number}}
       - name: Format lighthouse score
         id: format_lighthouse_score
-        uses: actions/github-script@v3
+        uses: actions/github-script@v6
         with:
           github-token: ${{ secrets.BOT_TOKEN }}
           script: |
@@ -139,8 +139,8 @@ jobs:
     needs: build
     if: github.event_name != 'pull_request'
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/download-artifact@v2
+      - uses: actions/checkout@v3
+      - uses: actions/download-artifact@v3
         with:
           name: website-build
           path: website/build

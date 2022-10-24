@@ -10,15 +10,17 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-python@v2
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: "3.9"
       - name: Get pip cache dir
         id: pip-get-cache
         run: |
-          echo "::set-output name=dir::$(pip cache dir)"
-      - uses: actions/cache@v2
+          echo "pip_cache=$(pip cache dir)" >> $GITHUB_ENV
+      - uses: actions/cache@v3
         with:
-          path: ${{ steps.pip-get-cache.outputs.dir }}
+          path: ${{ env.pip_cache }}
           key: deploy-${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
           restore-keys: |
             deploy-${{ runner.os }}-pip-
@@ -26,11 +28,11 @@ jobs:
         run: |
           pip install -r website/scripts/requirements.txt
           python website/scripts/parse_notebook.py
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
         with:
           cache: npm
           cache-dependency-path: "**/package-lock.json"
-      - uses: actions/cache@v2
+      - uses: actions/cache@v3
         id: npm-cache
         with:
           path: |
@@ -55,7 +57,7 @@ jobs:
         run: |
           cp .firebaserc build
           cp firebase.json build
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         with:
           name: website-build
           path: website/build
@@ -65,7 +67,7 @@ jobs:
     needs: build
     if: github.event_name != 'push'
     steps:
-      - uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@v3
         with:
           name: website-build
           path: website/build
@@ -89,10 +91,10 @@ jobs:
     needs: deploy-preview
     if: github.event_name != 'push'
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Audit URLs using Lighthouse
         id: lighthouse_audit
-        uses: treosh/lighthouse-ci-action@v3
+        uses: treosh/lighthouse-ci-action@v9
         with:
           urls: |
             https://preview-$PR_NUMBER--zootopi.netlify.app/
@@ -103,7 +105,7 @@ jobs:
           PR_NUMBER: ${{ github.event.pull_request.number}}
       - name: Format lighthouse score
         id: format_lighthouse_score
-        uses: actions/github-script@v3
+        uses: actions/github-script@v6
         with:
           github-token: ${{ secrets.BOT_TOKEN }}
           script: |
@@ -127,7 +129,7 @@ jobs:
             core.setOutput("comment", comment);
       - name: Add Lighthouse stats as comment
         id: comment_to_pr
-        uses: marocchino/sticky-pull-request-comment@v2.0.0
+        uses: marocchino/sticky-pull-request-comment@v2.2.1
         with:
           GITHUB_TOKEN: ${{ secrets.BOT_TOKEN }}
           number: ${{ github.event.pull_request.number }}
@@ -139,13 +141,13 @@ jobs:
     needs: build
     if: github.event_name != 'pull_request'
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/download-artifact@v2
+      - uses: actions/checkout@v3
+      - uses: actions/download-artifact@v3
         with:
           name: website-build
           path: website/build
       - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@4.1.4
+        uses: JamesIves/github-pages-deploy-action@4.4.1
         with:
           branch: ${{ secrets.DEPLOYMENT_BRANCH }}
           folder: website/build

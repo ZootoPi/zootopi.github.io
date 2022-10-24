@@ -147,7 +147,7 @@ jobs:
           name: website-build
           path: website/build
       - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@4.4.1
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: ${{ secrets.DEPLOYMENT_BRANCH }}
           folder: website/build

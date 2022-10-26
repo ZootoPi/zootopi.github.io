@@ -72,7 +72,6 @@ const config = {
         ],
       },
       footer: {
-        style: "dark",
         links: [
           {
             title: "Community",
@@ -105,6 +104,13 @@ const config = {
             ],
           },
         ],
+        logo: {
+          alt: "Zootopi team logo",
+          width: 60,
+          height: 60,
+          src: "test",
+          href: "/",
+        },
         copyright: `Copyright © ${new Date().getFullYear()} ZootoPi.`,
       },
       prism: {

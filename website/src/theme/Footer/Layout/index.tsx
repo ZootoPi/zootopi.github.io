@@ -1,12 +1,15 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import clsx from "clsx";
-import type { Props } from "@theme/Footer/Layout";
 import { useColorMode } from "@docusaurus/theme-common";
-import Logo from "@site/src/components/Logo";
+import Tagline from "@site/src/theme/Footer/Tagline";
 import styles from "./index.module.css";
+export interface Props {
+  readonly links: ReactNode;
+  readonly logo: ReactNode;
+  readonly copyright: ReactNode;
+}
 
 export default function FooterLayout({
-  style,
   links,
   logo,
   copyright,
@@ -21,20 +24,19 @@ export default function FooterLayout({
       <div className="row">
         <div className="col col--4">
           <div className={clsx(styles.footerLogo, "col")}>
-            <Logo width="50px" height="50px" style={colorMode} />
-            {copyright && <span>{copyright}</span>}
+            {logo}
+            {copyright}
           </div>
         </div>
         <div className="col col--4">
-          <div className={styles.footerLinks}></div>
+          <div className="row">
+            <div className={clsx(styles.footerLinks, "col col--6")}></div>
+            <div className={clsx(styles.footerSocial, "col col--6")}></div>
+          </div>
         </div>
         <div className="col col--4">
           <div className={styles.footerTagline}>
-            <div>
-              <span>Made with </span>
-              <span>❤️</span>
-              <span> by ZootoPi team</span>
-            </div>
+            <Tagline />
           </div>
         </div>
       </div>

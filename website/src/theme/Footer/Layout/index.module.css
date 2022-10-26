@@ -21,6 +21,12 @@
   justify-content: flex-end;
 }
 
+.footerSocial {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
 .footerTagline {
   display: flex;
   justify-content: flex-end;

@@ -1,10 +1,21 @@
 import React from "react";
+import { useColorMode } from "@docusaurus/theme-common";
+
+type LogoProps = {
+  width?: string | number;
+  height?: string | number;
+  style?: string;
+};
 
 export default function Logo({
   width = "100%",
   height = "100%",
-  style = "light",
-}): JSX.Element {
+  style = "",
+}: LogoProps): JSX.Element {
+  const { colorMode } = useColorMode();
+  if (!style) {
+    style = colorMode;
+  }
   const background = style === "light" ? "#13172D" : "#F6F7F9";
   return (
     <svg

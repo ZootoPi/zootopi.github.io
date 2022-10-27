@@ -23,8 +23,12 @@
 
 .footerSocial {
   display: flex;
-  flex-direction: column;
   justify-content: flex-end;
+}
+
+.footerSocialContainer {
+  display: flex;
+  flex-direction: column;
 }
 
 .footerTagline {

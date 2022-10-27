@@ -74,19 +74,19 @@ const config = {
       footer: {
         links: [
           {
-            title: "Community",
+            title: "Page",
             items: [
               {
-                label: "Stack Overflow",
-                href: "https://stackoverflow.com/questions/tagged/docusaurus",
+                label: "Home",
+                href: "/",
               },
               {
-                label: "Discord",
-                href: "https://discordapp.com/invite/docusaurus",
+                label: "About",
+                href: "/about",
               },
               {
-                label: "Twitter",
-                href: "https://twitter.com/docusaurus",
+                label: "Blog",
+                href: "/blog",
               },
             ],
           },
@@ -94,12 +94,16 @@ const config = {
             title: "More",
             items: [
               {
-                label: "Blog",
-                to: "/blog",
+                label: "Tutorials",
+                to: "/tutorial/python/anaconda",
               },
               {
-                label: "GitHub",
-                href: "https://github.com/facebook/docusaurus",
+                label: "Projects",
+                href: "/project",
+              },
+              {
+                label: "Certificates",
+                href: "/certificate",
               },
             ],
           },

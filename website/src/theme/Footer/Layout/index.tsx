@@ -5,6 +5,7 @@ import { FaFacebook, FaGithub, FaYoutube } from "react-icons/fa";
 import Tagline from "@site/src/theme/Footer/Tagline";
 import styles from "./index.module.css";
 import IconLink from "@site/src/components/IconLink";
+import { useLocation } from "@docusaurus/router";
 export interface Props {
   readonly links: ReactNode;
   readonly logo: ReactNode;
@@ -17,12 +18,10 @@ export default function FooterLayout({
   copyright,
 }: Props): JSX.Element {
   const { colorMode } = useColorMode();
+  const location = useLocation();
+  const isHomepage = location.pathname === "/";
   return (
-    <footer
-      className={clsx(styles.footerHomepage, "footer", {
-        "footer--dark": colorMode === "dark",
-      })}
-    >
+    <footer className={clsx(isHomepage && styles.footerHomepage, "footer")}>
       <div className="row">
         <div className="col col--4">
           <div className={clsx(styles.footerLogo, "col")}>

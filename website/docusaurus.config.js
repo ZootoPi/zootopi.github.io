@@ -33,7 +33,8 @@ const config = {
         title: "ZootoPi",
         logo: {
           alt: "ZootoPi Logo",
-          src: "img/icons/icon-96x96.png",
+          src: "img/logo.svg",
+          srcDark: "img/logo-dark.svg",
         },
         items: [
           {

@@ -1,6 +1,5 @@
 import React, { ReactNode } from "react";
 import clsx from "clsx";
-import { useColorMode } from "@docusaurus/theme-common";
 import { FaFacebook, FaGithub, FaYoutube } from "react-icons/fa";
 import Tagline from "@site/src/theme/Footer/Tagline";
 import styles from "./index.module.css";
@@ -17,7 +16,6 @@ export default function FooterLayout({
   logo,
   copyright,
 }: Props): JSX.Element {
-  const { colorMode } = useColorMode();
   const location = useLocation();
   const isHomepage = location.pathname === "/";
   return (

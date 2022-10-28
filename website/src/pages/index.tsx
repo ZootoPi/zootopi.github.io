@@ -3,10 +3,12 @@ import clsx from "clsx";
 import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
-import HomepageFeatures from "@site/src/components/HomepageFeatures";
+import HomepageFeatures from "@site/src/components/Homepage/Features";
 import { FaGithub } from "react-icons/fa";
 
 import styles from "./index.module.css";
+import BigLogo from "../components/Homepage/BigLogo";
+import FeatureBackground from "../components/Homepage/Features/Background";
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
@@ -45,8 +47,21 @@ function HomepageHeader() {
 export default function Home(): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
   return (
-    <Layout title={`${siteConfig.title}`} description={`${siteConfig.tagline}`}>
-      {/* <HomepageHeader /> */}
+    <Layout
+      title={`${siteConfig.title}`}
+      description={`${siteConfig.tagline}`}
+      wrapperClassName={styles.homepageContainer}
+    >
+      <div className={styles.homepageWelcome}>
+        <div className={styles.homepageBigLogo}>
+          <BigLogo />
+        </div>
+      </div>
+      <div className={styles.homepageFeatureContainer}>
+        <div className={styles.homepageFeatureBackground}>
+          <FeatureBackground width="100%" />
+        </div>
+      </div>
     </Layout>
   );
 }

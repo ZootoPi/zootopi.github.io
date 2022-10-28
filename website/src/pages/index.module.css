@@ -1,73 +1,37 @@
-/**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
- */
-
-.heroTitle {
-  font-size: 5rem;
-}
-
-@media screen and (max-width: 966px) {
-  .heroTitle {
-    font-size: 3rem;
-  }
-}
-
-@media screen and (max-width: 576px) {
-  .heroTitle {
-    font-size: 2rem;
-  }
-}
-
-.heroTitle span {
-  color: #fed482;
-}
-
-.heroBanner {
-  padding: 4rem 0;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-
-@media screen and (max-width: 966px) {
-  .heroBanner {
-    padding: 2rem;
-  }
-}
-
-@media screen and (max-width: 576px) {
-  .heroBanner {
-    padding: 0.5rem;
-  }
-}
-
-.heroImage {
-  margin: 1rem;
-}
-
-.heroImage img {
+.homepageContainer {
   width: 100%;
-}
-
-.heroContainer {
+  height: 200vh;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  position: absolute;
+  top: 0;
 }
 
-.buttons {
+.homepageWelcome {
+  width: 100%;
+  height: 100vh;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  position: absolute;
+  top: 0;
 }
 
-.buttons a {
+.homepageBigLogo {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -99;
+}
+
+.homepageFeatureContainer {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  bottom: 0;
+}
+
+.homepageFeatureBackground {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
   display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.buttons div {
-  padding-right: 10px;
+  z-index: -99;
 }

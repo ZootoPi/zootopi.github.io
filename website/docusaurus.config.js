@@ -27,18 +27,18 @@ module.exports = {
           to: "project/",
           activeBasePath: "project",
           position: "left",
-          label: "Projects",
+          label: "Dự án",
         },
         {
           to: "certificate/",
           activeBasePath: "certificate",
           position: "left",
-          label: "Certificates",
+          label: "Chứng chỉ",
         },
         {
           to: "about",
           position: "right",
-          label: "About",
+          label: "Về chúng tớ",
         },
         {
           to: "blog",

@@ -3,7 +3,7 @@ import clsx from "clsx";
 import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import { FaGithub } from "react-icons/all";
+import { FaGithub } from "react-icons/fa";
 import styles from "./index.module.css";
 import HomepageFeatures from "../components/HomepageFeatures";
 

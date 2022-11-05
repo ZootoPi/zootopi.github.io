@@ -8,9 +8,6 @@ sidebar_label: Trích xuất thuật ngữ (p2)
 
 (Đang cập nhật)
 
-
-
-
 ## 2. Mô hình
 
 (Đang cập nhật)

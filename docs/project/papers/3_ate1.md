@@ -1,7 +1,5 @@
 ---
-id: Trích xuất thuật ngữ
-sidebar_position: 3
-slug: /
+sidebar_label: Trích xuất thuật ngữ (p1)
 ---
 
 # Trích xuất thuật ngữ Slovenia với XLM-Roberta

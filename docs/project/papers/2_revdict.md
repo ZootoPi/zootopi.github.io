@@ -1,14 +1,12 @@
 ---
-id: Từ điển đảo ngược
-sidebar_position: 2
-slug: /
+sidebar_label: Từ điển nghịch đảo
 ---
 
 # Đảo ngược từ điển sử dụng mô hình đơn ngữ và ngôn ngữ chéo
 
 ## 1. Giới thiệu
 
-Từ điển đảo ngược (reverse dictionary) là một tác vụ biến đổi chuỗi chú thích, diễn giải thành vectơ từ phù hợp về mặt ngữ nghĩa. Đây là một tác vụ rất hữu ích trong các ứng dụng thực tế như giải quyết vấn đề đầu môi, giúp người mới học ngôn ngữ, v.v. Trong phần này, chúng ta đánh giá hiệu suất mô hình Transformer kết hợp với LSTM ở 3 chế độ: đơn ngữ, đa ngữ và ngôn ngữ chéo. Các thử nghiệm này được thực thi trên tập dữ liệu CODWOE gồm 5 ngôn ngữ: tiếng Anh, tiếng Pháp, tiếng Ý, tiếng Tây Ban Nha và tiếng Nga.
+Từ điển nghịch đảo (reverse dictionary) là một tác vụ biến đổi chuỗi chú thích, diễn giải thành vectơ từ phù hợp về mặt ngữ nghĩa. Đây là một tác vụ rất hữu ích trong các ứng dụng thực tế như giải quyết vấn đề đầu môi, giúp người mới học ngôn ngữ, v.v. Trong phần này, chúng ta đánh giá hiệu suất mô hình Transformer kết hợp với LSTM ở 3 chế độ: đơn ngữ, đa ngữ và ngôn ngữ chéo. Các thử nghiệm này được thực thi trên tập dữ liệu CODWOE gồm 5 ngôn ngữ: tiếng Anh, tiếng Pháp, tiếng Ý, tiếng Tây Ban Nha và tiếng Nga.
 
 ## 2. Mô hình
 

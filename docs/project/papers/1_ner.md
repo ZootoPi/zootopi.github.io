@@ -1,7 +1,5 @@
 ---
-id: Nhận dạng thực thể
-sidebar_position: 1
-slug: /
+sidebar_label: Nhận dạng thực thể
 ---
 
 # Nhận dạng thực thể kết hợp đặc trưng ngữ cảnh và toàn cục

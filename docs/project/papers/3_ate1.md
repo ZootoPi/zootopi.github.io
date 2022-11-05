@@ -24,7 +24,7 @@ Ta chia tập dữ liệu thành 3 phần (huấn luyện - đánh giá - kiểm
 
 ## 3. Kết quả nghiên cứu
 
-Kết quả thử nghiệm được trình bày trong bảng dưới đây. Phương pháp của chúng ta có hiệu suất nhất quán với tất cả các cách kết hợp lĩnh vực khác nhau. Mô hình hoạt động tốt hơn trong việc trích xuất các thuật ngữ từ lĩnh vực Ngôn ngữ học và Thú y so với từ Cơ sinh học và Hóa học. Cách tiếp cận này vượt trội hơn so với mô hình đương thời áp dụng trên cùng tập dữ liệu.
+Kết quả thử nghiệm được trình bày trong bảng dưới đây. Phương pháp của chúng ta có hiệu suất nhất quán với tất cả các cách kết hợp lĩnh vực khác nhau. Mô hình hoạt động tốt hơn trong việc trích xuất từ lĩnh vực Ngôn ngữ học và Thú y so với từ Cơ sinh học và Hóa học. Cách tiếp cận này cũng vượt trội hơn so với mô hình đương thời áp dụng trên cùng tập dữ liệu.
 
 <center> <img src="./imgs/xlmr_res.png" width="250"/></center>
 

@@ -2,7 +2,7 @@
 sidebar_label: Trích xuất thuật ngữ (p1)
 ---
 
-# Trích xuất thuật ngữ Slovenia với XLM-Roberta
+# Trích xuất thuật ngữ Slovenia với XLM-R
 
 ## 1. Giới thiệu
 

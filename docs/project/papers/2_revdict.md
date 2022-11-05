@@ -12,14 +12,13 @@ Từ điển đảo ngược (reverse dictionary) là một tác vụ biến đ�
 
 ## 2. Mô hình
 
-Chúng ta bắt đầu bằng cách thử nghiệm với mô hình Transformer và coi đây như một mô hình nền rồi thêm một lớp LSTM (Mô hình 1), một lớp BiLSTM (Mô hình 2), và kết hợp dự đoán từ hai lớp được đề cập này (Mô hình 3) với 3 chế độ: đơn ngữ, đa ngữ, ngôn ngữ chéo. Tổng thể kiến trúc là
-được trình bày trong hình dưới đây.
+Chúng ta bắt đầu bằng cách thử nghiệm với mô hình Transformer và coi đây như một mô hình nền rồi thêm một lớp LSTM (Mô hình 1), một lớp BiLSTM (Mô hình 2), và kết hợp dự đoán từ hai lớp được đề cập này (Mô hình 3) với 3 chế độ: đơn ngữ, đa ngữ, ngôn ngữ chéo. Tổng thể kiến trúc được trình bày trong hình dưới đây.
 
 ![Kiến trúc tổng quan](./imgs/revdict_arch.png)
 
 Thử nghiệm sử dụng Pytorch và được triển khai trên Google Colab. Kết quả thử nghiệm được đánh giá thông qua 3 chỉ số đánh giá: MSE, Cosine similarity, Cosine ranking.
 
-## 3. Kết quả
+## 3. Kết quả nghiên cứu
 
 Kết quả thử nghiệm và đánh giá tham khảo thêm tại bài báo [JSI at SemEval-2022 Task 1: CODWOE-Reverse Dictionary: Monolingual and cross-lingual approaches](https://aclanthology.org/2022.semeval-1.12.pdf). Để triển khai lại, tham khảo mã nguồn tại [codwoe2021](https://github.com/honghanhh/codwoe2021).
 

@@ -13,6 +13,7 @@ sidebar_label: Trích xuất thuật ngữ (p2)
 ## 2. Mô hình
 
 (Đang cập nhật)
+
 <!-- ![Cơ chế nhãn I-O-B](./imgs/xlmr_ex.png)
 
 <center> <img src="./imgs/xlmr_arch.png" width="250"/></center> -->

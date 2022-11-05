@@ -33,8 +33,6 @@ Khoá học bao gồm 4 khoá nhỏ:
 
 Trên thang Cơ bản - Trung cấp - Nâng cao, ZootoPi đánh giá đây là 1 khoá học Nâng Cao. Những bạn chưa có nền tảng về lập trình cơ bản hay khoa học dữ liệu nên học trước khoá [IBM Data Science Professional Certificate](https://www.coursera.org/professional-certificates/ibm-data-science) để dễ dàng tiếp thu kiến thức trong khoá học này.
 
-Tuỳ vào tốc độ và trải nghiệm học của mỗi người, cùng 1 khoá học thời gian học sẽ có những khác biệt. Chứng chỉ trên Coursera có 1 lợi thế đó là thời gian linh hoạt nên bạn hoàn toàn có thể tuỳ chỉnh lộ trình học phù hợp với bạn nhất.
-
 Dưới đây là 1 số tổng hợp về thông tin các khoá con giúp dễ dàng nắm được lộ trình học và tiện sắp xếp thời gian.
 
 ### 3.1 Khoá 1
@@ -80,5 +78,7 @@ Dưới đây là 1 số tổng hợp về thông tin các khoá con giúp dễ 
 - Kiến thức:
   - Thực hành capstone project để đánh giá kiến thức đã học được trong 3 khoá trên.
 - Thời gian: 9 tiếng
+
+Tuỳ vào tốc độ và trải nghiệm học của mỗi người, cùng 1 khoá học thời gian học sẽ có những khác biệt. Chứng chỉ trên Coursera có 1 lợi thế đó là thời gian linh hoạt nên bạn hoàn toàn có thể tuỳ chỉnh lộ trình học phù hợp với bạn nhất.
 
 Chúc các bạn học tập vui vẻ ^^!

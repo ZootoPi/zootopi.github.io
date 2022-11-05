@@ -23,6 +23,7 @@ sidebar_label: Trích xuất thuật ngữ (p2)
 ## 3. Kết quả nghiên cứu
 
 (Đang cập nhật)
+
 <!-- <center> <img src="./imgs/xlmr_res.png" width="250"/></center> -->
 
 Kết quả thử nghiệm và phân tích chi tiết tham khảo thêm tại bài báo [Can Cross-Domain Term Extraction Benefit from Cross-lingual Transfer?](https://link.springer.com/chapter/10.1007/978-3-031-18840-4_26). Để triển khai lại, tham khảo mã nguồn tại [ate-2022](https://github.com/honghanhh/ate-2022).

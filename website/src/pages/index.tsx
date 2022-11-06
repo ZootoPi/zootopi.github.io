@@ -14,40 +14,6 @@ import NextPageIcon from "../components/Homepage/Welcome/NextPageIcon";
 import TagLine from "../components/Homepage/Welcome/TagLine";
 import SocialButton from "../components/Homepage/Welcome/SocialButton";
 
-function HomepageHeader() {
-  const { siteConfig } = useDocusaurusContext();
-  return (
-    <header className={clsx("hero hero--primary", styles.heroBanner)}>
-      <div className="container">
-        <div className="row">
-          <div className={clsx(styles.heroContainer, "col")}>
-            <h1 className={styles.heroTitle}>
-              <span>Share </span>
-              what we
-              <span> love ❤️</span>
-            </h1>
-            <div className={styles.buttons}>
-              <Link
-                className="button button--secondary button--lg row"
-                href="https://github.com/zootopi"
-              >
-                <div>We in </div>
-                <FaGithub />
-              </Link>
-            </div>
-            <HomepageFeatures />
-          </div>
-          <div className="col">
-            <div className={styles.heroImage}>
-              <img alt="Zootopi team" src="img/zootopi_team.svg" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
-  );
-}
-
 export default function Home(): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
   return (
@@ -61,15 +27,7 @@ export default function Home(): JSX.Element {
         <div className={styles.homepageBigLogo}>
           <BigLogo />
         </div>
-        <div
-          style={{
-            flex: 1,
-            display: "flex",
-            justifyContent: "center",
-            flexDirection: "column",
-            width: "50%",
-          }}
-        >
+        <div className={styles.homepageWelcomeContent}>
           <TagLine paddingLeft="60px" />
           <SocialButton marginTop="80px" />
         </div>
@@ -81,7 +39,12 @@ export default function Home(): JSX.Element {
         <div className={styles.homepageFeatureBackground}>
           <FeatureBackground />
         </div>
-        <div style={{ height: "100%" }}></div>
+        <div style={{ height: "100%" }}>
+          <div className={styles.homepageFeatureTitle}>
+            What we do and what we share
+          </div>
+          <HomepageFeatures />
+        </div>
         <Footer />
       </div>
     </Layout>

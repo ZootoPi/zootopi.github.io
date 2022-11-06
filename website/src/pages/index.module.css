@@ -21,11 +21,18 @@
   width: 50%;
 }
 
-.homepageNextPage {
-  height: 200px;
+.homepageWelcomeContent {
+  flex: 1;
   display: flex;
   justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  width: 50%;
+}
+
+.homepageNextPage {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
 }
 
 .homepageFeatureContainer {
@@ -42,4 +49,11 @@
   width: 100%;
   display: flex;
   z-index: -99;
+}
+
+.homepageFeatureTitle {
+  font-size: 4rem;
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
 }

@@ -5,12 +5,18 @@
   width: 100%;
 }
 
-.featureElem {
-  border: 1px dashed var(--ifm-color-primary);
-  border-radius: 3px;
-  margin-right: 1rem;
-  margin-top: 1rem;
+.featureContainer {
+  margin-top: 100px;
   position: relative;
+}
+
+.featureElem {
+  border-radius: 3px;
+  background: #fff;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  padding-right: 15px;
+  height: 200px;
 }
 
 .featureElem:hover {

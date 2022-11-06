@@ -44,21 +44,21 @@ const config = {
             label: "Tutorial",
           },
           {
-            to: "project/",
+            to: "project/papers/ner/",
             activeBasePath: "project",
             position: "left",
-            label: "Projects",
+            label: "Dự án",
           },
           {
             to: "certificate/",
             activeBasePath: "certificate",
             position: "left",
-            label: "Certificates",
+            label: "Chứng chỉ",
           },
           {
             to: "about",
             position: "right",
-            label: "About",
+            label: "Về chúng tớ",
           },
           {
             to: "blog",
@@ -100,7 +100,7 @@ const config = {
               },
               {
                 label: "Projects",
-                href: "/project",
+                href: "/project/papers/ner/",
               },
               {
                 label: "Certificates",

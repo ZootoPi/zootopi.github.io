@@ -12,10 +12,6 @@ sidebar_label: Trích xuất thuật ngữ (p2)
 
 (Đang cập nhật)
 
-(Đang cập nhật)
-
-<center> <img src="./imgs/xlmr_arch.png" width="250"/></center> -->
-
 ## 3. Kết quả nghiên cứu
 
 (Đang cập nhật)

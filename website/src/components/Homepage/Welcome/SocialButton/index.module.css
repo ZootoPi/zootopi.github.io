@@ -1,8 +1,8 @@
 .button {
-  height: 50px;
   font-size: 1.25rem;
   border-radius: 10px;
   border: 0;
+  padding: 15px;
 }
 
 .IconLink {

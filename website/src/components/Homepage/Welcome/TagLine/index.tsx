@@ -9,24 +9,28 @@ export default function TagLine({ ...style }): JSX.Element {
         ...style,
       }}
     >
-      <span
-        className={styles.tagLineText}
-        style={{
-          color: "#FAD007",
-        }}
-      >
-        Share{" "}
-      </span>
-      <span className={styles.tagLineText}>what </span>
-      <span className={styles.tagLineText}>we </span>
-      <span
-        className={styles.tagLineText}
-        style={{
-          color: "#EF5123",
-        }}
-      >
-        love!
-      </span>
+      <div>
+        <span
+          className={styles.tagLineText}
+          style={{
+            color: "#FAD007",
+          }}
+        >
+          Share{" "}
+        </span>
+        <span className={styles.tagLineText}>what </span>
+      </div>
+      <div>
+        <span className={styles.tagLineText}>we </span>
+        <span
+          className={styles.tagLineText}
+          style={{
+            color: "#EF5123",
+          }}
+        >
+          love!
+        </span>
+      </div>
     </div>
   );
 }

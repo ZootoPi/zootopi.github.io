@@ -6,7 +6,7 @@
 }
 
 .featureContainer {
-  margin-top: 100px;
+  padding: 0 4rem;
   position: relative;
 }
 
@@ -17,6 +17,7 @@
   position: relative;
   padding-right: 15px;
   height: 200px;
+  display: flex;
 }
 
 .featureElem:hover {

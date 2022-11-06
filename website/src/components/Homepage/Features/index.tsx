@@ -1,12 +1,15 @@
 import React from "react";
 import clsx from "clsx";
 import styles from "./index.module.css";
+import CuCaiIcon from "./cucai";
+import GaIcon from "./ga";
+import BoIcon from "./bo";
 
 type FeatureItem = {
   title: string;
   description: string;
   url: string;
-  icon: string;
+  icon: JSX.Element;
 };
 
 const FeatureList: FeatureItem[] = [
@@ -15,19 +18,19 @@ const FeatureList: FeatureItem[] = [
     // Svg: require('../../static/img/undraw_docusaurus_mountain.svg').default,
     description: "Hands-on assignments in all levels.",
     url: "tutorial/python/anaconda",
-    icon: "/img/cucai.svg",
+    icon: <CuCaiIcon />,
   },
   {
     title: "Projects",
     description: "Real-world fantastic projects by us",
     url: "project",
-    icon: "/img/ga.svg",
+    icon: <BoIcon />,
   },
   {
     title: "Certificates",
     description: "Reviews about courses and certificates.",
     url: "certificate",
-    icon: "/img/bo.svg",
+    icon: <BoIcon />,
   },
 ];
 
@@ -42,16 +45,16 @@ function Feature({ title, description, url, icon }: FeatureItem) {
         >
           <div
             style={{
-              width: "120px",
-              maxHeight: "100%",
+              width: "100px",
+              margin: "10px",
             }}
           >
-            <img src={icon} style={{ maxWidth: "100%", maxHeight: "100%" }} />
+            {icon}
           </div>
 
           <div
             style={{
-              flex: 1,
+              width: "300px",
             }}
           >
             <p
@@ -65,7 +68,7 @@ function Feature({ title, description, url, icon }: FeatureItem) {
             </p>
             <p
               style={{
-                fontSize: "1.2rem",
+                fontSize: "1.4rem",
               }}
             >
               {description}
@@ -86,6 +89,7 @@ export default function HomepageFeatures(): JSX.Element {
         alignItems: "center",
         padding: "2rem 0",
         width: "100%",
+        marginTop: "100px",
       }}
     >
       <div

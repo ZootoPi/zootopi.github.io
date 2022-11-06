@@ -31,7 +31,15 @@ export default function Home(): JSX.Element {
           <TagLine paddingLeft="60px" />
           <SocialButton marginTop="80px" />
         </div>
-        <div className={styles.homepageNextPage}>
+        <div
+          className={styles.homepageNextPage}
+          onClick={() => {
+            window.scrollTo({
+              top: window.innerHeight,
+              behavior: "smooth",
+            });
+          }}
+        >
           <NextPageIcon width="30px" />
         </div>
       </div>

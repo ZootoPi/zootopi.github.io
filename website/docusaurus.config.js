@@ -24,7 +24,7 @@ module.exports = {
           label: "Tutorials",
         },
         {
-          to: "project/",
+          to: "project/papers/ner/",
           activeBasePath: "project",
           position: "left",
           label: "Dự án",

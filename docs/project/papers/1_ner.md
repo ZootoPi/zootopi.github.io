@@ -1,10 +1,8 @@
 ---
-id: Nhận dạng thực thể
-sidebar_position: 1
-slug: /
+sidebar_label: Nhận dạng thực thể
 ---
 
-# Nhận dạng thực thể kết hợp đặc trưng ngữ cảnh và toàn cục
+# 01. Nhận dạng thực thể kết hợp đặc trưng ngữ cảnh và toàn cục
 
 ## 1. Giới thiệu
 
@@ -48,4 +46,4 @@ Tham khảo bài báo [Named Entity Recognition Architecture Combining Contextua
 
 ## 4. Tham khảo
 
-Hanh, Tran Thi Hong, et al. "Named Entity Recognition Architecture Combining Contextual and Global Features." International Conference on Asian Digital Libraries. Springer, Cham, 2021.
+Hanh, Tran Thi Hong, et al. "[Named Entity Recognition Architecture Combining Contextual and Global Features](https://link.springer.com/chapter/10.1007/978-3-030-91669-5_21)." International Conference on Asian Digital Libraries. Springer, Cham, 2021.

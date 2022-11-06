@@ -23,7 +23,7 @@ const FeatureList: FeatureItem[] = [
   {
     title: "Projects",
     description: "Real-world fantastic projects by us",
-    url: "project",
+    url: "project/papers/ner",
     icon: <BoIcon />,
   },
   {
@@ -54,7 +54,8 @@ function Feature({ title, description, url, icon }: FeatureItem) {
 
           <div
             style={{
-              width: "300px",
+              maxWidth: "300px",
+              flex: 1,
             }}
           >
             <p

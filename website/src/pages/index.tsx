@@ -7,8 +7,12 @@ import HomepageFeatures from "@site/src/components/Homepage/Features";
 import { FaGithub } from "react-icons/fa";
 
 import styles from "./index.module.css";
-import BigLogo from "../components/Homepage/BigLogo";
+import BigLogo from "../components/Homepage/Welcome/BigLogo";
 import FeatureBackground from "../components/Homepage/Features/Background";
+import Footer from "@theme/Footer";
+import NextPageIcon from "../components/Homepage/Welcome/NextPageIcon";
+import TagLine from "../components/Homepage/Welcome/TagLine";
+import SocialButton from "../components/Homepage/Welcome/SocialButton";
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
@@ -51,16 +55,34 @@ export default function Home(): JSX.Element {
       title={`${siteConfig.title}`}
       description={`${siteConfig.tagline}`}
       wrapperClassName={styles.homepageContainer}
+      noFooter
     >
       <div className={styles.homepageWelcome}>
         <div className={styles.homepageBigLogo}>
           <BigLogo />
         </div>
+        <div
+          style={{
+            flex: 1,
+            display: "flex",
+            justifyContent: "center",
+            flexDirection: "column",
+            width: "50%",
+          }}
+        >
+          <TagLine paddingLeft="60px" />
+          <SocialButton marginTop="80px" />
+        </div>
+        <div className={styles.homepageNextPage}>
+          <NextPageIcon width="30px" />
+        </div>
       </div>
       <div className={styles.homepageFeatureContainer}>
         <div className={styles.homepageFeatureBackground}>
-          <FeatureBackground width="100%" />
+          <FeatureBackground />
         </div>
+        <div style={{ height: "100%" }}></div>
+        <Footer />
       </div>
     </Layout>
   );

@@ -1,0 +1,16 @@
+.button {
+  height: 50px;
+  font-size: 1.25rem;
+  border-radius: 10px;
+  border: 0;
+}
+
+.IconLink {
+  display: flex;
+  align-items: center;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+}

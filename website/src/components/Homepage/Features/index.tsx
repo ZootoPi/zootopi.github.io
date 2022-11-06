@@ -69,6 +69,7 @@ function Feature({ title, description, url, icon }: FeatureItem) {
             <p
               style={{
                 fontSize: "1.4rem",
+                color: "#000",
               }}
             >
               {description}

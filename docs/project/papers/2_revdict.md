@@ -2,7 +2,7 @@
 sidebar_label: Từ điển nghịch đảo
 ---
 
-# Đảo ngược từ điển sử dụng mô hình đơn ngữ và ngôn ngữ chéo
+# 02. Nghịch đảo từ điển sử dụng mô hình đơn ngữ và ngôn ngữ chéo
 
 ## 1. Giới thiệu
 

@@ -2,7 +2,7 @@
 sidebar_label: Nhận dạng thực thể
 ---
 
-# Nhận dạng thực thể kết hợp đặc trưng ngữ cảnh và toàn cục
+# 01. Nhận dạng thực thể kết hợp đặc trưng ngữ cảnh và toàn cục
 
 ## 1. Giới thiệu
 

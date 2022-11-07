@@ -21,8 +21,11 @@
 }
 
 .featureElem:hover {
-  background-color: var(--ifm-color-primary);
-  color: var(--ifm-color-black);
+  background-color: #efecf2;
+}
+
+[data-theme="dark"] .featureElem:hover {
+  background-color: #4776ba;
 }
 
 .featureElem a {

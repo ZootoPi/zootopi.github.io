@@ -1,8 +1,8 @@
 ---
-sidebar_label: Từ điển nghịch đảo
+sidebar_label: 02. Từ điển nghịch đảo
 ---
 
-# 02. Nghịch đảo từ điển sử dụng mô hình đơn ngữ và ngôn ngữ chéo
+# Nghịch đảo từ điển sử dụng mô hình đơn ngữ và ngôn ngữ chéo
 
 ## 1. Giới thiệu
 

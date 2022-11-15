@@ -12,7 +12,7 @@ const FeatureList = [
   {
     title: "Projects",
     description: "Real-world fantastic projects by us",
-    url: "project",
+    url: "project/papers/ner/",
   },
   {
     title: "Certificates",

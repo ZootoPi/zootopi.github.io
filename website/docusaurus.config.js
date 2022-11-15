@@ -24,21 +24,21 @@ module.exports = {
           label: "Tutorials",
         },
         {
-          to: "project/",
+          to: "project/papers/ner/",
           activeBasePath: "project",
           position: "left",
-          label: "Projects",
+          label: "Dự án",
         },
         {
           to: "certificate/",
           activeBasePath: "certificate",
           position: "left",
-          label: "Certificates",
+          label: "Chứng chỉ",
         },
         {
           to: "about",
           position: "right",
-          label: "About",
+          label: "Về chúng tớ",
         },
         {
           to: "blog",
@@ -60,11 +60,6 @@ module.exports = {
       footer_team: "ZootoPi team",
       footer_team_url: "/",
     },
-    gtag: {
-      trackingID: "G-LFH9JTFMHQ",
-      // Optional fields.
-      anonymizeIP: true, // Should IPs be anonymized?
-    },
   },
   presets: [
     [
@@ -81,6 +76,11 @@ module.exports = {
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
+        },
+        gtag: {
+          trackingID: "G-LFH9JTFMHQ",
+          // Optional fields.
+          anonymizeIP: true, // Should IPs be anonymized?
         },
       },
     ],

@@ -33,7 +33,8 @@
 }
 
 .pi {
-  max-width: 300px;
+  max-width: 60%;
+  max-height: 90%;
 }
 
 @media screen and (max-width: 1200px) {

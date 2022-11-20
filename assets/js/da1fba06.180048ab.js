@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkzootopi=self.webpackChunkzootopi||[]).push([[2467],{2699:e=>{e.exports=JSON.parse('{"name":"docusaurus-plugin-content-docs","id":"certificate"}')}}]);

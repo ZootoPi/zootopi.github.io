@@ -7,3 +7,9 @@
 .footerLogoLink:hover {
   opacity: 1;
 }
+
+@media screen and (max-width: 996px) {
+  .footerLogoLink {
+    display: none;
+  }
+}

@@ -49,7 +49,14 @@ export default function Home(): JSX.Element {
         <div className={styles.homepageFeatureBackground}>
           <FeatureBackground />
         </div>
-        <div style={{ height: "100%", padding: "2rem" }}>
+        <div
+          style={{
+            height: "100%",
+            padding: "2rem",
+            display: "flex",
+            flexDirection: "column",
+          }}
+        >
           <div className={styles.homepageFeatureTitle}>
             What we do and what we share
           </div>

@@ -65,6 +65,11 @@
     padding-left: 2rem;
     padding-right: 2rem;
   }
+
+  .footerHomepage {
+    padding-bottom: 0.5rem;
+  }
+
   .footerLogo {
     order: 2;
   }

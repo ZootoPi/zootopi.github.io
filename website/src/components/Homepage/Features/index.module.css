@@ -1,5 +1,6 @@
 .section {
   display: flex;
+  flex: 1;
   align-items: center;
   justify-content: center;
   width: 100%;
@@ -83,5 +84,13 @@
   .featureContainer {
     padding-top: 1rem;
     padding-bottom: 1rem;
+  }
+
+  .featureElemImage {
+    width: 70px;
+  }
+
+  .featureElem {
+    height: 100%;
   }
 }

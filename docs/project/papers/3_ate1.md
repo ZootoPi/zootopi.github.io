@@ -16,7 +16,7 @@ Ta coi trích xuất thuật ngữ như một tác vụ mà mô hình sẽ trả
 
 Trong các thử nghiệm của mình, ta sử dụng XLM-R, mô hình đa ngôn ngữ được huấn luyện trước để tận dụng tri ​​thức chung mà mô hình thu được trong quá trình huấn luyện trước trên kho dữ liệu đa ngôn ngữ khổng lồ. Tổng thể kiến trúc được trình bày trong hình dưới đây.
 
-<center> <img src="./imgs/xlmr_arch.png" width="250"/></center>
+![kiến trúc](./imgs/xlmr_arch.png)
 
 Ta chia tập dữ liệu thành 3 phần (huấn luyện - đánh giá - kiểm thử) và thử nghiệm học chuyển giao tri ​​thức từ lĩnh vực này sang lĩnh vực khác. Do đó, mô hình được tỉnh chỉnh với 2 lĩnh vực (ví dụ: Cơ sinh học, Hóa học), đánh giá trên lĩnh vực thứ ba (ví dụ: Thú y) và kiểm thử trên lĩnh vực còn lại (ví dụ: Ngôn ngữ học). Điều này cho phép ta đánh giá khả năng chuyển giao tri ​​thức của mô hình. Kết quả thử nghiệm được đánh giá thông qua 3 chỉ số đánh giá: Precision, Recall, F1-score.
 
@@ -24,7 +24,7 @@ Ta chia tập dữ liệu thành 3 phần (huấn luyện - đánh giá - kiểm
 
 Kết quả thử nghiệm được trình bày trong bảng dưới đây. Phương pháp của chúng ta có hiệu suất nhất quán với tất cả các cách kết hợp lĩnh vực khác nhau. Mô hình hoạt động tốt hơn trong việc trích xuất từ lĩnh vực Ngôn ngữ học và Thú y so với từ Cơ sinh học và Hóa học. Cách tiếp cận này cũng vượt trội hơn so với mô hình đương thời áp dụng trên cùng tập dữ liệu.
 
-<center> <img src="./imgs/xlmr_res.png" width="250"/></center>
+![kết quả](./imgs/xlmr_res.png)
 
 Kết quả thử nghiệm và phân tích chi tiết tham khảo thêm tại bài báo [A Transformer-based Sequence-labeling Approach to the Slovenian Cross-domain Automatic Term Extraction](https://nl.ijs.si/jtdh22/pdf/JTDH2022_Tran-et-al_A-Transformer-based-Sequence-labeling-Approach-to-the-Slovenian-Cross-domain-Automatic-Term-Extraction.pdf). Để triển khai lại, tham khảo mã nguồn tại [sdjt-ate](https://github.com/honghanhh/sdjt-ate).
 

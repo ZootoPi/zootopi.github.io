@@ -10,7 +10,7 @@ type Props = {
 
 export default function IconLink({ icon, text, href }: Props): JSX.Element {
   return (
-    <a href={href} className={clsx("footer__link-item", styles.IconLink)}>
+    <a href={href} className={clsx(styles.IconLink, "footer__link-item")}>
       {icon}
       {icon && <div style={{ width: "5px" }} />}
       {text}

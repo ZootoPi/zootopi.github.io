@@ -14,3 +14,13 @@
   top: 50%;
   transform: translateY(-50%);
 }
+
+@media screen and (max-width: 600px) {
+  .item1 {
+    width: 80%;
+  }
+
+  .item2 {
+    width: 100%;
+  }
+}

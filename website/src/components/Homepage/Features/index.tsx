@@ -17,13 +17,13 @@ const FeatureList: FeatureItem[] = [
     title: "Tutorials",
     // Svg: require('../../static/img/undraw_docusaurus_mountain.svg').default,
     description: "Hands-on assignments in all levels.",
-    url: "tutorial/python/anaconda",
+    url: "tutorial/python",
     icon: <CuCaiIcon />,
   },
   {
     title: "Projects",
     description: "Real-world fantastic projects by us",
-    url: "project/papers/ner",
+    url: "project/papers",
     icon: <GaIcon />,
   },
   {

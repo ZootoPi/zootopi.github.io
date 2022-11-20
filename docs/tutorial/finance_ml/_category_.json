@@ -1,4 +1,9 @@
 {
   "label": "Học máy trong tài chính",
-  "position": 2
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "title": "Học máy trong tài chính",
+    "slug": "/finance_ml"
+  }
 }

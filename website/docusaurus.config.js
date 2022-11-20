@@ -97,11 +97,11 @@ const config = {
             items: [
               {
                 label: "Tutorials",
-                to: "/tutorial/python/anaconda",
+                to: "/tutorial/python",
               },
               {
                 label: "Projects",
-                href: "/project/papers/ner/",
+                href: "/project/papers",
               },
               {
                 label: "Certificates",

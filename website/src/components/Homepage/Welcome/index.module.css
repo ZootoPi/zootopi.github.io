@@ -1,0 +1,76 @@
+.homepageBigLogo {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -99;
+  width: 100%;
+  height: 100%;
+}
+
+.homepageWelcomeContent {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  /* width: 50%; */
+  margin: 60px;
+}
+
+.homepageWelcomeSocialButton {
+  margin-top: 80px;
+}
+
+.homepageNextPage {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.piContainer {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.pi {
+  max-width: 300px;
+}
+
+@media screen and (max-width: 1200px) {
+  .homepageNextPage {
+    display: none;
+  }
+
+  .homepageWelcomeSocialButton {
+    margin-top: 30px;
+  }
+
+  .homepageWelcomeContent {
+    margin: 20px;
+  }
+}
+
+@media screen and (max-width: 996px) {
+  .piContainer {
+    flex: none;
+    justify-content: flex-end;
+  }
+
+  .pi {
+    max-width: 200px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .homepageWelcomeContent {
+    flex-direction: column;
+  }
+
+  .piContainer {
+    margin-top: 10px;
+  }
+
+  .pi {
+    max-width: 200px;
+  }
+}

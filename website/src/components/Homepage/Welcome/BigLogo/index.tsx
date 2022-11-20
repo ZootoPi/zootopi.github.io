@@ -22,9 +22,6 @@ export default function BigLogo({
       <div className={styles.background}>
         <Background />
       </div>
-      {/* <div className={styles.pi}>
-        <Pi />
-      </div> */}
     </div>
   );
 }

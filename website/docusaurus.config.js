@@ -38,13 +38,13 @@ const config = {
         },
         items: [
           {
-            type: "doc",
-            docId: "python/anaconda",
+            to: "tutorial/python",
+            activeBasePath: "tutorial",
             position: "left",
             label: "Tutorial",
           },
           {
-            to: "project/papers/ner/",
+            to: "project/papers",
             activeBasePath: "project",
             position: "left",
             label: "Dự án",

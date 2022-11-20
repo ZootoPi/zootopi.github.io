@@ -1,13 +1,18 @@
-.features {
+.section {
   display: flex;
   align-items: center;
-  padding: 2rem 0;
+  justify-content: center;
   width: 100%;
+}
+
+.featureList {
+  display: flex;
+  justify-content: center;
 }
 
 .featureContainer {
   padding: 0 4rem;
-  position: relative;
+  max-width: 450px;
 }
 
 .featureElem {
@@ -36,6 +41,47 @@
   right: 0;
 }
 
+.featureElemContainer {
+  display: flex;
+}
+
+.featureElemImage {
+  width: 100px;
+  margin: 10px;
+}
+
+.featureElemText {
+  flex: 1;
+}
+
 .featureTitle {
-  margin-top: 1rem;
+  color: #4776ba;
+  font-size: 1.7rem;
+  font-weight: 500;
+}
+
+.featureDescription {
+  color: #000;
+  font-size: 1.2rem;
+}
+
+@media screen and (max-width: 1366px) {
+  .featureContainer {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .featureContainer {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+@media screen and (max-width: 996px) {
+  .featureContainer {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
 }

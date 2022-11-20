@@ -28,8 +28,10 @@ export default function Home(): JSX.Element {
           <BigLogo />
         </div>
         <div className={styles.homepageWelcomeContent}>
-          <TagLine paddingLeft="60px" />
-          <SocialButton marginTop="80px" />
+          <TagLine />
+          <div className={styles.homepageWelcomeSocialButton}>
+            <SocialButton />
+          </div>
         </div>
         <div
           className={styles.homepageNextPage}
@@ -47,7 +49,7 @@ export default function Home(): JSX.Element {
         <div className={styles.homepageFeatureBackground}>
           <FeatureBackground />
         </div>
-        <div style={{ height: "100%" }}>
+        <div style={{ height: "100%", padding: "2rem" }}>
           <div className={styles.homepageFeatureTitle}>
             What we do and what we share
           </div>

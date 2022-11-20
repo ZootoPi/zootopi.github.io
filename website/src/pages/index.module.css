@@ -18,7 +18,8 @@
   top: 0;
   right: 0;
   z-index: -99;
-  width: 50%;
+  width: 55%;
+  min-width: 750px;
 }
 
 .homepageWelcomeContent {
@@ -27,6 +28,11 @@
   justify-content: center;
   flex-direction: column;
   width: 50%;
+  margin: 60px;
+}
+
+.homepageWelcomeSocialButton {
+  margin-top: 80px;
 }
 
 .homepageNextPage {
@@ -56,4 +62,39 @@
   display: flex;
   justify-content: center;
   margin-top: 100px;
+  text-align: center;
+}
+
+@media screen and (max-width: 1200px) {
+  .homepageNextPage {
+    display: none;
+  }
+
+  .homepageWelcome {
+    height: 100%;
+    margin-bottom: 300px;
+  }
+
+  .homepageFeatureContainer {
+    height: 100%;
+  }
+
+  .homepageWelcomeContent {
+    width: 100%;
+    margin: 0;
+  }
+
+  .homepageWelcomeSocialButton {
+    margin-top: 30px;
+  }
+
+  .homepageBigLogo {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 996px) {
+  .homepageFeatureTitle {
+    font-size: 3rem;
+  }
 }

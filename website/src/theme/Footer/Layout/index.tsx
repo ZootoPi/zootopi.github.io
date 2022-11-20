@@ -20,43 +20,35 @@ export default function FooterLayout({
   const isHomepage = location.pathname === "/";
   return (
     <footer className={clsx(isHomepage && styles.footerHomepage, "footer")}>
-      <div className="row">
-        <div className="col col--4">
-          <div className={clsx(styles.footerLogo, "col")}>
-            {logo}
-            {copyright}
-          </div>
+      <div className={styles.footerContainer}>
+        <div className={styles.footerLogo}>
+          {logo}
+          {copyright}
         </div>
-        <div className="col col--4">
-          <div className="row">
-            <div className={clsx(styles.footerLinks, "col col--6")}>
-              {links}
-            </div>
-            <div className={clsx(styles.footerSocial, "col col--6")}>
-              <div className={styles.footerSocialContainer}>
-                <IconLink
-                  icon={<FaFacebook />}
-                  text="Facebook"
-                  href="https://github.com"
-                />
-                <IconLink
-                  icon={<FaGithub />}
-                  text="Github"
-                  href="https://github.com"
-                />
-                <IconLink
-                  icon={<FaYoutube />}
-                  text="Youtube"
-                  href="https://github.com"
-                />
-              </div>
+        <div className={styles.footerSocialLinks}>
+          <div className={styles.footerLinks}>{links}</div>
+          <div className={styles.footerSocial}>
+            <div className={styles.footerSocialContainer}>
+              <IconLink
+                icon={<FaFacebook />}
+                text="Facebook"
+                href="https://www.facebook.com/aizootopi"
+              />
+              <IconLink
+                icon={<FaGithub />}
+                text="Github"
+                href="https://github.com/ZootoPi"
+              />
+              <IconLink
+                icon={<FaYoutube />}
+                text="Youtube"
+                href="https://www.youtube.com/@zootopi4315"
+              />
             </div>
           </div>
         </div>
-        <div className="col col--4">
-          <div className={styles.footerTagline}>
-            <Tagline />
-          </div>
+        <div className={styles.footerTagline}>
+          <Tagline />
         </div>
       </div>
     </footer>

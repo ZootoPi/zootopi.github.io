@@ -1,7 +1,26 @@
 .tagLineText {
-  font-size: 9rem;
+  font-size: 7rem;
 }
 
 .tagLineContainer {
   line-height: 1;
+}
+
+@media screen and (max-width: 1366px) {
+  .tagLineText {
+    font-size: 6rem;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  /* .tagLineText {
+    font-size: 7rem;
+  } */
+
+  .tagLineContainer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
 }

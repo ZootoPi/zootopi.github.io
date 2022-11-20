@@ -24,7 +24,7 @@ const FeatureList: FeatureItem[] = [
     title: "Projects",
     description: "Real-world fantastic projects by us",
     url: "project/papers/ner",
-    icon: <BoIcon />,
+    icon: <GaIcon />,
   },
   {
     title: "Certificates",
@@ -38,43 +38,11 @@ function Feature({ title, description, url, icon }: FeatureItem) {
   return (
     <div className={clsx(styles.featureContainer, "col col--4")}>
       <div className={styles.featureElem}>
-        <div
-          style={{
-            display: "flex",
-          }}
-        >
-          <div
-            style={{
-              width: "100px",
-              margin: "10px",
-            }}
-          >
-            {icon}
-          </div>
-
-          <div
-            style={{
-              maxWidth: "300px",
-              flex: 1,
-            }}
-          >
-            <p
-              style={{
-                color: "#4776BA",
-                fontSize: "2rem",
-                fontWeight: "500",
-              }}
-            >
-              {title}
-            </p>
-            <p
-              style={{
-                fontSize: "1.4rem",
-                color: "#000",
-              }}
-            >
-              {description}
-            </p>
+        <div className={styles.featureElemContainer}>
+          <div className={styles.featureElemImage}>{icon}</div>
+          <div className={styles.featureElemText}>
+            <p className={styles.featureTitle}>{title}</p>
+            <p className={styles.featureDescription}>{description}</p>
           </div>
         </div>
         <a href={url} aria-label={description}></a>
@@ -85,27 +53,11 @@ function Feature({ title, description, url, icon }: FeatureItem) {
 
 export default function HomepageFeatures(): JSX.Element {
   return (
-    <section
-      style={{
-        display: "flex",
-        alignItems: "center",
-        padding: "2rem 0",
-        width: "100%",
-        marginTop: "100px",
-      }}
-    >
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          width: "100%",
-        }}
-      >
-        <div className="row">
-          {FeatureList.map((props, idx) => (
-            <Feature key={idx} {...props} />
-          ))}
-        </div>
+    <section className={styles.section}>
+      <div className={clsx(styles.featureList, "row")}>
+        {FeatureList.map((props, idx) => (
+          <Feature key={idx} {...props} />
+        ))}
       </div>
     </section>
   );

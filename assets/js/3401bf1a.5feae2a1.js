@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkzootopi=self.webpackChunkzootopi||[]).push([[8899],{1722:e=>{e.exports=JSON.parse('{"title":"Nghi\xean c\u1ee9u","slug":"/papers","permalink":"/project/papers","navigation":{"next":{"title":"01. Nh\u1eadn d\u1ea1ng th\u1ef1c th\u1ec3","permalink":"/project/papers/ner"}}}')}}]);

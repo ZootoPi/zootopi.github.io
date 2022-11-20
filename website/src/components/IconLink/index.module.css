@@ -6,4 +6,5 @@
 .IconLink {
   display: flex;
   align-items: center;
+  color: var(--ifm-footer-link-color);
 }

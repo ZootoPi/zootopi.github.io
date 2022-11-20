@@ -13,6 +13,7 @@ import Footer from "@theme/Footer";
 import NextPageIcon from "../components/Homepage/Welcome/NextPageIcon";
 import TagLine from "../components/Homepage/Welcome/TagLine";
 import SocialButton from "../components/Homepage/Welcome/SocialButton";
+import HomepageWelcome from "../components/Homepage/Welcome";
 
 export default function Home(): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
@@ -24,26 +25,7 @@ export default function Home(): JSX.Element {
       noFooter
     >
       <div className={styles.homepageWelcome}>
-        <div className={styles.homepageBigLogo}>
-          <BigLogo />
-        </div>
-        <div className={styles.homepageWelcomeContent}>
-          <TagLine />
-          <div className={styles.homepageWelcomeSocialButton}>
-            <SocialButton />
-          </div>
-        </div>
-        <div
-          className={styles.homepageNextPage}
-          onClick={() => {
-            window.scrollTo({
-              top: window.innerHeight,
-              behavior: "smooth",
-            });
-          }}
-        >
-          <NextPageIcon width="30px" />
-        </div>
+        <HomepageWelcome />
       </div>
       <div className={styles.homepageFeatureContainer}>
         <div className={styles.homepageFeatureBackground}>

@@ -70,20 +70,29 @@
     padding-bottom: 0.5rem;
   }
 
-  .footerLogo {
-    order: 2;
-  }
-  .footerSocialLinks {
-    order: 1;
-  }
-  .footerTagline {
-    order: 3;
-  }
-
   .footerLinks {
     align-items: center;
   }
   .footerSocial {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .footerContainer {
+    grid-template-areas:
+      "links"
+      "logo"
+      "tag-line";
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .footerLogo {
+    text-align: center;
+  }
+
+  .footerTagline {
     justify-content: center;
   }
 }

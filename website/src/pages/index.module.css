@@ -4,6 +4,8 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  position: relative;
+  overflow: hidden;
 }
 
 .homepageWelcome {
@@ -11,34 +13,6 @@
   height: calc(100vh - var(--ifm-navbar-height));
   display: flex;
   flex-direction: column;
-}
-
-.homepageBigLogo {
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: -99;
-  width: 55%;
-  min-width: 750px;
-}
-
-.homepageWelcomeContent {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  width: 50%;
-  margin: 60px;
-}
-
-.homepageWelcomeSocialButton {
-  margin-top: 80px;
-}
-
-.homepageNextPage {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 50px;
 }
 
 .homepageFeatureContainer {
@@ -60,6 +34,7 @@
 
 .homepageFeatureTitle {
   font-size: 4rem;
+  line-height: 1;
   display: flex;
   justify-content: center;
   margin-top: 100px;
@@ -73,34 +48,28 @@
 
   .homepageWelcome {
     height: 100%;
-    margin-bottom: 300px;
+    /* margin-bottom: 300px; */
   }
 
   .homepageFeatureContainer {
     height: 100%;
   }
 
-  .homepageWelcomeContent {
-    width: 100%;
-    margin: 0;
-  }
-
-  .homepageWelcomeSocialButton {
-    margin-top: 30px;
-  }
-
-  .homepageBigLogo {
-    display: none;
-  }
-
   .homepageFeatureTitle {
-    margin-top: 0;
-    margin-bottom: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
 }
 
 @media screen and (max-width: 996px) {
   .homepageFeatureTitle {
     font-size: 3rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .homepageFeatureTitle {
+    font-size: 2rem;
+    margin-bottom: 20px;
   }
 }

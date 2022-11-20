@@ -1,0 +1,26 @@
+.item1 {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 50%;
+}
+
+.item2 {
+  display: flex;
+  position: relative;
+  width: 60%;
+  left: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@media screen and (max-width: 600px) {
+  .item1 {
+    width: 80%;
+  }
+
+  .item2 {
+    width: 100%;
+  }
+}

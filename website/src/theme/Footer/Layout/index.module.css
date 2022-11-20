@@ -1,0 +1,98 @@
+/**
+ * CSS files with the .module.css suffix will be treated as CSS modules
+ * and scoped locally.
+ */
+
+.footerHomepage {
+  background: none;
+  box-shadow: none;
+}
+
+.footerContainer {
+  display: grid;
+  grid-template-areas: "logo links tag-line";
+  width: 100%;
+}
+
+.footerLogo {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+  flex-direction: column;
+  width: 100%;
+  grid-area: logo;
+}
+
+.footerSocialLinks {
+  display: flex;
+  flex: 1;
+  grid-area: links;
+}
+
+.footerLinks {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.footerSocial {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.footerSocialContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.footerTagline {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 100%;
+  grid-area: tag-line;
+}
+
+@media screen and (max-width: 996px) {
+  .footerContainer {
+    grid-template-areas:
+      "links links"
+      "logo tag-line";
+    gap: 10px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .footerHomepage {
+    padding-bottom: 0.5rem;
+  }
+
+  .footerLinks {
+    align-items: center;
+  }
+  .footerSocial {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .footerContainer {
+    grid-template-areas:
+      "links"
+      "logo"
+      "tag-line";
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .footerLogo {
+    text-align: center;
+  }
+
+  .footerTagline {
+    justify-content: center;
+  }
+}

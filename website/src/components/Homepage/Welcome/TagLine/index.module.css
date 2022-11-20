@@ -1,0 +1,31 @@
+.tagLineText {
+  font-size: 7rem;
+}
+
+.tagLineContainer {
+  line-height: 1;
+}
+
+@media screen and (max-width: 1366px) {
+  .tagLineText {
+    font-size: 6rem;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .tagLineText {
+    font-size: 5.5rem;
+  }
+}
+
+@media screen and (max-width: 996px) {
+  .tagLineText {
+    font-size: 4rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .tagLineText {
+    font-size: 3.5rem;
+  }
+}

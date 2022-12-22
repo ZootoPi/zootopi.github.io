@@ -1,4 +1,9 @@
 {
   "label": "Python cơ bản",
-  "position": 1
+  "position": 1,
+  "link": {
+    "type": "generated-index",
+    "title": "Python cơ bản",
+    "slug": "/python"
+  }
 }

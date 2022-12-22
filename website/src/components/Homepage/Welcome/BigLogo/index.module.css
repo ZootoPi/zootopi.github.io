@@ -1,0 +1,16 @@
+.background {
+  position: absolute;
+  display: flex;
+  top: 0;
+  right: -10px;
+  width: 60%;
+  max-width: 95%;
+}
+
+@media screen and (max-width: 1200px) {
+  .background {
+    right: -30px;
+    width: auto;
+    height: 600px;
+  }
+}

@@ -1,0 +1,18 @@
+/**
+ * CSS files with the .module.css suffix will be treated as CSS modules
+ * and scoped locally.
+ */
+
+.footerLinksContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.footerLinksColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.footerLinksColumnPadding {
+  padding-left: 1rem;
+}

@@ -1,75 +1,75 @@
-/* stylelint-disable docusaurus/copyright-header */
-
-/**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
- */
-
-.heroTitle {
-  font-size: 5rem;
-}
-
-@media screen and (max-width: 966px) {
-  .heroTitle {
-    font-size: 3rem;
-  }
-}
-
-@media screen and (max-width: 576px) {
-  .heroTitle {
-    font-size: 2rem;
-  }
-}
-
-.heroTitle span {
-  color: #fed482;
-}
-
-.heroBanner {
-  padding: 4rem 0;
-  text-align: center;
+.homepageContainer {
+  /* position: absolute; */
+  top: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
   position: relative;
   overflow: hidden;
 }
 
-@media screen and (max-width: 966px) {
-  .heroBanner {
-    padding: 2rem;
-  }
-}
-
-@media screen and (max-width: 576px) {
-  .heroBanner {
-    padding: 0.5rem;
-  }
-}
-
-.heroImage {
-  margin: 1rem;
-}
-
-.heroImage img {
+.homepageWelcome {
   width: 100%;
-}
-
-.heroContainer {
+  height: calc(100vh - var(--ifm-navbar-height));
   display: flex;
   flex-direction: column;
-  justify-content: center;
 }
 
-.buttons {
+.homepageFeatureContainer {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  position: relative;
 }
 
-.buttons a {
+.homepageFeatureBackground {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  z-index: -99;
 }
 
-.buttons div {
-  padding-right: 10px;
+.homepageFeatureTitle {
+  font-size: 4rem;
+  line-height: 1;
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+  text-align: center;
+}
+
+@media screen and (max-width: 1200px) {
+  .homepageNextPage {
+    display: none;
+  }
+
+  .homepageWelcome {
+    height: 100%;
+    /* margin-bottom: 300px; */
+  }
+
+  .homepageFeatureContainer {
+    height: 100%;
+  }
+
+  .homepageFeatureTitle {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 996px) {
+  .homepageFeatureTitle {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .homepageFeatureTitle {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
 }

@@ -1,0 +1,10 @@
+/**
+ * CSS files with the .module.css suffix will be treated as CSS modules
+ * and scoped locally.
+ */
+
+.IconLink {
+  display: flex;
+  align-items: center;
+  color: var(--ifm-footer-link-color);
+}

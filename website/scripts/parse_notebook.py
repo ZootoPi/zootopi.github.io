@@ -35,9 +35,27 @@ def convert_notebook(ipynb_in_path, exporter, writer) -> None:
         nb = nbformat.reads(nb_str, nbformat.NO_CONVERT)
 
     # displayname is absent from notebook metadata
-    nb["metadata"]["kernelspec"]["display_name"] = "python3"
+    if "kernelspec" in nb["metadata"]:
+        nb["metadata"]["kernelspec"]["display_name"] = "python3"
 
+    # Fix output cells that might be missing required properties
     for cell in nb['cells']:
+        if cell.get('cell_type') == 'code':
+            # Ensure outputs list exists
+            if 'outputs' not in cell:
+                cell['outputs'] = []
+            # Fix output properties
+            for output in cell['outputs']:
+                # Fix stream outputs missing 'name'
+                if output.get('output_type') == 'stream' and 'name' not in output:
+                    output['name'] = 'stdout'
+                # Fix execute_result outputs missing 'execution_count'
+                if output.get('output_type') == 'execute_result' and 'execution_count' not in output:
+                    output['execution_count'] = None
+                # Fix execute_result outputs missing 'metadata'
+                if output.get('output_type') == 'execute_result' and 'metadata' not in output:
+                    output['metadata'] = {}
+        
         for f in preprocess:
             f(cell)
 

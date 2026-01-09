@@ -214,10 +214,14 @@ Không bắt buộc, nhưng nên có. Đây là chứng chỉ entry-level, nhưn
 <details>
 <summary>Làm thế nào để thực hành mà không tốn phí?</summary>
 
+Bạn có thể thực hành miễn phí bằng cách:
+
 - Sử dụng GCP free tier ($300 credits trong 90 ngày)
 - Làm các labs miễn phí trên Google Cloud Skill Boost
 - Sử dụng các sandbox environments có sẵn
-- **Tham gia chương trình Get Certified 2025** để nhận 400 free credits cho labs và exam voucher miễn phí (xem chi tiết ở section [Chương trình Get Certified 2025](#-chương-trình-get-certified-2025-miễn-phí) phía trên)
+- Tham gia chương trình Get Certified 2025 để nhận 400 free credits cho labs và exam voucher miễn phí
+
+Xem chi tiết về chương trình Get Certified 2025 ở section [Chương trình Get Certified 2025](#-chương-trình-get-certified-2025-miễn-phí) phía trên.
 </details>
 
 <details>

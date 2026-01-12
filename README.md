@@ -1,36 +1,9 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Giới thiệu về dự án của ZootoPi
 
-## Getting Started
+Hí anh em, chúng tớ là **ZootoPi**. Dự án là sự kết hợp của anh **Gà**, em **Bò**, và bé **Củ Cải** với mong muốn chia sẻ những kiến thức mà trong quá trình anh em chúng tớ bắt đầu hành trình code dạo.
 
-First, run the development server:
+![ZootoPi](../cover.svg)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Như slogan của website, chúng tớ làm cái blog đơn giản là **thích gì viết** =)). Ý là ... viết về những gì chúng tớ thấy thú vị xoay quanh nghề nghiệp của chúng tớ, đương nhiên sẽ không giới hạn ở các bài viết hướng dẫn, mà còn là những chia sẻ kinh nghiệm bản thân từ dự án thực tế cũng như học lỏm được từ 500 anh em đồng nghiệp 😆😆😆. Ngoài ra, chúng tớ cũng sẽ review 1 số khoá học online hay ho cũng như chia sẻ funny side projects...
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Hãy ủng hộ chúng tớ nhé!!!!

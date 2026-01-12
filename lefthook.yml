@@ -10,8 +10,5 @@ pre-commit:
         - "*.jsonc"
         - "*.css"
       stage_fixed: true
-    - run: pnpm prettier --write
-      glob:
-        - "src/contents/**/*.md"
-        - "src/contents/**/*.mdx"
+    - run: pnpm prettier **/*.md --write
       stage_fixed: true

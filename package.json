@@ -10,7 +10,7 @@
     "format": "ultracite fix && pnpm dlx prettier **/*.md --write",
     "prepare": "lefthook install",
     "copy-images": "node scripts/copy-images.js",
-    "convert-notebooks": "node scripts/convert-notebooks.js"
+    "convert-notebooks": "node scripts/convert-notebooks.js && pnpm dlx prettier **/*.md --write"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.1",

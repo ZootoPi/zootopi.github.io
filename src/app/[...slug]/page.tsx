@@ -128,7 +128,7 @@ export default async function ContentPage({ params }: PageProps) {
           <Script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" />
         </Head>
         <div className="mx-auto max-w-4xl px-4 py-12 max-sm:px-2">
-          <article className="prose prose-lg mx-auto max-w-none">
+          <article className="prose prose-lg mx-auto">
             <MDXContent />
           </article>
         </div>

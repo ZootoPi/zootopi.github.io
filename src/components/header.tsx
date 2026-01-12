@@ -80,7 +80,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="fixed top-4 right-4 left-4 z-50 mx-auto max-w-7xl">
+      <header className="fixed top-4 right-4 left-4 z-50 mx-auto max-w-7xl max-sm:top-2 max-sm:right-2 max-sm:left-2">
         <nav className="flex items-center justify-between rounded-2xl border border-zinc-200/50 bg-white/80 px-4 py-2 backdrop-blur-md transition-all duration-200 md:px-6 dark:border-zinc-800/50 dark:bg-zinc-900/80">
           <div className="flex items-center gap-2">
             <Link

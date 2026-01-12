@@ -123,8 +123,37 @@
   body {
     @apply bg-background text-foreground;
   }
-  [aria-hidden="true"] {
+
+  .katex-html[aria-hidden="true"] {
     display: none !important;
+  }
+
+  /* KaTeX mobile wrapping - prevent layout breaking on small screens */
+  .katex,
+  .katex-display {
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    display: block;
+  }
+
+  /* Mobile-specific adjustments for KaTeX */
+  @media (max-width: 768px) {
+    .katex {
+      font-size: 1em;
+    }
+
+    .katex-display {
+      font-size: 1.1em;
+      margin: 0.5em 0;
+    }
+
+    /* Ensure KaTeX containers don't overflow viewport */
+    .katex-display > .katex {
+      max-width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
   }
 
   code[data-theme*=" "],

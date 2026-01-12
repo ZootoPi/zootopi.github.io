@@ -1,9 +1,9 @@
 import path from "node:path";
 import type { Metadata } from "next";
+import Head from "next/head";
 import { notFound } from "next/navigation";
+import Script from "next/script";
 import DirectoryListing from "@/components/directory-listing";
-import Footer from "@/components/footer";
-import Header from "@/components/header";
 import {
   compileMDX,
   getAllDirectories,
@@ -123,22 +123,15 @@ export default async function ContentPage({ params }: PageProps) {
     const MDXContent = await compileMDX(processedContent);
 
     return (
-      <div className="min-h-screen bg-linear-to-b from-zinc-50 to-white dark:from-zinc-950 dark:to-zinc-900">
-        <Header />
-        <div className="mx-auto max-w-4xl px-4 py-24">
-          <article className="prose prose-lg prose-zinc dark:prose-invert mx-auto max-w-none prose-img:rounded-xl prose-pre:bg-zinc-900 prose-headings:font-bold prose-a:text-[#4776BA] prose-code:text-[#EE4723] prose-headings:text-zinc-900 prose-p:text-zinc-700 prose-strong:text-zinc-900 prose-a:no-underline prose-img:shadow-lg hover:prose-a:underline dark:prose-pre:bg-zinc-950 dark:prose-a:text-[#4776BA] dark:prose-code:text-[#EE4723] dark:prose-headings:text-zinc-100 dark:prose-p:text-zinc-300 dark:prose-strong:text-zinc-100">
+      <div className="h-full pt-24">
+        <Head>
+          <Script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" />
+        </Head>
+        <div className="mx-auto max-w-4xl px-4 py-12 max-sm:px-2">
+          <article className="prose prose-lg mx-auto max-w-none">
             <MDXContent />
           </article>
-          <div className="mt-12 border-zinc-200 border-t pt-8 dark:border-zinc-800">
-            <a
-              className="inline-flex cursor-pointer items-center gap-2 font-medium text-sm text-zinc-600 transition-colors duration-200 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
-              href="/blog"
-            >
-              ← Back to blog
-            </a>
-          </div>
         </div>
-        <Footer />
       </div>
     );
   }
@@ -149,12 +142,8 @@ export default async function ContentPage({ params }: PageProps) {
 
     if (directoryContents) {
       return (
-        <div className="min-h-screen bg-linear-to-b from-zinc-50 to-white dark:from-zinc-950 dark:to-zinc-900">
-          <Header />
-          <div className="pt-24">
-            <DirectoryListing contents={directoryContents} slug={slug} />
-          </div>
-          <Footer />
+        <div className="h-full pt-24">
+          <DirectoryListing contents={directoryContents} slug={slug} />
         </div>
       );
     }

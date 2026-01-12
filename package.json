@@ -4,12 +4,13 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "copy-images": "node scripts/copy-images.js",
-    "dev": "pnpm copy-images && next dev",
-    "build": "pnpm copy-images && next build",
+    "dev": "next dev",
+    "build": "pnpm copy-images && pnpm convert-notebooks && next build",
     "start": "next start",
     "format": "ultracite fix",
-    "prepare": "lefthook install"
+    "prepare": "lefthook install",
+    "copy-images": "node scripts/copy-images.js",
+    "convert-notebooks": "node scripts/convert-notebooks.js"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.1",
@@ -23,7 +24,10 @@
     "next": "16.1.1",
     "react": "19.2.3",
     "react-dom": "19.2.3",
+    "rehype-katex": "^7.0.1",
+    "rehype-pretty-code": "^0.14.1",
     "remark-gfm": "^4.0.1",
+    "remark-math": "^6.0.0",
     "tailwind-merge": "^3.4.0"
   },
   "devDependencies": {

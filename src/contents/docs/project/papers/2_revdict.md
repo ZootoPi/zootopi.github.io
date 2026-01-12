@@ -1,5 +1,5 @@
 ---
-sidebar_label: 02. Từ điển nghịch đảo
+title: 02. Từ điển nghịch đảo
 ---
 
 # Nghịch đảo từ điển sử dụng mô hình đơn ngữ và ngôn ngữ chéo

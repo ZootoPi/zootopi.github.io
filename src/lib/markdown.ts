@@ -4,7 +4,10 @@ import path from "node:path";
 import { compile, run } from "@mdx-js/mdx";
 import matter from "gray-matter";
 import { Fragment, jsx, jsxs } from "react/jsx-runtime";
+import rehypeKatex from "rehype-katex";
+import rehypePrettyCode from "rehype-pretty-code";
 import remarkGfm from "remark-gfm";
+import remarkMath from "remark-math";
 
 const CONTENTS_DIR = path.join(process.cwd(), "src/contents");
 const MD_FILE_REGEX = /\.(md|mdx)$/;
@@ -139,7 +142,20 @@ export async function compileMDX(
 
   const compiled = await compile(processedContent, {
     outputFormat: "function-body",
-    remarkPlugins: [remarkGfm],
+    remarkPlugins: [remarkGfm, remarkMath],
+    rehypePlugins: [
+      [
+        rehypePrettyCode,
+        {
+          theme: {
+            light: "github-light",
+            dark: "github-dark",
+          },
+          keepBackground: false,
+        },
+      ],
+      rehypeKatex,
+    ],
   });
 
   // Evaluate the compiled MDX
@@ -256,6 +272,7 @@ export interface DirectoryContents {
   subdirectories: Array<{
     slug: string[];
     name: string;
+    label?: string;
     hasCategoryMetadata: boolean;
   }>;
 }
@@ -276,7 +293,11 @@ async function processDirectoryEntry(
   }
 
   // Skip image directories
-  if (entry.name === "img" || entry.name === "imgs") {
+  if (
+    entry.name === "img" ||
+    entry.name === "imgs" ||
+    entry.name === "visualization"
+  ) {
     return;
   }
 
@@ -292,9 +313,20 @@ async function processDirectoryEntry(
     const subCategoryPath = path.join(fullPath, "_category_.json");
     const hasCategoryMetadata = fs.existsSync(subCategoryPath);
 
+    // Get category metadata if it exists
+    let label: string | undefined;
+    if (hasCategoryMetadata) {
+      const subCategoryMetadata = await getCategoryMetadata([
+        ...slug,
+        entry.name,
+      ]);
+      label = subCategoryMetadata?.label;
+    }
+
     subdirectories.push({
       slug: [...slug, entry.name],
       name: entry.name,
+      label,
       hasCategoryMetadata,
     });
   } else if (entry.isFile() && MD_FILE_REGEX.test(entry.name)) {

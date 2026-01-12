@@ -1,7 +1,5 @@
 ---
-id: certificate-courses
-sidebar_position: 1
-slug: /
+title: "Khoá học chuyên sâu về Khoa học Dữ liệu từ IBM"
 ---
 
 # Khoá học chuyên sâu về Khoa học Dữ liệu từ IBM

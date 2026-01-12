@@ -1,5 +1,5 @@
 ---
-sidebar_label: 03. Trích xuất thuật ngữ (p1)
+title: 03. Trích xuất thuật ngữ (p1)
 ---
 
 # Trích xuất thuật ngữ Slovenia với XLM-R

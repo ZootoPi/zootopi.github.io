@@ -1,5 +1,5 @@
 ---
-sidebar_label: 01. Nhận dạng thực thể
+title: 01. Nhận dạng thực thể
 ---
 
 # Nhận dạng thực thể kết hợp đặc trưng ngữ cảnh và toàn cục

@@ -1,8 +1,6 @@
 import { ArrowRight, Award, BookOpen, FolderKanban } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import Footer from "@/components/footer";
-import Header from "@/components/header";
 import PostCard from "@/components/post-card";
 import {
   getAllMarkdownFiles,
@@ -85,7 +83,7 @@ export default async function Home() {
   ];
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-white dark:bg-zinc-950">
+    <div className="overflow-hidde relative min-h-screen">
       {/* Floating Color Blobs - Background Layer */}
       <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
         {/* Blue blob - left side */}
@@ -105,22 +103,9 @@ export default async function Home() {
         />
       </div>
 
-      <Header />
-
       <main className="relative z-10 pt-24">
         {/* Hero Section with Colorful Gradient */}
         <section className="relative mx-auto max-w-7xl overflow-hidden px-4 py-20 md:py-32">
-          {/* Sky background for entire hero section */}
-          <div className="pointer-events-none absolute inset-0 -z-10 flex items-center justify-center">
-            <Image
-              alt=""
-              aria-hidden="true"
-              className="h-full w-full object-cover opacity-60 dark:opacity-40"
-              fill
-              src="/sky.svg"
-            />
-          </div>
-
           <div className="relative z-10">
             <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
               {/* Left side - Text content */}
@@ -279,8 +264,6 @@ export default async function Home() {
           </section>
         )}
       </main>
-
-      <Footer />
     </div>
   );
 }

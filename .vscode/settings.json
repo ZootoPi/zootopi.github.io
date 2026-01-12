@@ -41,7 +41,7 @@
     "editor.defaultFormatter": "biomejs.biome"
   },
   "[markdown]": {
-    "editor.defaultFormatter": "biomejs.biome"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[mdx]": {
     "editor.defaultFormatter": "biomejs.biome"

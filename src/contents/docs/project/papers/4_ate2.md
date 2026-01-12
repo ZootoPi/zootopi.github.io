@@ -1,5 +1,5 @@
 ---
-sidebar_label: 04. Trích xuất thuật ngữ (p2)
+title: 04. Trích xuất thuật ngữ (p2)
 ---
 
 # Học chuyển giao đa ngôn ngữ có lợi cho trích xuất thuật ngữ chéo ngành không?

@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "pnpm copy-images && pnpm convert-notebooks && next build",
+    "build": "pnpm copy-images && next build",
     "start": "next start",
     "format": "ultracite fix && pnpm dlx prettier **/*.md --write",
     "prepare": "lefthook install",
@@ -28,6 +28,7 @@
     "rehype-pretty-code": "^0.14.1",
     "remark-gfm": "^4.0.1",
     "remark-math": "^6.0.0",
+    "sharp": "^0.34.5",
     "tailwind-merge": "^3.4.0"
   },
   "devDependencies": {

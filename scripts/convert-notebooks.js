@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import sharp from "sharp";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -94,10 +95,11 @@ function processTextOutput(output) {
 
 /**
  * Process image output and save to img directory
+ * Converts PNG and GIF to WebP format, keeps JPEG and SVG unchanged
  */
 
 // biome-ignore lint/complexity/noExcessiveCognitiveComplexity: allow
-function processImageOutput(output, notebookPath, cellIndex) {
+async function processImageOutput(output, notebookPath, cellIndex) {
   const notebookDir = path.dirname(notebookPath);
   const notebookName = path.basename(notebookPath, ".ipynb");
   const imgDir = path.join(notebookDir, "img");
@@ -119,15 +121,20 @@ function processImageOutput(output, notebookPath, cellIndex) {
     if (output.data?.[format]) {
       const imageData = output.data[format];
       let extension = "png";
+      let shouldConvertToWebP = false;
+
       if (format === "image/jpeg" || format === "image/jpg") {
         extension = "jpg";
       } else if (format === "image/gif") {
         extension = "gif";
+        shouldConvertToWebP = true;
       } else if (format === "image/svg+xml") {
         extension = "svg";
+      } else if (format === "image/png") {
+        shouldConvertToWebP = true;
       }
 
-      const imageFileName = `${notebookName}-cell-${cellIndex}.${extension}`;
+      const imageFileName = `${notebookName}-cell-${cellIndex}.${shouldConvertToWebP ? "webp" : extension}`;
       const imagePath = path.join(imgDir, imageFileName);
 
       // Handle base64 encoded images
@@ -143,9 +150,30 @@ function processImageOutput(output, notebookPath, cellIndex) {
         continue;
       }
 
-      fs.writeFileSync(imagePath, imageBuffer);
-      const relativeImagePath = path.join("img", imageFileName);
-      return `![Output](./${relativeImagePath})`;
+      // Convert PNG and GIF to WebP, keep others as-is
+      try {
+        if (shouldConvertToWebP) {
+          const webpBuffer = await sharp(imageBuffer)
+            .webp({ quality: 82 })
+            .toBuffer();
+          fs.writeFileSync(imagePath, webpBuffer);
+        } else {
+          fs.writeFileSync(imagePath, imageBuffer);
+        }
+        const relativeImagePath = path.join("img", imageFileName);
+        return `![Output](./${relativeImagePath})`;
+      } catch (error) {
+        // Fall back to original format if conversion fails
+        console.warn(
+          `⚠️  Failed to convert ${format} to WebP for ${notebookPath}, using original format:`,
+          error.message
+        );
+        const fallbackFileName = `${notebookName}-cell-${cellIndex}.${extension}`;
+        const fallbackPath = path.join(imgDir, fallbackFileName);
+        fs.writeFileSync(fallbackPath, imageBuffer);
+        const relativeImagePath = path.join("img", fallbackFileName);
+        return `![Output](./${relativeImagePath})`;
+      }
     }
   }
 
@@ -155,7 +183,7 @@ function processImageOutput(output, notebookPath, cellIndex) {
 /**
  * Process all outputs for a code cell
  */
-function processOutputs(outputs, notebookPath, cellIndex) {
+async function processOutputs(outputs, notebookPath, cellIndex) {
   if (!outputs || outputs.length === 0) {
     return "";
   }
@@ -169,7 +197,11 @@ function processOutputs(outputs, notebookPath, cellIndex) {
         output.output_type === "execute_result") &&
       output.data
     ) {
-      const imageMarkdown = processImageOutput(output, notebookPath, cellIndex);
+      const imageMarkdown = await processImageOutput(
+        output,
+        notebookPath,
+        cellIndex
+      );
       if (imageMarkdown) {
         outputParts.push(imageMarkdown);
         continue;
@@ -268,7 +300,7 @@ function escapeMarkdownTextJSX(content) {
 /**
  * Convert a notebook cell to markdown
  */
-function convertCellToMarkdown(cell, cellIndex, notebookPath) {
+async function convertCellToMarkdown(cell, cellIndex, notebookPath) {
   if (cell.cell_type === "markdown") {
     const source = joinSource(cell.source);
     // Convert LaTeX environments to remark-math compatible format
@@ -287,7 +319,7 @@ function convertCellToMarkdown(cell, cellIndex, notebookPath) {
 
     // Add outputs if present
     if (cell.outputs && cell.outputs.length > 0) {
-      const outputsMarkdown = processOutputs(
+      const outputsMarkdown = await processOutputs(
         cell.outputs,
         notebookPath,
         cellIndex
@@ -383,7 +415,7 @@ function extractFrontmatter(notebook, h1Title = null) {
 /**
  * Convert notebook to markdown
  */
-function convertNotebookToMarkdown(notebookPath) {
+async function convertNotebookToMarkdown(notebookPath) {
   try {
     const notebookContent = fs.readFileSync(notebookPath, "utf8");
     const notebook = JSON.parse(notebookContent);
@@ -402,7 +434,11 @@ function convertNotebookToMarkdown(notebookPath) {
 
     // Convert each cell
     for (let i = 0; i < cells.length; i++) {
-      const cellMarkdown = convertCellToMarkdown(cells[i], i, notebookPath);
+      const cellMarkdown = await convertCellToMarkdown(
+        cells[i],
+        i,
+        notebookPath
+      );
       if (cellMarkdown) {
         markdownParts.push(cellMarkdown);
         // Add spacing between cells
@@ -461,7 +497,7 @@ function findNotebookFiles(dir, fileList = []) {
 /**
  * Main function to convert all notebooks
  */
-function convertAllNotebooks() {
+async function convertAllNotebooks() {
   console.log("🔍 Searching for Jupyter notebooks...");
   const notebookFiles = findNotebookFiles(contentsDir);
 
@@ -476,7 +512,7 @@ function convertAllNotebooks() {
   let failCount = 0;
 
   for (const notebookPath of notebookFiles) {
-    if (convertNotebookToMarkdown(notebookPath)) {
+    if (await convertNotebookToMarkdown(notebookPath)) {
       successCount++;
     } else {
       failCount++;

@@ -111,7 +111,7 @@ importance_df = pd.DataFrame({'feature_labels': X_train.columns,
 feature_plot_importance(importance_df)
 ```
 
-![Output](./img/2022-02-15-xai2-thuc-hanh-cell-6.png)
+![Output](./img/2022-02-15-xai2-thuc-hanh-cell-6.webp)
 
 Dựa vào feature importance từ mô hình Random Forest, có thể thấy `MedInc`, `AveOccup`, `HouseAge` là 3 đặc trưng quan trọng. Ta hoàn toàn có thể xây dựng 1 mô hình Random Forest mới với chỉ những đặc trưng quan trọng.
 
@@ -134,7 +134,7 @@ importance_df_reduced = pd.DataFrame({'feature_labels': X_train_reduced.columns,
 feature_plot_importance(importance_df_reduced)
 ```
 
-![Output](./img/2022-02-15-xai2-thuc-hanh-cell-8.png)
+![Output](./img/2022-02-15-xai2-thuc-hanh-cell-8.webp)
 
 Dựa vào feature importance từ mô hình Random Forest, có thể thấy `MedInc`, `AveOccup`, `HouseAge` là 3 đặc trưng quan trọng. Nhưng chỉ dựa vào đặc trưng thì khó có thể thấy được mối liên hệ giữa đặc trưng đó với việc mô hình đưa ra kết quả dự đoán. Để giải quyết vấn đề này, chúng ta sẽ cùng nhau đến với Biểu đồ Phụ thuộc Từng phần (Partial Dependence Plot).
 
@@ -162,7 +162,7 @@ PartialDependenceDisplay.from_estimator(regr,
                                         percentiles = [0,1]);
 ```
 
-![Output](./img/2022-02-15-xai2-thuc-hanh-cell-13.png)
+![Output](./img/2022-02-15-xai2-thuc-hanh-cell-13.webp)
 
 ```python
 PartialDependenceDisplay.from_estimator(regr,
@@ -171,7 +171,7 @@ PartialDependenceDisplay.from_estimator(regr,
                                         percentiles = [0,1]);
 ```
 
-![Output](./img/2022-02-15-xai2-thuc-hanh-cell-14.png)
+![Output](./img/2022-02-15-xai2-thuc-hanh-cell-14.webp)
 
 ```python
 PartialDependenceDisplay.from_estimator(regr,
@@ -180,7 +180,7 @@ PartialDependenceDisplay.from_estimator(regr,
                                         percentiles = [0,1]);
 ```
 
-![Output](./img/2022-02-15-xai2-thuc-hanh-cell-15.png)
+![Output](./img/2022-02-15-xai2-thuc-hanh-cell-15.webp)
 
 Với biểu đồ DPD 2D, ta có:
 
@@ -192,7 +192,7 @@ MedInc_AvcOccup_disp = PartialDependenceDisplay.from_estimator(regr,
                                                                grid_resolution = 20)
 ```
 
-![Output](./img/2022-02-15-xai2-thuc-hanh-cell-17.png)
+![Output](./img/2022-02-15-xai2-thuc-hanh-cell-17.webp)
 
 ```python
 MedInc_HouseAge_disp = PartialDependenceDisplay.from_estimator(regr,
@@ -202,7 +202,7 @@ MedInc_HouseAge_disp = PartialDependenceDisplay.from_estimator(regr,
                                                                grid_resolution = 20)
 ```
 
-![Output](./img/2022-02-15-xai2-thuc-hanh-cell-18.png)
+![Output](./img/2022-02-15-xai2-thuc-hanh-cell-18.webp)
 
 ```python
 AveOccup_HouseAge_disp = PartialDependenceDisplay.from_estimator(regr,
@@ -212,7 +212,7 @@ AveOccup_HouseAge_disp = PartialDependenceDisplay.from_estimator(regr,
                                                                  grid_resolution = 10)
 ```
 
-![Output](./img/2022-02-15-xai2-thuc-hanh-cell-19.png)
+![Output](./img/2022-02-15-xai2-thuc-hanh-cell-19.webp)
 
 Ta hoàn toàn có thể thêm các điểm dữ liệu vào biểu đồ PDP bằng cách sau:
 
@@ -225,7 +225,7 @@ plt.scatter(X_train_reduced['AveOccup'],
             color = 'black');
 ```
 
-![Output](./img/2022-02-15-xai2-thuc-hanh-cell-21.png)
+![Output](./img/2022-02-15-xai2-thuc-hanh-cell-21.webp)
 
 ## 3.2. Sử dụng thư viện PDPbox
 
@@ -253,7 +253,7 @@ findfont: Font family ['Arial'] not found. Falling back to DejaVu Sans.
 findfont: Font family ['Arial'] not found. Falling back to DejaVu Sans.
 ```
 
-![Output](./img/2022-02-15-xai2-thuc-hanh-cell-25.png)
+![Output](./img/2022-02-15-xai2-thuc-hanh-cell-25.webp)
 
 ```python
 pdp_MedInc = pdp.pdp_isolate(model=regr,
@@ -263,7 +263,7 @@ pdp_MedInc = pdp.pdp_isolate(model=regr,
 fig, axes = pdp.pdp_plot(pdp_MedInc, 'HouseAge', plot_lines=True, frac_to_plot=100, plot_pts_dist=True);
 ```
 
-![Output](./img/2022-02-15-xai2-thuc-hanh-cell-26.png)
+![Output](./img/2022-02-15-xai2-thuc-hanh-cell-26.webp)
 
 ```python
 pdp_MedInc = pdp.pdp_isolate(model=regr,
@@ -273,7 +273,7 @@ pdp_MedInc = pdp.pdp_isolate(model=regr,
 fig, axes = pdp.pdp_plot(pdp_MedInc, 'AveOccup', plot_lines=True, frac_to_plot=100, plot_pts_dist=True);
 ```
 
-![Output](./img/2022-02-15-xai2-thuc-hanh-cell-27.png)
+![Output](./img/2022-02-15-xai2-thuc-hanh-cell-27.webp)
 
 Thư viện PDPbox cũng cung cấp cả 2 biểu đồ dưới dạng 1D và 2D. Biều đồ 2D phía dưới cho thấy mối quan hệ của giá nhà trung bình với 2 đặc trưng là thu nhập bình quân và độ tuổi của nhà.
 
@@ -285,7 +285,7 @@ p = pdp.pdp_interact(regr,X_train_reduced,
 pdp.pdp_interact_plot(p,feats);
 ```
 
-![Output](./img/2022-02-15-xai2-thuc-hanh-cell-29.png)
+![Output](./img/2022-02-15-xai2-thuc-hanh-cell-29.webp)
 
 Đón xem những trải nghiệm và phân tích cụ thể từ Zootopi tại:
 
